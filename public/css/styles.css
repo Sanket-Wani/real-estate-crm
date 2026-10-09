@@ -1942,6 +1942,7 @@
   border-bottom: 1.5px solid #F3F4F6 !important;
   text-align: left !important;
   background: transparent !important;
+  white-space: nowrap !important;
 }
 
 .finexy-table tbody tr {
@@ -1968,6 +1969,7 @@
   font-weight: 600 !important;
   padding: 4px 10px !important;
   border-radius: 9999px !important;
+  white-space: nowrap !important;
 }
 
 .finexy-status-dot {
@@ -2172,15 +2174,16 @@
 }
 
 .stitch-unit-actions {
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 4px !important;
+  width: 100% !important;
 }
 
 .stitch-unit-btn {
-  padding: 5px 9px !important;
+  padding: 5px 2px !important;
   border-radius: 8px !important;
-  font-size: 11px !important;
+  font-size: 10.5px !important;
   font-weight: 600 !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   background: #F4F5F7 !important;
@@ -2192,6 +2195,10 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .stitch-unit-btn:hover {

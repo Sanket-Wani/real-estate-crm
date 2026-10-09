@@ -292,7 +292,7 @@ function renderInventoryMatrix(container, state) {
                 </button>
                 ${unit.status === 'available' ? `
                   <button class="stitch-unit-btn btn-hold" onclick="window.openUnitModal('${unit.id}')" title="Place 15-Minute Hold">
-                    Hold Unit
+                    Hold
                   </button>
                 ` : unit.status === 'held' ? `
                   <button class="stitch-unit-btn" style="background: #FEE2E2; color: #B91C1C; border-color: #FECACA;" onclick="window.handleReleaseHold('${unit.id}')" title="Release Hold">
@@ -304,7 +304,7 @@ function renderInventoryMatrix(container, state) {
                   </button>
                 `}
                 <button class="stitch-unit-btn" onclick="window.openFloorPlanModal('${unit.configuration.includes('4BHK') ? '4bhk' : '3bhk'}')" title="3D Architectural View">
-                  Floor Plan
+                  3D Plan
                 </button>
               </div>
             </div>
