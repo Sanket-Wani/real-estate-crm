@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — IRIS Launch War Room &amp; Live Deal Floor</title>
+<!-- Google Fonts: Outfit & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#45474c",
+            "primary-fixed-dim": "#ffb4a3",
+            "on-secondary-container": "#616269",
+            "on-error": "#ffffff",
+            "tertiary-container": "#2ca397",
+            "surface-dim": "#d0daf2",
+            "primary-fixed": "#ffdad2",
+            "on-surface-variant": "#5b403b",
+            "inverse-primary": "#ffb4a3",
+            "secondary-container": "#dfdfe6",
+            "on-primary": "#ffffff",
+            "primary": "#b52704",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#5a0d00",
+            "on-primary-fixed-variant": "#8c1900",
+            "surface-variant": "#d9e3fb",
+            "tertiary-fixed": "#89f5e7",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "surface-container-low": "#f0f3ff",
+            "surface-bright": "#f9f9ff",
+            "on-secondary": "#ffffff",
+            "on-surface": "#111c2d",
+            "secondary": "#5d5e64",
+            "on-tertiary-fixed-variant": "#005049",
+            "background": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-high": "#dfe8ff",
+            "secondary-fixed-dim": "#c6c6cd",
+            "on-error-container": "#93000a",
+            "outline-variant": "#e3beb6",
+            "tertiary": "#006a61",
+            "surface-tint": "#b52704",
+            "surface": "#f9f9ff",
+            "on-tertiary-fixed": "#00201d",
+            "surface-container-highest": "#d9e3fb",
+            "primary-container": "#ff5b37",
+            "inverse-surface": "#273143",
+            "on-tertiary-container": "#00322d",
+            "on-background": "#111c2d",
+            "on-primary-fixed": "#3d0600",
+            "surface-container": "#e8eeff",
+            "outline": "#8f7069",
+            "on-secondary-fixed": "#1a1b21",
+            "inverse-on-surface": "#ecf0ff",
+            "secondary-fixed": "#e2e2e9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin-lg": "2.5rem",
+            "space-xl": "2.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.25rem",
+            "space-xs": "0.25rem",
+            "gutter-lg": "1.75rem",
+            "margin": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Outfit"],
+            "title-md": ["Outfit"],
+            "headline-lg": ["Outfit"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Outfit"],
+            "display-hero": ["Outfit"],
+            "numeric-data": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "label-caps": ["Inter"],
+            "display-hero-mobile": ["Outfit"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "numeric-data": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f3f8;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F5F7] text-on-surface antialiased min-h-screen">
+<!-- ========================================================================= -->
+<!-- SIDE NAV BAR (Anchored via Shared Components JSON)                         -->
+<!-- ========================================================================= -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant/30 dark:border-outline-variant/10 flex flex-col justify-between p-4">
+<!-- Top Branding & Navigation -->
+<div>
+<!-- Header / Logo -->
+<div class="flex items-center gap-3 px-2 py-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-on-surface flex items-center justify-center text-surface-container-lowest font-semibold shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+</div>
+<div class="hidden xl:flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface font-semibold tracking-tight leading-none">Simplesphere OS</span>
+<span class="font-label-md text-label-md text-secondary mt-1">Private Cockpit</span>
+</div>
+</div>
+<!-- Quick CTA Button -->
+<div class="mb-5 hidden xl:block">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-on-surface text-surface-container-lowest font-body-md text-body-md font-semibold hover:bg-black transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Asset</span>
+</button>
+</div>
+<!-- Main Tabs Navigation -->
+<nav class="space-y-1.5">
+<!-- Cockpit -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="hidden xl:inline font-label-md text-label-md">Cockpit</span>
+</a>
+<!-- Properties -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span class="hidden xl:inline font-label-md text-label-md">Properties</span>
+</a>
+<!-- Pipelines (Active Target for IRIS Launch Floor) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all scale-95 duration-150 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">filter_alt</span>
+<span class="hidden xl:inline font-label-md text-label-md font-semibold text-white">Pipelines</span>
+</a>
+<!-- Ledger -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="hidden xl:inline font-label-md text-label-md">Ledger</span>
+</a>
+<!-- Clients -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="hidden xl:inline font-label-md text-label-md">Clients</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="hidden xl:inline font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer Utility Links -->
+<div class="pt-4 border-t border-outline-variant/20 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+<span class="hidden xl:inline font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span class="hidden xl:inline font-label-md text-label-md">Terminal</span>
+</a>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- TOP APP BAR (Anchored via Shared Components JSON)                         -->
+<!-- ========================================================================= -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/10 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex items-center justify-between px-6">
+<!-- Search Command Bar (on_left) -->
+<div class="flex items-center gap-3 w-72 lg:w-96">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-12 rounded-full bg-[#F4F5F7] border border-black/5 text-on-surface font-body-sm text-body-sm focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all placeholder:text-secondary/70" placeholder="Search units, HNIs, tokens..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-caps text-[10px] bg-white border border-black/10 px-1.5 py-0.5 rounded text-secondary shadow-2xs font-semibold">⌘K</span>
+</div>
+</div>
+<!-- Secondary Navigation Cluster -->
+<div class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface transition-all" href="#">Portfolio</a>
+<a class="font-body-md text-body-md text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary pb-1" href="#">Dealflow</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface transition-all" href="#">Escrow</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface transition-all" href="#">Analytics</a>
+</div>
+<!-- Actions & MD Profile -->
+<div class="flex items-center gap-3">
+<!-- Trailing Icon Actions -->
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<!-- Trailing Secondary Action -->
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-black/10 text-on-surface font-body-sm text-body-sm font-semibold hover:bg-[#F4F5F7] transition-all">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+        Export Ledger
+      </button>
+<!-- Trailing Primary Action -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary-container text-white font-body-sm text-body-sm font-semibold hover:bg-[#FF6B4A] transition-all active:scale-95 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+        Create Deal
+      </button>
+<!-- Profile Avatar -->
+<div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30">
+<img class="w-9 h-9 rounded-full object-cover ring-2 ring-white shadow-sm" data-alt="Close up professional portrait of Vikram Malhotra, an Indian male Executive Managing Director wearing a tailored charcoal suit and crisp white shirt in a modern high-end minimalist corporate architectural headquarters with ambient soft warm studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTvVlcTIFcaOtiXBzIMtZ32iU0OTPd6UCAUS261iJ63ogAXyTTLE4f0k05QFi7q3GLquomb0gRG98ADRk346BMr70ROFQKt6cPLrMfDDFBBgVIRPUVK3TMN0QmKjik-07glAp7obPm-ztDWK0DQcptX2KnFNckdxm8M7ANQ-CabswrtGpw3l4R6_C6Z1jLYxnRN9Gzpcyxl_oTzJAz4RjcSUMK-wg68tNpSX_1E0HiI6gytxWNJbibQeyS__Mgs16uuSEP5MVA4Bg"/>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN COCKPIT VIEWPORT CANVAS                                             -->
+<!-- ========================================================================= -->
+<main class="ml-20 xl:ml-64 pt-20 pb-12 px-6 lg:px-10 max-w-[1720px]">
+<!-- 1. BREADCRUMBS & WAR ROOM EXECUTIVE HEADER -->
+<div class="mb-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 font-label-caps text-label-caps text-secondary mb-2 tracking-wide uppercase">
+<span>Pipelines</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Launch Operations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">IRIS Live War Room</span>
+</div>
+<!-- Main Header Bar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-4 border-b border-black/5">
+<div>
+<div class="flex flex-wrap items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+              IRIS Launch War Room &amp; Live Deal Floor
+            </h1>
+<!-- Live Status Pill -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/60 shadow-2xs">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
+</span>
+<span class="font-label-md text-label-md font-semibold text-emerald-800">
+                Live Floor Stream Active • Sub-second Sync
+              </span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-3xl">
+            High-frequency telemetry for Phase 1 launch day allotments, real-time inventory locking, broker referrals, and dynamic pricing triggers.
+          </p>
+</div>
+<!-- Header Actions Cluster -->
+<div class="flex items-center gap-2.5 shrink-0">
+<!-- Sound Gong -->
+<button class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white border border-black/10 text-on-surface font-body-sm text-body-sm font-semibold hover:bg-neutral-50 active:scale-95 transition-all shadow-[0_2px_6px_-1px_rgba(17,19,24,0.02)]">
+<span class="material-symbols-outlined text-[18px] text-amber-600">notifications_active</span>
+            Sound Floor Gong
+          </button>
+<!-- Download Run-Rate PDF -->
+<button class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white border border-black/10 text-on-surface font-body-sm text-body-sm font-semibold hover:bg-neutral-50 active:scale-95 transition-all shadow-[0_2px_6px_-1px_rgba(17,19,24,0.02)]">
+<span class="material-symbols-outlined text-[18px] text-secondary">picture_as_pdf</span>
+            Download Run-Rate PDF
+          </button>
+<!-- Primary Fast Track Token -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container text-white font-body-sm text-body-sm font-semibold hover:bg-[#FF6B4A] active:scale-95 transition-all shadow-[0_4px_16px_rgba(255,91,55,0.25),inset_0_1px_0_rgba(255,255,255,0.25)]">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+            + Fast Track EOI Token
+          </button>
+</div>
+</div>
+</div>
+<!-- 2. TOP 4-TILE KPI ROW -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<!-- KPI Tile 1: Signature Coral Hero -->
+<div class="relative bg-primary-container text-white rounded-[20px] p-6 overflow-hidden shadow-[0_8px_24px_-4px_rgba(255,91,55,0.35)]">
+<!-- Ambient decorative backlighting overlay -->
+<div class="absolute -right-8 -bottom-8 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-semibold text-white/80">Launch Day Gross Bookings</span>
+<span class="material-symbols-outlined text-[20px] text-white/70">trending_up</span>
+</div>
+<div class="font-numeric-data text-[34px] leading-tight font-bold tracking-tight mb-2">
+          ₹28.5 Cr
+        </div>
+<div class="flex items-center gap-2 text-white/90 font-body-sm text-body-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse"></span>
+<span>14 Units Locked in 4 Hours</span>
+</div>
+<div class="mt-4 pt-3 border-t border-white/20 flex items-center justify-between text-white/80 font-label-md text-label-md">
+<span>Phase 1 Quota</span>
+<span class="font-semibold text-white">82% Achieved</span>
+</div>
+</div>
+<!-- KPI Tile 2: Live Walk-In Footfall -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-semibold text-secondary">Live Walk-In Footfall</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">person_pin_circle</span>
+</div>
+<div class="font-numeric-data text-[32px] leading-tight font-bold text-on-surface mb-2">
+            142 HNIs
+          </div>
+<p class="font-body-sm text-body-sm text-secondary">
+            High-Net-Worth Visitors on Site (Current Site Capacity: 85%)
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            Geofence Active
+          </span>
+<span class="font-label-md text-label-md text-secondary">Haversine 250m</span>
+</div>
+</div>
+<!-- KPI Tile 3: Average Token Velocity -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-semibold text-secondary">Average Token Velocity</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">speed</span>
+</div>
+<div class="font-numeric-data text-[32px] leading-tight font-bold text-on-surface mb-2">
+            18.2 min
+          </div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Per EOI Expression of Interest (Faster by 4.1 min vs Project Target)
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+            High Velocity Peak
+          </span>
+<span class="font-label-md text-label-md text-emerald-600 font-semibold">-22.5% Latency</span>
+</div>
+</div>
+<!-- KPI Tile 4: Real-Time Inventory Absorption -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-semibold text-secondary">Real-Time Inventory Absorption</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">pie_chart</span>
+</div>
+<div class="font-numeric-data text-[32px] leading-tight font-bold text-on-surface mb-2">
+            38 <span class="text-secondary font-normal text-xl">/ 60 Units</span>
+</div>
+<div class="w-full bg-[#EDEFF2] rounded-full h-2.5 mb-2 overflow-hidden">
+<div class="bg-primary-container h-2.5 rounded-full" style="width: 63.3%;"></div>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>63.3% Committed &amp; Staged</span>
+<span class="font-semibold text-on-surface">22 Units Available</span>
+</div>
+</div>
+</section>
+<!-- 3. PROJECT SHOWCASE STRIP (Building Inspiration Image Anchor) -->
+<div class="bg-white rounded-[20px] p-4 mb-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="relative w-28 h-20 rounded-xl overflow-hidden shrink-0 border border-black/10">
+<img class="w-full h-full object-cover" data-alt="Wide high angle aerial shot of The Aquaria luxury residential construction site in Mumbai showing tower framework, yellow cranes, sea-link bridge in the distance, blue coastal sky, modern development banners, and bustling metropolitan site operations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPvP5ld_caxj3U9btYF8KIGpGM_Q4rahpXZokbAJ_iqsh27KQYQXwrvRdq5xF7fzyMhzDeraZmdaPJRSjtfz1cF28X3m6ojAYyUn_gejxMP8EOYNXIa3f-AzMOveQn4M3lYERdXWrDqhPWJJHKyHpOJCBosyAKLkspADahiuXdl-dIKvnF4WlHpeCh0Ag-cuEAOLGBAuZHQ0uFYa9yueEzGOqYWkOdqdhtJEl6zM57BcNQQfQ7hr7byy4Mm-hHzWTUtNy9-8tqRIs"/>
+<div class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-md text-[10px] text-white font-semibold">
+            TOWER A &amp; B
+          </div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface">THE AQUARIA — Phase 1 Launch Stage</h3>
+<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700">RERA Registered</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Bandra-Worli Coastal Vista • Super-luxury 2.5BHK, 3BHK, 3.5BHK &amp; Sky Penthouses</p>
+</div>
+</div>
+<div class="flex items-center gap-6 w-full md:w-auto justify-end border-t md:border-t-0 pt-3 md:pt-0 border-black/5">
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-secondary block">BASE LAUNCH RATE</span>
+<span class="font-numeric-data text-numeric-data font-semibold text-on-surface">₹48,500 / sq.ft</span>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-secondary block">STAGE STATUS</span>
+<span class="font-label-md text-label-md font-semibold text-primary-container">Cast Floor 14 of 28</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-[#F4F5F7] border border-black/10 text-on-surface font-body-sm text-body-sm font-semibold hover:bg-[#EDEFF2] transition-all">
+          Floor Architect Map
+        </button>
+</div>
+</div>
+<!-- 4. MAIN SPLIT LAYOUT (60% Left Stream / 40% Right Insights) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- LEFT COLUMN: LIVE DEAL FLOOR FEED (60% - 7 of 12 cols on desktop) -->
+<section class="lg:col-span-7 space-y-4">
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<!-- Stream Header & Filters -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-black/[0.06]">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-ping"></span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">
+                  Live Deal Floor Feed
+                </h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Real-Time Transaction &amp; Inventory Locking Stream</p>
+</div>
+<!-- Auto Refresh Indicator -->
+<div class="inline-flex items-center gap-1.5 text-xs text-secondary bg-[#F4F5F7] px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] animate-spin text-primary-container">sync</span>
+<span>Floor Sync: 0.4s</span>
+</div>
+</div>
+<!-- Filter Segment Chips -->
+<div class="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar border-b border-black/[0.04]">
+<button class="px-3 py-1.5 rounded-full font-label-md text-label-md font-semibold bg-on-surface text-white shrink-0 shadow-2xs">
+              All Events (38)
+            </button>
+<button class="px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-secondary hover:text-on-surface bg-[#F4F5F7] hover:bg-[#EDEFF2] shrink-0 transition-all">
+              Tokens Cleared
+            </button>
+<button class="px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-secondary hover:text-on-surface bg-[#F4F5F7] hover:bg-[#EDEFF2] shrink-0 transition-all">
+              Unit Locks
+            </button>
+<button class="px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-secondary hover:text-on-surface bg-[#F4F5F7] hover:bg-[#EDEFF2] shrink-0 transition-all">
+              Broker Registrations
+            </button>
+<button class="px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-secondary hover:text-on-surface bg-[#F4F5F7] hover:bg-[#EDEFF2] shrink-0 transition-all">
+              Escrow Verified
+            </button>
+</div>
+<!-- Stream List -->
+<div class="divide-y divide-black/[0.04] max-h-[640px] overflow-y-auto custom-scrollbar pr-1">
+<!-- Event 1: Penthouse Deal (2 mins ago) -->
+<div class="py-4 hover:bg-[#F9FAFC] transition-colors rounded-xl px-2">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md font-bold text-on-surface">Unit A-1402</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">4BHK Sky Penthouse</span>
+<span class="font-numeric-data text-numeric-data font-bold text-primary-container">₹9.57 Cr</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                        Token Cleared (₹25L RTGS Escrow)
+                      </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-2 font-body-sm text-body-sm text-secondary">
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">ALLOTTEE</span>
+<span class="text-on-surface font-medium">Dr. Kabir &amp; Rhea Mehta</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">SALES DESK</span>
+<span class="text-on-surface font-medium">Priya Kulkarni</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">CHANNEL PARTNER</span>
+<span class="text-on-surface font-medium">Prime Realty Advisors (2.5%)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-secondary block">2 mins ago</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 mt-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Verified
+                  </span>
+</div>
+</div>
+</div>
+<!-- Event 2: Unit Staged (7 mins ago) -->
+<div class="py-4 hover:bg-[#F9FAFC] transition-colors rounded-xl px-2">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200/80 flex items-center justify-center text-amber-600 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">lock_clock</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md font-bold text-on-surface">Unit B-1104</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">3.5BHK Crest</span>
+<span class="font-numeric-data text-numeric-data font-bold text-on-surface">₹7.20 Cr</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-200">
+                        Unit Staged (15m Lock Active)
+                      </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-2 font-body-sm text-body-sm text-secondary">
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">ALLOTTEE</span>
+<span class="text-on-surface font-medium">Ananya Vardhan</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">SALES DESK</span>
+<span class="text-on-surface font-medium">Vikram Malhotra</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">CHANNEL PARTNER</span>
+<span class="text-on-surface font-medium">Direct Inbound</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-secondary block">7 mins ago</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 mt-1">
+                    Expires in 08:14
+                  </span>
+</div>
+</div>
+</div>
+<!-- Event 3: RERA Allotment Signed (14 mins ago) -->
+<div class="py-4 hover:bg-[#F9FAFC] transition-colors rounded-xl px-2">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">draw</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md font-bold text-on-surface">Unit A-0902</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">3BHK Sea Suite</span>
+<span class="font-numeric-data text-numeric-data font-bold text-on-surface">₹6.45 Cr</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-blue-100 text-blue-800 border border-blue-200">
+                        RERA Allotment Signed
+                      </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-2 font-body-sm text-body-sm text-secondary">
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">ALLOTTEE</span>
+<span class="text-on-surface font-medium">Sunil Mittal &amp; Co</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">SALES DESK</span>
+<span class="text-on-surface font-medium">Ananya Sharma</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">CHANNEL PARTNER</span>
+<span class="text-on-surface font-medium">Apex Prop Consultancy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-secondary block">14 mins ago</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-600 mt-1">
+                    Digital Seal Attached
+                  </span>
+</div>
+</div>
+</div>
+<!-- Event 4: Token Cleared (21 mins ago) -->
+<div class="py-4 hover:bg-[#F9FAFC] transition-colors rounded-xl px-2">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md font-bold text-on-surface">Unit B-0801</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">3BHK Bay View</span>
+<span class="font-numeric-data text-numeric-data font-bold text-on-surface">₹5.85 Cr</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                        Token Cleared (₹25L Escrow)
+                      </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-2 font-body-sm text-body-sm text-secondary">
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">ALLOTTEE</span>
+<span class="text-on-surface font-medium">Rajesh Nadar</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">SALES DESK</span>
+<span class="text-on-surface font-medium">Priya Kulkarni</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">CHANNEL PARTNER</span>
+<span class="text-on-surface font-medium">Prime Realty Advisors</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-secondary block">21 mins ago</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 mt-1">
+                    Escrow Ack #7749
+                  </span>
+</div>
+</div>
+</div>
+<!-- Event 5: Token Cleared (29 mins ago) -->
+<div class="py-4 hover:bg-[#F9FAFC] transition-colors rounded-xl px-2">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md font-bold text-on-surface">Unit A-0704</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">2.5BHK Urban</span>
+<span class="font-numeric-data text-numeric-data font-bold text-on-surface">₹4.80 Cr</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                        Token Cleared
+                      </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-2 font-body-sm text-body-sm text-secondary">
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">ALLOTTEE</span>
+<span class="text-on-surface font-medium">Devika Rastogi</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">SALES DESK</span>
+<span class="text-on-surface font-medium">Rohit Sen</span>
+</div>
+<div>
+<span class="text-slate-400 font-label-caps text-[10px] block">CHANNEL PARTNER</span>
+<span class="text-on-surface font-medium">Urban Nest Associates</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-secondary block">29 mins ago</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 mt-1">
+                    Escrow Ack #7741
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floor Live Feed Footer Bar -->
+<div class="pt-4 mt-2 border-t border-black/[0.04] flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>Showing recent 5 of 38 events</span>
+<button class="text-primary-container hover:underline font-semibold flex items-center gap-1">
+              Expand Complete Telemetry Log
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: DYNAMIC PRICING & LEADERBOARD & ESCROW (40% - 5 of 12 cols) -->
+<section class="lg:col-span-5 space-y-5">
+<!-- CARD 1: REAL-TIME DYNAMIC PRICE RISE TRIGGER -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] relative overflow-hidden">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-semibold text-secondary">Algorithmic Yield Controller</span>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-container/10 text-primary-container border border-primary-container/20">
+              Imminent Hike
+            </span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">
+            Real-Time Phase 1 Dynamic Price Rise Trigger
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-4">
+            Automated floor price threshold based on velocity run-rate.
+          </p>
+<!-- Alert Highlight Box -->
+<div class="bg-gradient-to-br from-orange-50 via-white to-red-50/30 rounded-2xl p-4 border border-orange-200/80 mb-4">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md font-bold text-orange-900">Next Price Escalation: At 40 Bookings</span>
+<span class="font-numeric-data text-numeric-data font-bold text-primary-container">38 / 40 Reached</span>
+</div>
+<p class="font-body-sm text-body-sm text-neutral-800 font-medium mb-3">
+              +₹500/sq.ft hike incoming in <span class="text-primary-container font-bold">2 bookings!</span>
+</p>
+<!-- Progress Visualization (95% to threshold) -->
+<div class="space-y-1">
+<div class="w-full bg-orange-200/50 rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-3 rounded-full transition-all duration-500" style="width: 95%;"></div>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-secondary">
+<span>0 Bookings (Base)</span>
+<span class="font-semibold text-primary-container">95% of Target Limit</span>
+<span>40 Threshold</span>
+</div>
+</div>
+</div>
+<!-- Projected Incremental Revenue Metrics -->
+<div class="bg-[#F8F9FB] rounded-xl p-3.5 mb-4 border border-black/[0.04]">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-body-sm text-body-sm text-secondary">Projected Incremental Gain:</span>
+<span class="font-numeric-data text-numeric-data font-bold text-emerald-700">+₹4.20 Cr</span>
+</div>
+<p class="font-label-md text-label-md text-secondary mt-1">
+              Applied automatically across remaining 22 Phase 1 units immediately upon trigger.
+            </p>
+</div>
+<!-- Action Button -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-on-surface text-white font-body-sm text-body-sm font-semibold hover:bg-black active:scale-98 transition-all flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+            Preview Adjusted Cost Sheets
+          </button>
+</div>
+<!-- CARD 2: ACTIVE SALES DESK LEADERBOARD -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Active Sales Desk Leaderboard</h3>
+<span class="font-label-caps text-label-caps font-semibold text-secondary bg-[#EDEFF2] px-2.5 py-1 rounded-full">
+              Target: ₹35 Cr Quota
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4">Launch Day Velocity &amp; Allotment Conversion</p>
+<div class="space-y-3">
+<!-- Rank 1: Priya Kulkarni (with attached reference image) -->
+<div class="p-3 rounded-xl bg-orange-50/50 border border-orange-200/70 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container text-white text-xs font-bold flex items-center justify-center shrink-0">
+                  1
+                </div>
+<!-- Image for Priya Kulkarni -->
+<img class="w-10 h-10 rounded-full object-cover ring-2 ring-primary-container shrink-0" data-alt="Sophisticated professional portrait of Priya Kulkarni, an Indian female senior real estate portfolio lead smiling warmly, styled in an elegant dark business blazer with ivory silk blouse in a warm modern luxury architectural interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPfhv2fGm0QSzdR6OkOJYpXmjJy8R23P27TG-5N5CIvzbpobEWYrVnfn8Cw0Koc1Q-RyOSrjhvcQ504ZM7nLXZkkBskDyFXyAkzyAAE5zs42f8ozcxH0WoBOtBQahQ8AuQmNC6xooeERy3HYH5vKUPF2T2itWTGcQWTM6-d_PkPT6UK4zUkSNfeuoY8fzl8ERXWEY_LKUXuaU7Ovfg_bigY-H4TJdvkMX_KVvE3ne5N2ZSoedOTos7YjtoVu1YqpC3erfk2_ApwQs"/>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-bold text-on-surface">Priya Kulkarni</span>
+<span class="material-symbols-outlined text-amber-500 text-[16px]">stars</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">5 Units Booked • Conv: 41.2%</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-numeric-data text-numeric-data font-bold text-primary-container">₹11.2 Cr</div>
+<span class="font-label-caps text-[10px] text-emerald-700 font-semibold bg-emerald-100 px-1.5 py-0.5 rounded">112% Quota</span>
+</div>
+</div>
+<!-- Rank 2: Ananya Sharma -->
+<div class="p-3 rounded-xl bg-white border border-black/[0.05] flex items-center justify-between gap-3 hover:bg-[#F9FAFC] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-[#EDEFF2] text-secondary text-xs font-bold flex items-center justify-center shrink-0">
+                  2
+                </div>
+<div class="w-10 h-10 rounded-full bg-slate-100 border border-black/5 flex items-center justify-center font-bold text-slate-700 text-sm shrink-0">
+                  AS
+                </div>
+<div>
+<span class="font-body-md text-body-md font-bold text-on-surface block">Ananya Sharma</span>
+<span class="font-body-sm text-body-sm text-secondary">4 Units Booked • Conv: 36.8%</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-numeric-data text-numeric-data font-bold text-on-surface">₹9.8 Cr</div>
+<span class="font-label-caps text-[10px] text-secondary font-semibold bg-[#EDEFF2] px-1.5 py-0.5 rounded">98% Quota</span>
+</div>
+</div>
+<!-- Rank 3: Vikram Malhotra (Exec MD) -->
+<div class="p-3 rounded-xl bg-white border border-black/[0.05] flex items-center justify-between gap-3 hover:bg-[#F9FAFC] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-[#EDEFF2] text-secondary text-xs font-bold flex items-center justify-center shrink-0">
+                  3
+                </div>
+<div class="w-10 h-10 rounded-full bg-slate-100 border border-black/5 flex items-center justify-center font-bold text-slate-700 text-sm shrink-0">
+                  VM
+                </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-bold text-on-surface">Vikram Malhotra</span>
+<span class="font-label-caps text-[9px] bg-slate-200 text-slate-700 px-1 rounded">MD</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">3 Units Booked • Conv: 50.0%</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-numeric-data text-numeric-data font-bold text-on-surface">₹7.5 Cr</div>
+<span class="font-label-caps text-[10px] text-secondary font-semibold bg-[#EDEFF2] px-1.5 py-0.5 rounded">75% Quota</span>
+</div>
+</div>
+<!-- Rank 4: Rohit Sen -->
+<div class="p-3 rounded-xl bg-white border border-black/[0.05] flex items-center justify-between gap-3 hover:bg-[#F9FAFC] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-[#EDEFF2] text-secondary text-xs font-bold flex items-center justify-center shrink-0">
+                  4
+                </div>
+<div class="w-10 h-10 rounded-full bg-slate-100 border border-black/5 flex items-center justify-center font-bold text-slate-700 text-sm shrink-0">
+                  RS
+                </div>
+<div>
+<span class="font-body-md text-body-md font-bold text-on-surface block">Rohit Sen</span>
+<span class="font-body-sm text-body-sm text-secondary">2 Units Booked • Conv: 29.5%</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-numeric-data text-numeric-data font-bold text-on-surface">₹4.8 Cr</div>
+<span class="font-label-caps text-[10px] text-secondary font-semibold bg-[#EDEFF2] px-1.5 py-0.5 rounded">48% Quota</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: FLOOR ESCROW & TOKEN NODE SUMMARY -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-emerald-600">shield</span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Floor Escrow &amp; Token Node</h3>
+</div>
+<span class="font-label-md text-label-md text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">
+              Zero Bounce
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-[#F8F9FB] rounded-xl p-3 border border-black/[0.04]">
+<span class="font-label-caps text-label-caps text-secondary block">RERA ESCROW TODAY</span>
+<span class="font-numeric-data text-[22px] font-bold text-on-surface block mt-0.5">₹3.50 Cr</span>
+<span class="font-label-md text-[11px] text-secondary">ICICI Bank Dedicated Node</span>
+</div>
+<div class="bg-[#F8F9FB] rounded-xl p-3 border border-black/[0.04]">
+<span class="font-label-caps text-label-caps text-secondary block">AVG TOKEN VALUE</span>
+<span class="font-numeric-data text-[22px] font-bold text-on-surface block mt-0.5">₹25.00 L</span>
+<span class="font-label-md text-[11px] text-secondary">Per Priority Allotment Slip</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-black/[0.04] text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>RTGS / UPI Instant Settlement: 100% Ok</span>
+</div>
+<button class="text-primary-container font-semibold hover:underline font-label-md">Audit Trail</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

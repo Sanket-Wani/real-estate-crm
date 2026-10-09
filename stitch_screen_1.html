@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — Luxury Real Estate CRM Cockpit</title>
+<!-- Google Fonts: Outfit & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#45474c",
+            "inverse-surface": "#273143",
+            "on-primary": "#ffffff",
+            "surface-tint": "#b52704",
+            "on-secondary-fixed": "#1a1b21",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "surface": "#f9f9ff",
+            "on-secondary-container": "#616269",
+            "primary-fixed-dim": "#ffb4a3",
+            "surface-container-highest": "#d9e3fb",
+            "surface-container": "#e8eeff",
+            "surface-container-low": "#f0f3ff",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#5a0d00",
+            "outline-variant": "#e3beb6",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#c6c6cd",
+            "on-tertiary-fixed": "#00201d",
+            "on-tertiary-container": "#00322d",
+            "tertiary-container": "#2ca397",
+            "on-surface-variant": "#5b403b",
+            "tertiary-fixed": "#89f5e7",
+            "on-surface": "#111c2d",
+            "on-primary-fixed": "#3d0600",
+            "on-primary-fixed-variant": "#8c1900",
+            "on-background": "#111c2d",
+            "secondary-container": "#dfdfe6",
+            "on-tertiary-fixed-variant": "#005049",
+            "inverse-primary": "#ffb4a3",
+            "primary-container": "#ff5b37",
+            "tertiary": "#006a61",
+            "surface-container-high": "#dfe8ff",
+            "secondary-fixed": "#e2e2e9",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#b52704",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdad2",
+            "surface-dim": "#d0daf2",
+            "background": "#f9f9ff",
+            "secondary": "#5d5e64",
+            "surface-variant": "#d9e3fb",
+            "error": "#ba1a1a",
+            "outline": "#8f7069",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "inverse-on-surface": "#ecf0ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-xl": "2.25rem",
+            "space-xs": "0.25rem",
+            "gutter-lg": "1.75rem",
+            "margin": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.25rem",
+            "margin-lg": "2.5rem"
+          },
+          "fontFamily": {
+            "numeric-data": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Outfit"],
+            "label-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Outfit"],
+            "title-md": ["Outfit"],
+            "display-hero-mobile": ["Outfit"],
+            "label-md": ["Inter"],
+            "label-caps": ["Inter"],
+            "headline-lg-mobile": ["Outfit"],
+            "headline-sm": ["Outfit"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "numeric-data": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Architectural Custom Utility Details */
+    .diagonal-stripes {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 91, 55, 0.28),
+        rgba(255, 91, 55, 0.28) 6px,
+        rgba(255, 91, 55, 0.08) 6px,
+        rgba(255, 91, 55, 0.08) 12px
+      );
+    }
+    .card-radius {
+      border-radius: 20px;
+    }
+    .custom-shadow-card {
+      box-shadow: 0 4px 20px -2px rgba(17, 19, 24, 0.03), 0 2px 6px -1px rgba(17, 19, 24, 0.02);
+    }
+  </style>
+</head>
+<body class="bg-[#F4F5F7] text-on-surface antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary">
+<!-- ==================== SHARED COMPONENT: SideNavBar ==================== -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col justify-between p-4">
+<!-- Top Branding & Navigation -->
+<div class="flex flex-col gap-6">
+<!-- Monogram / Brand Emblem -->
+<div class="flex items-center gap-3.5 px-2 py-1">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold tracking-tighter shadow-sm flex-shrink-0">
+          S
+        </div>
+<div class="hidden xl:flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight leading-tight">Simplesphere OS</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Private Cockpit</span>
+</div>
+</div>
+<!-- Quick Action CTA from JSON -->
+<button class="hidden xl:flex items-center justify-center gap-2 w-full py-2.5 px-3 bg-[#111318] hover:bg-black text-white rounded-xl font-label-md text-label-md font-semibold transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Asset</span>
+</button>
+<!-- Main Navigation Links from JSON: Cockpit (Active), Properties, Pipelines, Ledger, Clients, Settings -->
+<nav aria-label="Main Navigation" class="flex flex-col gap-1.5">
+<!-- Cockpit (Active) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all group" href="#" title="Cockpit">
+<span class="material-symbols-outlined text-[20px] flex-shrink-0" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="hidden xl:inline font-label-md text-label-md">Cockpit</span>
+</a>
+<!-- Properties -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Properties">
+<span class="material-symbols-outlined text-[20px] flex-shrink-0">domain</span>
+<span class="hidden xl:inline font-label-md text-label-md font-medium">Properties</span>
+</a>
+<!-- Pipelines -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Pipelines">
+<span class="material-symbols-outlined text-[20px] flex-shrink-0">filter_alt</span>
+<span class="hidden xl:inline font-label-md text-label-md font-medium">Pipelines</span>
+</a>
+<!-- Ledger -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Ledger">
+<span class="material-symbols-outlined text-[20px] flex-shrink-0">account_balance_wallet</span>
+<span class="hidden xl:inline font-label-md text-label-md font-medium">Ledger</span>
+</a>
+<!-- Clients -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Clients">
+<span class="material-symbols-outlined text-[20px] flex-shrink-0">group</span>
+<span class="hidden xl:inline font-label-md text-label-md font-medium">Clients</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Settings">
+<span class="material-symbols-outlined text-[20px] flex-shrink-0">tune</span>
+<span class="hidden xl:inline font-label-md text-label-md font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Segmented Toggle & Utility Dock -->
+<div class="flex flex-col gap-3 pt-4 border-t border-black/[0.04]">
+<!-- Sun/Moon Theme Toggle Pill -->
+<div class="bg-[#EDEFF2] p-1 rounded-xl flex items-center justify-between">
+<button class="flex-1 py-1 px-1.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm flex items-center justify-center transition-all" title="Light Mode">
+<span class="material-symbols-outlined text-[16px]">light_mode</span>
+</button>
+<button class="flex-1 py-1 px-1.5 rounded-lg text-secondary hover:text-on-surface flex items-center justify-center transition-all" title="Dark Mode">
+<span class="material-symbols-outlined text-[16px]">dark_mode</span>
+</button>
+</div>
+<!-- Footer Tabs from JSON: Support, Terminal -->
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#" title="Support">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="hidden xl:inline font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#" title="Terminal">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="hidden xl:inline font-label-md text-label-md">Terminal</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT CANVAS WRAPPER ==================== -->
+<div class="flex-1 ml-20 xl:ml-64 flex flex-col min-w-0">
+<!-- ==================== SHARED COMPONENT: TopNavBar ==================== -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant/30 flex items-center justify-between px-6 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<!-- Left: Search Command Bar & Product Wordmark -->
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-semibold tracking-tight">Simplesphere OS</span>
+<span class="text-xs px-2 py-0.5 rounded-full bg-black/[0.05] text-secondary font-label-caps text-label-caps">Private Real Estate Desk</span>
+</div>
+<!-- Sleek Search Input Pill -->
+<div class="relative w-64 md:w-80">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary pointer-events-none">search</span>
+<input class="w-full h-10 pl-10 pr-12 rounded-full bg-[#F4F5F7] border border-black/[0.06] text-on-surface font-body-sm text-body-sm placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Search deals, clients, villas..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-white border border-black/[0.08] text-[10px] font-mono font-medium text-secondary pointer-events-none">⌘K</span>
+</div>
+</div>
+<!-- Center Nav Links from JSON -->
+<nav class="hidden 2xl:flex items-center gap-6">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-secondary font-medium hover:text-on-surface transition-all font-body-md text-body-md" href="#">Dealflow</a>
+<a class="text-secondary font-medium hover:text-on-surface transition-all font-body-md text-body-md" href="#">Escrow</a>
+<a class="text-secondary font-medium hover:text-on-surface transition-all font-body-md text-body-md" href="#">Analytics</a>
+</nav>
+<!-- Right: Trailing Actions, Notification, Profile Pill -->
+<div class="flex items-center gap-3">
+<!-- Secondary Action: Export Ledger -->
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-black/[0.08] hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md font-semibold transition-all">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Export Ledger</span>
+</button>
+<!-- Primary Action: Create Deal -->
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-container text-on-primary hover:bg-[#FF6B4A] font-label-md text-label-md font-semibold shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Create Deal</span>
+</button>
+<!-- Vertical divider -->
+<div class="h-6 w-[1px] bg-black/[0.08] mx-1"></div>
+<!-- Notification Bell with Vibrant Dot -->
+<button class="relative w-9 h-9 rounded-full bg-white hover:bg-surface-container-low border border-black/[0.06] flex items-center justify-center text-on-surface transition-all" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-white"></span>
+</button>
+<!-- Settings Icon -->
+<button class="w-9 h-9 rounded-full bg-white hover:bg-surface-container-low border border-black/[0.06] flex items-center justify-center text-secondary transition-all" title="Preferences">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<!-- Executive Profile Pill -->
+<div class="flex items-center gap-2.5 pl-1 pr-2 py-1 rounded-full bg-white border border-black/[0.06] cursor-pointer hover:bg-surface-container-low transition-all">
+<img alt="Executive Managing Director Portrait" class="w-7 h-7 rounded-full object-cover border border-black/[0.08]" data-alt="A distinguished executive portrait of Vikram Malhotra, an Indian principal real estate director in his early forties wearing a bespoke slate grey Savile Row suit. The lighting is high-key, luminous, and soft, with a clean architectural glass and warm timber background. The mood is confident, discreet, and institutional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-M9VsM1uZUUQvrGfWCcRSX0DAUuSQ3lZ19MAo5WY6CANWP6qhfJ69h0318-oeVLArmPQ6WvdKg1oGv6zRJIaGwWJ4a3wp47TnFSOm3EGjIKDYRzTT3J2SiwWxjvh9ss_Gf4Bn7UsfeA2O1bbiRInHm5oGIg05QKhmrtI3pVeHhJBgeX8uM-Mqiod3E_1yeunz43bBfNnhWD27t-MW4y2ZwL-wIXiVXjMPdv-c8WRGggNz4Bxn1YGwbJlhj48eSectWf3Jv4BVoqY"/>
+<div class="hidden md:flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-none">Vikram Malhotra</span>
+<span class="font-label-caps text-label-caps text-secondary text-[10px] mt-0.5 leading-none">Principal Partner</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">expand_more</span>
+</div>
+</div>
+</header>
+<!-- ==================== COCKPIT CANVAS BODY ==================== -->
+<main class="mt-16 p-6 xl:p-8 space-y-6 max-w-[1720px] w-full mx-auto">
+<!-- GREETING & SYNCHRONIZATION BANNER -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white card-radius p-6 border border-black/[0.06] custom-shadow-card">
+<div class="space-y-1">
+<div class="flex items-center gap-2.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Good morning, Vikram.</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#10B981]/10 text-[#065F46] font-label-caps text-label-caps">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
+              Live Sync
+            </span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-2xl">
+            Stay on top of your projects, monitor inventory velocity, and track revenue collections across active luxury mandates.
+          </p>
+</div>
+<div class="flex items-center gap-3 flex-wrap">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F4F5F7] border border-black/[0.06] text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-on-surface">calendar_today</span>
+<span>Thursday, 24 Oct 2024</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container/10 text-primary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Escrow Sync: Live</span>
+</div>
+</div>
+</section>
+<!-- PRIMARY METRICS ROW (BENTO GRID: 8 COL & 4 COL) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- CARD 1: Total Collections & Sub-Wallets (7 Cols on xl) -->
+<div class="lg:col-span-7 xl:col-span-7 bg-white card-radius p-6 border border-black/[0.06] custom-shadow-card flex flex-col justify-between">
+<div>
+<!-- Header with Title & Currency Selector -->
+<div class="flex items-center justify-between pb-4 border-b border-black/[0.04]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Total Collections &amp; Balance</span>
+</div>
+<!-- Currency Toggle -->
+<div class="bg-[#EDEFF2] p-0.5 rounded-full flex items-center">
+<button class="px-2.5 py-0.5 rounded-full bg-white text-on-surface font-label-caps text-label-caps font-bold shadow-xs">INR ₹</button>
+<button class="px-2.5 py-0.5 rounded-full text-secondary hover:text-on-surface font-label-caps text-label-caps font-medium">USD $</button>
+</div>
+</div>
+<!-- Big Metric & Growth Badge -->
+<div class="mt-5 flex flex-wrap items-baseline justify-between gap-4">
+<div>
+<span class="text-xs text-secondary font-medium">Consolidated Liquidity</span>
+<div class="flex items-baseline gap-3 mt-1">
+<span class="font-display-hero text-display-hero text-on-surface font-bold tracking-tight">₹ 7.8 Cr</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#10B981]/15 text-[#065F46] font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                    +5.2% vs last month
+                  </span>
+</div>
+</div>
+<!-- Quick Action Pill Buttons -->
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#111318] hover:bg-black text-white font-label-md text-label-md font-semibold transition-all active:scale-95">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Transfer</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-black/[0.08] hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md font-semibold transition-all">
+<span>Request Capital</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3 Sub-Wallet Horizontal Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-6 pt-5 border-t border-black/[0.04]">
+<div class="p-3.5 rounded-xl bg-[#F4F5F7] border border-black/[0.04] space-y-1">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-label-md">Escrow Reserve</span>
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</div>
+<p class="font-numeric-data text-numeric-data text-on-surface font-semibold">₹ 4.2 Cr</p>
+<p class="font-label-caps text-label-caps text-secondary">Locked / 3 Projects</p>
+</div>
+<div class="p-3.5 rounded-xl bg-[#F4F5F7] border border-black/[0.04] space-y-1">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-label-md">Operational Float</span>
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+</div>
+<p class="font-numeric-data text-numeric-data text-on-surface font-semibold">₹ 2.6 Cr</p>
+<p class="font-label-caps text-label-caps text-[#065F46] font-semibold">Available for Disbursal</p>
+</div>
+<div class="p-3.5 rounded-xl bg-[#F4F5F7] border border-black/[0.04] space-y-1">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-label-md">Tax &amp; Stamp Duty</span>
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</div>
+<p class="font-numeric-data text-numeric-data text-on-surface font-semibold">₹ 1.0 Cr</p>
+<p class="font-label-caps text-label-caps text-[#92400E]">Accrued (Q3 Cycle)</p>
+</div>
+</div>
+</div>
+<!-- 2x2 Quick KPI Metric Grid (5 Cols on xl) -->
+<div class="lg:col-span-5 xl:col-span-5 grid grid-cols-2 gap-4">
+<!-- Card A: Signature Vibrant Coral Card -->
+<div class="bg-primary-container text-white card-radius p-5 flex flex-col justify-between shadow-md relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-white/80">Total Demand</span>
+<span class="material-symbols-outlined text-white/80 text-[20px]">insights</span>
+</div>
+<div class="my-2">
+<div class="font-display-hero-mobile text-display-hero-mobile font-bold tracking-tight">₹ 9.50 Cr</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-full bg-white/20 text-white backdrop-blur-xs">
+                  +7.4% QoQ
+                </span>
+<span class="text-xs text-white/80">High Velocity</span>
+</div>
+</div>
+<!-- Micro trendline sparkline representation -->
+<div class="h-6 w-full flex items-end gap-1 pt-1 opacity-80">
+<div class="w-full h-2 bg-white/30 rounded-t"></div>
+<div class="w-full h-3 bg-white/40 rounded-t"></div>
+<div class="w-full h-2.5 bg-white/30 rounded-t"></div>
+<div class="w-full h-4 bg-white/50 rounded-t"></div>
+<div class="w-full h-3.5 bg-white/40 rounded-t"></div>
+<div class="w-full h-5 bg-white/70 rounded-t"></div>
+<div class="w-full h-6 bg-white rounded-t"></div>
+</div>
+</div>
+<!-- Card B: Available Inventory -->
+<div class="bg-white card-radius p-5 border border-black/[0.06] custom-shadow-card flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Available Units</span>
+<div class="w-8 h-8 rounded-lg bg-[#F4F5F7] flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+</div>
+</div>
+<div class="my-2">
+<div class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-bold tracking-tight">27 Units</div>
+<p class="font-label-md text-label-md text-secondary mt-1">Penthouse &amp; Sky Villas</p>
+</div>
+<div class="pt-2 border-t border-black/[0.04] flex items-center justify-between text-xs text-secondary">
+<span>Off-Market: 8</span>
+<span class="font-medium text-on-surface">63% Reserved</span>
+</div>
+</div>
+<!-- Card C: Site Visits Verified -->
+<div class="bg-white card-radius p-5 border border-black/[0.06] custom-shadow-card flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Verified Visits</span>
+<div class="w-8 h-8 rounded-lg bg-[#F4F5F7] flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="my-2">
+<div class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-bold tracking-tight">18 Visits</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46]">
+                  +3 this week
+                </span>
+</div>
+</div>
+<div class="pt-2 border-t border-black/[0.04] flex items-center justify-between text-xs text-secondary">
+<span>HNW Accredited</span>
+<span class="font-medium text-on-surface">100% KYC</span>
+</div>
+</div>
+<!-- Card D: Brokerage Disbursed -->
+<div class="bg-white card-radius p-5 border border-black/[0.06] custom-shadow-card flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Disbursed Fee</span>
+<div class="w-8 h-8 rounded-lg bg-[#F4F5F7] flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="my-2">
+<div class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-bold tracking-tight">₹ 85.0 L</div>
+<p class="font-label-md text-label-md text-[#065F46] font-medium mt-1">98% on-time settlement</p>
+</div>
+<div class="pt-2 border-t border-black/[0.04] flex items-center justify-between text-xs text-secondary">
+<span>Next tranche: 3d</span>
+<span class="font-medium text-on-surface">Tier 1 Partners</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECONDARY OPERATIONAL ROW: ESCROW TARGET + 2 MINI LUXURY PREVIEW WIDGETS -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- CARD 3: Escrow Target & Milestone Progress (6 Cols) -->
+<div class="lg:col-span-6 bg-white card-radius p-6 border border-black/[0.06] custom-shadow-card flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">flag</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Escrow Disbursement Target</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-black/[0.06] text-on-surface font-label-caps text-label-caps font-semibold">Q4 Pace</span>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹ 14.2 Cr</span>
+<span class="text-secondary font-body-md text-body-md"> / ₹ 18.0 Cr</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">78.8% Goal Reached</span>
+</div>
+<!-- Custom Multi-Segment Progress Bar -->
+<div class="w-full h-4 bg-[#EDEFF2] rounded-full mt-4 p-0.5 flex items-center overflow-hidden">
+<!-- Solid Coral Bar (Completed tranche) -->
+<div class="h-full bg-primary-container rounded-l-full" style="width: 62%;"></div>
+<!-- Diagonal Striped Pattern Bar (Pending verified tranches) -->
+<div class="h-full diagonal-stripes border-l border-r border-white/60" style="width: 16.8%;"></div>
+<!-- Unfilled Track -->
+<div class="h-full flex-1"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-secondary mt-2">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> Settled Tranche (₹ 11.2 Cr)</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded bg-primary-container/30"></span> In Transit (₹ 3.0 Cr)</span>
+<span>Target: ₹ 18.0 Cr</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-black/[0.04] flex items-center justify-between">
+<p class="font-body-sm text-body-sm text-secondary">
+              Remaining <strong class="text-on-surface">₹ 3.8 Cr</strong> required before Phase 2 milestone close on Nov 15.
+            </p>
+<button class="text-primary hover:underline font-label-md text-label-md font-semibold inline-flex items-center gap-1">
+<span>Audit Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 4: Mini Luxury Unit Preview Widgets (6 Cols, split into 2 cards) -->
+<div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Obsidian Card: Penthouse 402 -->
+<div class="bg-[#111318] text-white card-radius p-5 flex flex-col justify-between border border-black/[0.1] shadow-lg relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-white/90 font-label-caps text-label-caps font-semibold">
+                Ready for Handover
+              </span>
+<div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+</div>
+<div class="my-4">
+<span class="text-xs uppercase tracking-wider text-white/60 font-mono">Bespoke Flagship</span>
+<h3 class="font-title-md text-title-md font-semibold text-white mt-1 leading-snug">The Sovereign Sky Penthouse #402</h3>
+<p class="font-numeric-data text-numeric-data font-bold text-white mt-2">₹ 18.5 Cr</p>
+</div>
+<div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-white/70">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">apartment</span>
+                7,400 sq.ft • Private Deck
+              </span>
+<button class="text-white hover:text-primary-container font-semibold inline-flex items-center gap-0.5">
+<span>Dossier</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</button>
+</div>
+</div>
+<!-- Vibrant Coral Gradient Card: Ocean Villa #09 -->
+<div class="bg-gradient-to-br from-[#FF5B37] to-[#E04824] text-white card-radius p-5 flex flex-col justify-between shadow-lg relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-label-caps text-label-caps font-semibold">
+                Under Token Escrow
+              </span>
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="my-4">
+<span class="text-xs uppercase tracking-wider text-white/80 font-mono">Coastal Estate</span>
+<h3 class="font-title-md text-title-md font-semibold text-white mt-1 leading-snug">The Lumina Ocean Villa #09</h3>
+<p class="font-numeric-data text-numeric-data font-bold text-white mt-2">₹ 12.8 Cr</p>
+</div>
+<div class="pt-3 border-t border-white/20 flex items-center justify-between text-xs text-white/90">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pool</span>
+                Private Jetty &amp; Helipad
+              </span>
+<button class="text-white hover:underline font-semibold inline-flex items-center gap-0.5">
+<span>View Escrow</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CARD 5: Invoiced vs Collected Bar Chart Section -->
+<section class="bg-white card-radius p-6 border border-black/[0.06] custom-shadow-card space-y-6">
+<!-- Header & Time Selector / Legends -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-black/[0.04]">
+<div class="space-y-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Invoiced vs Collected</h2>
+<p class="font-body-sm text-body-sm text-secondary">Monthly capital realization timeline across managed investment vehicles</p>
+</div>
+<div class="flex items-center gap-4 flex-wrap">
+<!-- Legend Indicators -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-[#111318]"></span>
+<span class="font-label-md text-label-md text-secondary">Invoiced</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-container"></span>
+<span class="font-label-md text-label-md text-secondary">Collected</span>
+</div>
+</div>
+<!-- Time Selector Pill -->
+<div class="bg-[#F4F5F7] p-1 rounded-full border border-black/[0.06] flex items-center">
+<button class="px-3 py-1 rounded-full bg-white text-on-surface font-label-md text-label-md font-semibold shadow-xs">Last 8 Months</button>
+<button class="px-3 py-1 rounded-full text-secondary hover:text-on-surface font-label-md text-label-md font-medium">YTD 2024</button>
+</div>
+</div>
+</div>
+<!-- Grouped Bar Chart Display -->
+<div class="pt-4 pb-2">
+<!-- Chart Grid & Bars Container -->
+<div class="relative h-64 w-full flex items-end justify-between gap-2 sm:gap-6 px-4">
+<!-- Horizontal Guide Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="border-b border-black w-full"></div>
+<div class="border-b border-black w-full"></div>
+<div class="border-b border-black w-full"></div>
+<div class="border-b border-black w-full"></div>
+</div>
+<!-- Jan -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 group">
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 45%;" title="Jan Invoiced: ₹ 0.90 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm transition-all" style="height: 40%;" title="Jan Collected: ₹ 0.82 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary">Jan</span>
+</div>
+<!-- Feb -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 group">
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 60%;" title="Feb Invoiced: ₹ 1.20 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm transition-all" style="height: 52%;" title="Feb Collected: ₹ 1.05 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary">Feb</span>
+</div>
+<!-- Mar -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 group">
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 75%;" title="Mar Invoiced: ₹ 1.50 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm transition-all" style="height: 70%;" title="Mar Collected: ₹ 1.40 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary">Mar</span>
+</div>
+<!-- Apr -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 group">
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 55%;" title="Apr Invoiced: ₹ 1.10 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm transition-all" style="height: 48%;" title="Apr Collected: ₹ 0.95 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary">Apr</span>
+</div>
+<!-- May -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 group">
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 80%;" title="May Invoiced: ₹ 1.60 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm transition-all" style="height: 72%;" title="May Collected: ₹ 1.45 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary">May</span>
+</div>
+<!-- Jun -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 group">
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 70%;" title="Jun Invoiced: ₹ 1.40 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm transition-all" style="height: 65%;" title="Jun Collected: ₹ 1.30 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary">Jun</span>
+</div>
+<!-- Jul -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 group">
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 85%;" title="Jul Invoiced: ₹ 1.70 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm transition-all" style="height: 78%;" title="Jul Collected: ₹ 1.55 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary">Jul</span>
+</div>
+<!-- Aug (With Active Tooltip Highlight) -->
+<div class="flex-1 flex flex-col items-center gap-2 z-10 relative group">
+<!-- Active Tooltip Float -->
+<div class="absolute -top-12 bg-[#111318] text-white px-2.5 py-1 rounded-md text-[11px] font-mono whitespace-nowrap shadow-md pointer-events-none flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>₹ 1.65 Cr collected</span>
+</div>
+<div class="w-full flex items-end justify-center gap-1.5 h-48">
+<div class="w-3 sm:w-5 bg-[#111318] rounded-t-sm transition-all" style="height: 92%;" title="Aug Invoiced: ₹ 1.85 Cr"></div>
+<div class="w-3 sm:w-5 bg-primary-container rounded-t-sm shadow-sm transition-all" style="height: 84%;" title="Aug Collected: ₹ 1.65 Cr"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface font-bold">Aug</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs text-secondary pt-2 border-t border-black/[0.04]">
+<span>Net Collection Realization: <strong class="text-on-surface font-semibold">91.4%</strong> against billed tranches</span>
+<span class="text-on-surface font-medium">Standard Settlement Window: 5 Days</span>
+</div>
+</section>
+<!-- CARD 6: Recent Deals & Pipeline Activity Table -->
+<section class="bg-white card-radius p-6 border border-black/[0.06] custom-shadow-card space-y-4">
+<!-- Table Toolbar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Recent Deals &amp; Pipeline Velocity</h2>
+<p class="font-body-sm text-body-sm text-secondary">Live high-value transaction log across prime luxury urban corridors</p>
+</div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<!-- Search inside table -->
+<div class="relative w-48 sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[16px] text-secondary">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-xl bg-[#F4F5F7] border border-black/[0.06] text-xs font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container" placeholder="Filter entries..." type="text"/>
+</div>
+<!-- Filter Button -->
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-black/[0.08] hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md font-semibold transition-all">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filter</span>
+</button>
+<!-- Export CSV -->
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#111318] hover:bg-black text-white font-label-md text-label-md font-semibold transition-all">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- High-Precision Responsive Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-black/[0.06] text-secondary font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-3.5 px-3 w-10">
+<input class="w-4 h-4 rounded border-black/20 text-primary-container focus:ring-primary-container" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-semibold">Deal / Unit Name &amp; Client</th>
+<th class="py-3.5 px-4 font-semibold">Asset Type</th>
+<th class="py-3.5 px-4 font-semibold">Lead Activity</th>
+<th class="py-3.5 px-4 font-semibold">Contract Value</th>
+<th class="py-3.5 px-4 font-semibold">Status</th>
+<th class="py-3.5 px-4 font-semibold">Timestamp</th>
+<th class="py-3.5 px-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-black/[0.04] text-sm">
+<!-- Entry 1 -->
+<tr class="hover:bg-[#F4F5F7]/70 transition-colors group">
+<td class="py-4 px-3">
+<input class="w-4 h-4 rounded border-black/20 text-primary-container focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-[#111318] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      SH
+                    </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Penthouse 42B — Skyline Horizon</div>
+<div class="font-body-sm text-body-sm text-secondary">Client: Devendra Singhania</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-secondary font-body-sm text-body-sm">Sky Residence</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-tertiary">task_alt</span>
+                    Site visit completed
+                  </span>
+</td>
+<td class="py-4 px-4 font-numeric-data text-numeric-data text-on-surface font-bold">₹ 14.20 Cr</td>
+<td class="py-4 px-4">
+<!-- Completed Badge: Soft green with dot -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#10B981]/15 text-[#065F46] font-label-caps text-label-caps font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                    Completed
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs font-mono text-secondary">10m ago</td>
+<td class="py-4 px-3 text-right">
+<button class="p-1 rounded hover:bg-black/[0.05] text-secondary hover:text-on-surface" title="Options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Entry 2 -->
+<tr class="hover:bg-[#F4F5F7]/70 transition-colors group">
+<td class="py-4 px-3">
+<input class="w-4 h-4 rounded border-black/20 text-primary-container focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      VS
+                    </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Villa Serena #11 — Palm Greens</div>
+<div class="font-body-sm text-body-sm text-secondary">Client: Aanya Vardhan</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-secondary font-body-sm text-body-sm">Luxury Villa</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-amber-600">sync</span>
+                    Escrow token initiated
+                  </span>
+</td>
+<td class="py-4 px-4 font-numeric-data text-numeric-data text-on-surface font-bold">₹ 9.80 Cr</td>
+<td class="py-4 px-4">
+<!-- In Progress Badge: Soft yellow/amber with dot -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F59E0B]/15 text-[#92400E] font-label-caps text-label-caps font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
+                    In Progress
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs font-mono text-secondary">1h ago</td>
+<td class="py-4 px-3 text-right">
+<button class="p-1 rounded hover:bg-black/[0.05] text-secondary hover:text-on-surface" title="Options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Entry 3 -->
+<tr class="hover:bg-[#F4F5F7]/70 transition-colors group">
+<td class="py-4 px-3">
+<input class="w-4 h-4 rounded border-black/20 text-primary-container focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-[#EDEFF2] text-on-surface flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      GA
+                    </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Sky Duplex 1804 — The Grand Aurum</div>
+<div class="font-body-sm text-body-sm text-secondary">Client: Kabir &amp; Rhea Mehta</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-secondary font-body-sm text-body-sm">Duplex</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary">description</span>
+                    KYC &amp; Agreement drafted
+                  </span>
+</td>
+<td class="py-4 px-4 font-numeric-data text-numeric-data text-on-surface font-bold">₹ 7.45 Cr</td>
+<td class="py-4 px-4">
+<!-- Pending Badge: Soft orange with dot -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FF5B37]/15 text-[#B52704] font-label-caps text-label-caps font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                    Pending
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs font-mono text-secondary">3h ago</td>
+<td class="py-4 px-3 text-right">
+<button class="p-1 rounded hover:bg-black/[0.05] text-secondary hover:text-on-surface" title="Options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Entry 4 -->
+<tr class="hover:bg-[#F4F5F7]/70 transition-colors group">
+<td class="py-4 px-3">
+<input class="w-4 h-4 rounded border-black/20 text-primary-container focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-[#065F46]/10 text-[#065F46] flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      MS
+                    </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">The Marquee Suite #301</div>
+<div class="font-body-sm text-body-sm text-secondary">Client: Aditya Birla Trust</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-secondary font-body-sm text-body-sm">Commercial Penthouse</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-[#10B981]">check_circle</span>
+                    Disbursal cleared
+                  </span>
+</td>
+<td class="py-4 px-4 font-numeric-data text-numeric-data text-on-surface font-bold">₹ 11.20 Cr</td>
+<td class="py-4 px-4">
+<!-- Completed Badge: Soft green with dot -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#10B981]/15 text-[#065F46] font-label-caps text-label-caps font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                    Completed
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs font-mono text-secondary">Yesterday</td>
+<td class="py-4 px-3 text-right">
+<button class="p-1 rounded hover:bg-black/[0.05] text-secondary hover:text-on-surface" title="Options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Ledger Summary Footer -->
+<div class="flex items-center justify-between pt-4 border-t border-black/[0.04] text-xs text-secondary">
+<span>Showing 4 of 24 active high-tier mandates</span>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-lg border border-black/[0.06] bg-white hover:bg-[#F4F5F7] disabled:opacity-50 text-on-surface font-medium">Previous</button>
+<span class="font-mono text-on-surface">Page 1 of 6</span>
+<button class="px-2.5 py-1 rounded-lg border border-black/[0.06] bg-white hover:bg-[#F4F5F7] text-on-surface font-medium">Next</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

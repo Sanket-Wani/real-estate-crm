@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — Marketing Attribution &amp; Campaigns ROI Performance Cockpit</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d9e3fb",
+            "on-background": "#111c2d",
+            "secondary-container": "#dfdfe6",
+            "surface-tint": "#b52704",
+            "on-tertiary-fixed-variant": "#005049",
+            "error": "#ba1a1a",
+            "surface-container-high": "#dfe8ff",
+            "on-secondary-container": "#616269",
+            "on-surface-variant": "#5b403b",
+            "surface-bright": "#f9f9ff",
+            "on-primary-fixed-variant": "#8c1900",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#c6c6cd",
+            "secondary-fixed": "#e2e2e9",
+            "inverse-surface": "#273143",
+            "primary-fixed": "#ffdad2",
+            "on-primary-fixed": "#3d0600",
+            "tertiary-fixed": "#89f5e7",
+            "outline": "#8f7069",
+            "on-tertiary-fixed": "#00201d",
+            "on-secondary-fixed-variant": "#45474c",
+            "on-secondary": "#ffffff",
+            "background": "#f9f9ff",
+            "secondary": "#5d5e64",
+            "primary-container": "#ff5b37",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#b52704",
+            "inverse-on-surface": "#ecf0ff",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "on-surface": "#111c2d",
+            "outline-variant": "#e3beb6",
+            "on-secondary-fixed": "#1a1b21",
+            "surface-dim": "#d0daf2",
+            "tertiary-container": "#2ca397",
+            "tertiary": "#006a61",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f0f3ff",
+            "on-primary-container": "#5a0d00",
+            "primary-fixed-dim": "#ffb4a3",
+            "surface-container": "#e8eeff",
+            "surface-variant": "#d9e3fb",
+            "on-tertiary-container": "#00322d",
+            "inverse-primary": "#ffb4a3",
+            "error-container": "#ffdad6",
+            "surface": "#f9f9ff",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.25rem",
+            "margin-lg": "2.5rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-lg": "1.75rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "numeric-data": ["Outfit"],
+            "headline-lg": ["Outfit"],
+            "label-md": ["Inter"],
+            "headline-lg-mobile": ["Outfit"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Outfit"],
+            "label-lg": ["Inter"],
+            "title-md": ["Outfit"],
+            "display-hero-mobile": ["Outfit"],
+            "label-caps": ["Inter"],
+            "display-hero": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "numeric-data": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .striped-pattern-buffer {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(226, 232, 240, 0.9),
+        rgba(226, 232, 240, 0.9) 8px,
+        rgba(241, 245, 249, 0.9) 8px,
+        rgba(241, 245, 249, 0.9) 16px
+      );
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-full bg-[#F4F5F7] text-on-surface antialiased selection:bg-primary-container selection:text-white">
+<!-- ========================================================================= -->
+<!-- SIDE NAVIGATION BAR (SHARED COMPONENT ANCHOR) -->
+<!-- ========================================================================= -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant/30 dark:border-outline-variant/10">
+<div class="flex flex-col justify-between h-full p-4">
+<!-- Top Cluster: Brand & Primary Navigation -->
+<div class="flex flex-col gap-6">
+<!-- Brand Header -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="h-10 w-10 rounded-xl bg-on-surface text-surface flex items-center justify-center font-headline-sm text-headline-sm font-semibold tracking-tight shadow-sm shrink-0">
+            S
+          </div>
+<div class="hidden xl:flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface font-semibold tracking-tight">Simplesphere OS</span>
+<span class="font-label-md text-label-md text-secondary">Private Cockpit</span>
+</div>
+</div>
+<!-- Add Asset Action Button -->
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-on-surface hover:bg-black text-white text-body-sm font-label-md font-semibold transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="hidden xl:inline">Add Asset</span>
+</button>
+<!-- Navigation Links (Cockpit, Properties, Pipelines, Ledger [Active], Clients, Settings) -->
+<nav class="flex flex-col gap-1">
+<!-- Item 1: Cockpit -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="hidden xl:inline font-label-md text-label-md">Cockpit</span>
+</a>
+<!-- Item 2: Properties -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span class="hidden xl:inline font-label-md text-label-md">Properties</span>
+</a>
+<!-- Item 3: Pipelines -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">filter_alt</span>
+<span class="hidden xl:inline font-label-md text-label-md">Pipelines</span>
+</a>
+<!-- Item 4: Ledger (ACTIVE - Maps directly to Campaign & Attribution Ledger) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="hidden xl:inline font-label-md text-label-md">Ledger</span>
+</a>
+<!-- Item 5: Clients -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="hidden xl:inline font-label-md text-label-md">Clients</span>
+</a>
+<!-- Item 6: Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="hidden xl:inline font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer Secondary Controls -->
+<div class="flex flex-col gap-1 border-t border-slate-100 pt-3">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="hidden xl:inline font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="hidden xl:inline font-label-md text-label-md">Terminal</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- TOP NAVIGATION BAR (SHARED COMPONENT ANCHOR) -->
+<!-- ========================================================================= -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant/30 flex items-center justify-between px-6 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<!-- Left: Global Universal Search Command Bar -->
+<div class="flex items-center gap-4 w-96 max-w-md">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-10 pl-10 pr-12 text-body-sm font-body-md rounded-full bg-slate-50 border border-slate-200/80 focus:bg-white focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all placeholder:text-slate-400" placeholder="Search campaigns, UTM tags, or ledger... ⌘K" type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<kbd class="px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 bg-white border border-slate-200 rounded">⌘K</kbd>
+</div>
+</div>
+</div>
+<!-- Center/Right: Action Cluster & Profile -->
+<div class="flex items-center gap-3">
+<!-- Export Ledger Button -->
+<button class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200/90 text-on-surface text-body-sm font-label-md font-medium hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-600">download</span>
+<span>Export Ledger</span>
+</button>
+<!-- Trailing Primary Action: + Launch New Campaign -->
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-container hover:bg-[#ff471e] text-white text-body-sm font-label-md font-semibold transition-all active:scale-95 shadow-sm shadow-coral-500/20">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Create Deal</span>
+</button>
+<div class="h-6 w-px bg-slate-200 mx-1"></div>
+<!-- Icon Actions -->
+<button class="p-2 rounded-xl text-slate-500 hover:text-on-surface hover:bg-slate-100 transition-colors relative" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary-container rounded-full ring-2 ring-white"></span>
+</button>
+<button class="p-2 rounded-xl text-slate-500 hover:text-on-surface hover:bg-slate-100 transition-colors" title="Settings / Tune">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<!-- Executive Profile Avatar -->
+<div class="flex items-center gap-3 pl-2">
+<div class="h-9 w-9 rounded-full ring-2 ring-slate-100 overflow-hidden bg-slate-200 shrink-0">
+<img class="h-full w-full object-cover" data-alt="A sophisticated portrait of an executive managing director in a tailored dark navy suit, standing inside a bright luxury architectural office with soft daylight and glass reflections. Clean executive portrait style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU3JL62aaBBnJ4CcaYJjn-FszgM4brEtau6bTipRo1y_Xk-uzftwOEfvnqg4AvygythVPyizHrdTSrxU_LA8RpEmZpEUeyX2SDstCwx4LDgJI7bYQrY4HDMuKxYjEnd2flIyfImDLczCtb4AdZ-KsZKvT-ALYQjhZLDNsiyahInycNx_EQI-u6dJKXE9-L8pEY-8RgjtWDqtBvFyQq-s5sO8JgYaQciZxt41QX5uHsuEwoVXEoHKQvB-_dIUH41kED0CcVV30K6wQ"/>
+</div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-body-sm font-label-lg text-on-surface leading-tight">Vikram Malhotra</span>
+<span class="text-label-caps font-label-caps text-secondary leading-tight">Executive MD</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN COCKPIT CANVAS CONTENT -->
+<!-- ========================================================================= -->
+<main class="ml-20 xl:ml-64 pt-20 pb-16 px-6 lg:px-10 max-w-[1720px] transition-all">
+<!-- 1. COCKPIT HEADER & ATTRIBUTION STATUS BADGE -->
+<section class="mt-4 mb-8 flex flex-col gap-4">
+<!-- Status Badge -->
+<div class="flex items-center gap-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-label-caps tracking-wider font-semibold uppercase">
+<span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>MULTI-TOUCH ATTRIBUTION ACTIVE • LINEAR &amp; TIME-DECAY MODEL</span>
+</div>
+</div>
+<!-- Headline and Subtitle with Action Buttons -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+            Marketing Attribution &amp; Campaign Performance Cockpit
+          </h1>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-3xl">
+            Multi-touch UTM attribution from digital ad impression to verified site visit and signed sale deed.
+          </p>
+</div>
+<!-- Cockpit Quick Actions -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-200/90 text-on-surface font-label-md text-body-sm hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-600">tune</span>
+<span>Attribution Settings</span>
+</button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-container hover:bg-[#ff471e] text-white font-label-md text-body-sm font-semibold transition-all active:scale-95 shadow-md shadow-coral-500/20">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span>+ Launch New Campaign</span>
+</button>
+</div>
+</div>
+<!-- Capsule Filter Track -->
+<div class="flex items-center gap-2.5 overflow-x-auto pt-2 pb-1 custom-scrollbar">
+<button class="px-4 py-1.5 rounded-full bg-[#111318] text-white text-body-sm font-label-md font-semibold shrink-0 shadow-sm transition-transform active:scale-95">
+          All Channels (5)
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-white border border-slate-200/90 text-slate-600 hover:text-on-surface hover:border-slate-300 text-body-sm font-label-md shrink-0 transition-all">
+          Google Search (High Intent)
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-white border border-slate-200/90 text-slate-600 hover:text-on-surface hover:border-slate-300 text-body-sm font-label-md shrink-0 transition-all">
+          Meta Video Discovery
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-white border border-slate-200/90 text-slate-600 hover:text-on-surface hover:border-slate-300 text-body-sm font-label-md shrink-0 transition-all">
+          Portals (Magicbricks/99acres)
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-white border border-slate-200/90 text-slate-600 hover:text-on-surface hover:border-slate-300 text-body-sm font-label-md shrink-0 transition-all">
+          Channel Partner Roadshows
+        </button>
+</div>
+</section>
+<!-- 2. 4-TILE EXECUTIVE KPI ROW (FINEXY 4-TILE STYLE) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+<!-- Tile 1: Solid Coral #FF5B37 Accent Card -->
+<div class="rounded-2xl p-6 bg-primary-container text-white shadow-lg shadow-coral-500/20 flex flex-col justify-between transition-all hover:-translate-y-0.5 duration-200 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-32 h-32 rounded-full bg-white/5 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-white/80 font-label-caps text-label-caps tracking-wider uppercase">REVENUE BOOKED</span>
+<div class="h-8 w-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">currency_rupee</span>
+</div>
+</div>
+<div class="font-numeric-data text-3xl font-extrabold tracking-tight text-white mb-2">
+            ₹71.1 Cr
+          </div>
+</div>
+<div class="pt-2">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-[12px] font-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>250.2x Blended ROMI</span>
+</div>
+</div>
+</div>
+<!-- Tile 2: Total Ad Spend -->
+<div class="rounded-2xl p-6 bg-surface-container-lowest border border-slate-200/80 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between transition-all hover:-translate-y-0.5 duration-200">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-slate-500 font-label-caps text-label-caps tracking-wider uppercase">TOTAL AD SPEND</span>
+<div class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div class="font-numeric-data text-3xl font-bold tracking-tight text-on-surface mb-2">
+            ₹28.3 L
+          </div>
+</div>
+<div class="pt-2">
+<p class="text-body-sm font-body-sm text-secondary">
+            ₹33.0 L Budget Allocated <span class="font-medium text-slate-700">(85.8% Deployed)</span>
+</p>
+</div>
+</div>
+<!-- Tile 3: Qualified Leads -->
+<div class="rounded-2xl p-6 bg-surface-container-lowest border border-slate-200/80 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between transition-all hover:-translate-y-0.5 duration-200">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-slate-500 font-label-caps text-label-caps tracking-wider uppercase">QUALIFIED LEADS</span>
+<div class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+</div>
+</div>
+<div class="font-numeric-data text-3xl font-bold tracking-tight text-on-surface mb-2">
+            891 Leads
+          </div>
+</div>
+<div class="pt-2">
+<p class="text-body-sm font-body-sm text-secondary">
+            Avg CPL ₹3,176 • <span class="text-emerald-700 font-medium">31.8% Qualified Rate</span>
+</p>
+</div>
+</div>
+<!-- Tile 4: Bookings Closed -->
+<div class="rounded-2xl p-6 bg-surface-container-lowest border border-slate-200/80 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between transition-all hover:-translate-y-0.5 duration-200">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-slate-500 font-label-caps text-label-caps tracking-wider uppercase">BOOKINGS CLOSED</span>
+<div class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="font-numeric-data text-3xl font-bold tracking-tight text-on-surface mb-2">
+            16 Units
+          </div>
+</div>
+<div class="pt-2">
+<p class="text-body-sm font-body-sm text-secondary">
+            Avg Cost/Booking ₹177k • <span class="font-medium text-slate-700">₹4.44 Cr Avg Ticket</span>
+</p>
+</div>
+</div>
+</section>
+<!-- 3. CAMPAIGN BUDGET UTILIZATION PROGRESS CARD -->
+<section class="rounded-2xl p-6 bg-surface-container-lowest border border-slate-200/80 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] mb-6">
+<!-- Header Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">Overall Marketing Capital Deployment — Q3 FY26</h2>
+<span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+<span class="text-body-sm font-label-md text-secondary">Execution Period</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary mt-0.5">
+            Quarterly burn-down across paid digital, print inserts &amp; broker roadshows.
+          </p>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20 text-primary font-label-caps text-label-caps font-semibold">
+            85.8% Deployed
+          </span>
+<span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-label-caps text-label-caps font-semibold">
+            ₹4.70 L Buffer Remaining
+          </span>
+</div>
+</div>
+<!-- Striped Progress Bar Track -->
+<div class="w-full h-3.5 rounded-full overflow-hidden flex bg-slate-100 p-0.5 border border-slate-200/60 shadow-inner">
+<!-- Deployed Capital: 85.8% Coral -->
+<div class="h-full rounded-full bg-primary-container transition-all duration-500 shadow-sm" style="width: 85.8%;"></div>
+<!-- Remaining Buffer: 14.2% Striped Pattern Track -->
+<div class="h-full rounded-full striped-pattern-buffer ml-0.5 opacity-90" style="width: 14.2%;"></div>
+</div>
+<!-- Footer Metrics Under Progress Bar -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-100 text-body-sm font-body-sm text-secondary">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary-container shrink-0"></span>
+<span>₹28,30,000 spent out of ₹33,00,000 budget</span>
+</div>
+<div class="flex items-center justify-start md:justify-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">schedule</span>
+<span>Next Budget Rebalancing: <strong class="text-slate-800 font-medium">01 Nov 2024</strong></span>
+</div>
+<div class="flex items-center justify-start md:justify-end gap-2">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">query_stats</span>
+<span>Projected End-of-Quarter ROMI: <strong class="text-emerald-700 font-semibold font-numeric-data">265x</strong></span>
+</div>
+</div>
+</section>
+<!-- 4. MULTI-CHANNEL ATTRIBUTION PERFORMANCE TABLE -->
+<section class="rounded-2xl bg-surface-container-lowest border border-slate-200/80 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] overflow-hidden">
+<!-- Card Toolbar Header -->
+<div class="p-6 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100">
+<div class="flex items-center gap-3">
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">
+            Multi-Channel Attribution &amp; Campaign Ledger
+          </h2>
+<span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-label-caps font-label-caps font-semibold">
+            5 Active Campaigns
+          </span>
+</div>
+<!-- Filter & Search Controls -->
+<div class="flex items-center gap-3">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-lg bg-slate-50 border border-slate-200 text-body-sm font-body-sm focus:bg-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search campaign, UTM tag..." type="text"/>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 text-body-sm font-label-md font-medium hover:bg-slate-50 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-500">filter_list</span>
+<span>Filter</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 text-body-sm font-label-md font-medium hover:bg-slate-50 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-500">table_view</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Table Body Container (Custom Scrollbar to Prevent Layout Crashing) -->
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse whitespace-nowrap">
+<thead>
+<tr class="bg-slate-50/80 text-[11px] font-semibold text-slate-500 uppercase font-label-caps tracking-wider border-b border-slate-200/70">
+<th class="py-3.5 pl-6 pr-3 w-10" scope="col">
+<input class="h-4 w-4 rounded border-slate-300 text-primary-container focus:ring-primary-container/20" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-semibold" scope="col">CAMPAIGN &amp; ATTRIBUTION SOURCE</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">AD SPEND (INR)</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">LEADS</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">CPL</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">SITE VISITS</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">CPSV</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">BOOKINGS</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">CPB</th>
+<th class="py-3.5 px-4 font-semibold text-right" scope="col">REVENUE (INR)</th>
+<th class="py-3.5 px-4 font-semibold text-center" scope="col">ROMI</th>
+<th class="py-3.5 pr-6 pl-4 font-semibold text-right" scope="col">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 font-body-sm text-body-sm">
+<!-- Row 1: Worli Sea Face Luxury Launch -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 pl-6 pr-3">
+<input checked="" class="h-4 w-4 rounded border-slate-300 text-primary-container focus:ring-primary-container/20" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface hover:text-primary transition-colors">Worli Sea Face Luxury Launch</span>
+<span class="text-[12px] text-secondary font-mono text-slate-500">Google Search Ads • utm_campaign=worli_sea_penthouse</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹9.4 L</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700">240</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹3,917</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700 font-medium">38</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹24,737</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-900 font-semibold">4</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹235k</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹32.40 Cr</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[12px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  343.7x
+                </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    View UTM
+                  </button>
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    Cost Sheet
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Aurelia Smart Green Homes -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 pl-6 pr-3">
+<input checked="" class="h-4 w-4 rounded border-slate-300 text-primary-container focus:ring-primary-container/20" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface hover:text-primary transition-colors">Aurelia Smart Green Homes</span>
+<span class="text-[12px] text-secondary font-mono text-slate-500">Meta Lead Gen • Instagram Reels &amp; FB Carousel</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹6.2 L</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700">410</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹1,512</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700 font-medium">52</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹11,923</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-900 font-semibold">6</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹103k</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹10.80 Cr</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[12px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  173.2x
+                </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    View UTM
+                  </button>
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    Cost Sheet
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: 99Acres Premium Builder Spotlight -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 pl-6 pr-3">
+<input class="h-4 w-4 rounded border-slate-300 text-primary-container focus:ring-primary-container/20" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface hover:text-primary transition-colors">99Acres Premium Builder Spotlight</span>
+<span class="text-[12px] text-secondary font-mono text-slate-500">99Acres Portal • High HNI Banner Takeover</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹5.0 L</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700">95</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹5,263</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700 font-medium">14</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹35,714</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-900 font-semibold">2</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹250k</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹7.80 Cr</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[12px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  155.0x
+                </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    View UTM
+                  </button>
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    Cost Sheet
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: MagicBricks Verified Platinum Showcase -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 pl-6 pr-3">
+<input class="h-4 w-4 rounded border-slate-300 text-primary-container focus:ring-primary-container/20" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface hover:text-primary transition-colors">MagicBricks Verified Platinum Showcase</span>
+<span class="text-[12px] text-secondary font-mono text-slate-500">MagicBricks Portal • Sponsored Search Results</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹4.5 L</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700">82</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹5,488</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700 font-medium">11</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹40,909</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-900 font-semibold">1</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹450k</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹3.90 Cr</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[12px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+                  85.7x
+                </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    View UTM
+                  </button>
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    Cost Sheet
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Prime Channel Partner Exclusive Conclave -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 pl-6 pr-3">
+<input class="h-4 w-4 rounded border-slate-300 text-primary-container focus:ring-primary-container/20" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface hover:text-primary transition-colors">Prime Channel Partner Exclusive Conclave</span>
+<span class="text-[12px] text-secondary font-mono text-slate-500">Direct Broker Network • Mumbai Taj Lands End Event</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹3.2 L</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700">64</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹5,000</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-700 font-medium">22</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹14,545</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-900 font-semibold">3</td>
+<td class="py-4 px-4 text-right font-numeric-data text-slate-600">₹107k</td>
+<td class="py-4 px-4 text-right font-numeric-data font-semibold text-on-surface">₹16.20 Cr</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[12px] font-semibold bg-purple-50 text-purple-700 border border-purple-200">
+                  505.3x
+                </span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    View UTM
+                  </button>
+<button class="px-2.5 py-1 text-[12px] font-label-md font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50 shadow-sm transition-all">
+                    Cost Sheet
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination -->
+<div class="px-6 py-4 bg-white border-t border-slate-100 flex items-center justify-between">
+<span class="text-body-sm text-secondary">
+          Showing <span class="font-semibold text-on-surface">5</span> of <span class="font-semibold text-on-surface">5</span> active campaigns
+        </span>
+<div class="flex items-center gap-1.5">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-400 text-body-sm font-label-md cursor-not-allowed" disabled="">
+            Previous
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-on-surface text-white text-body-sm font-label-md font-semibold">
+            1
+          </button>
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-400 text-body-sm font-label-md cursor-not-allowed" disabled="">
+            Next
+          </button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

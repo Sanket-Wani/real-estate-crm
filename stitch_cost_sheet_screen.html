@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — Dynamic Cost Sheet &amp; RERA Allotment Calculator</title>
+<!-- Typography & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Engine -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#6bd8cb",
+            "on-tertiary-fixed-variant": "#005049",
+            "secondary-fixed-dim": "#c6c6cd",
+            "primary": "#b52704",
+            "on-secondary-fixed-variant": "#45474c",
+            "primary-fixed-dim": "#ffb4a3",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#1a1b21",
+            "tertiary-fixed": "#89f5e7",
+            "surface-container-highest": "#d9e3fb",
+            "on-tertiary-fixed": "#00201d",
+            "surface-container": "#e8eeff",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#dfe8ff",
+            "secondary-fixed": "#e2e2e9",
+            "on-primary-container": "#5a0d00",
+            "secondary": "#5d5e64",
+            "on-background": "#111c2d",
+            "surface-dim": "#d0daf2",
+            "on-primary-fixed": "#3d0600",
+            "background": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#8f7069",
+            "outline-variant": "#e3beb6",
+            "tertiary-container": "#2ca397",
+            "on-secondary-container": "#616269",
+            "on-surface": "#111c2d",
+            "primary-fixed": "#ffdad2",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface": "#f9f9ff",
+            "inverse-primary": "#ffb4a3",
+            "on-tertiary-container": "#00322d",
+            "tertiary": "#006a61",
+            "surface-tint": "#b52704",
+            "on-surface-variant": "#5b403b",
+            "on-error": "#ffffff",
+            "surface-variant": "#d9e3fb",
+            "surface-bright": "#f9f9ff",
+            "secondary-container": "#dfdfe6",
+            "inverse-surface": "#273143",
+            "on-primary-fixed-variant": "#8c1900",
+            "surface-container-low": "#f0f3ff",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#ecf0ff",
+            "error": "#ba1a1a",
+            "primary-container": "#ff5b37"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "2.5rem",
+            "gutter-lg": "1.75rem",
+            "space-xl": "2.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "margin": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "headline-md": ["Outfit"],
+            "title-md": ["Outfit"],
+            "display-hero": ["Outfit"],
+            "label-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "numeric-data": ["Outfit"],
+            "headline-lg-mobile": ["Outfit"],
+            "label-caps": ["Inter"],
+            "headline-sm": ["Outfit"],
+            "headline-lg": ["Outfit"],
+            "display-hero-mobile": ["Outfit"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "numeric-data": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.02);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.12);
+      border-radius: 9999px;
+    }
+    .card-ambient-shadow {
+      box-shadow: 0 4px 20px -2px rgba(17, 19, 24, 0.03), 0 2px 6px -1px rgba(17, 19, 24, 0.02);
+    }
+  </style>
+</head>
+<body class="bg-[#F4F5F7] text-on-surface antialiased font-body-md text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary">
+<!-- ========================================================================= -->
+<!-- 1. SHARED COMPONENT: SideNavBar (Strict Source of Truth)                 -->
+<!-- ========================================================================= -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant/30 dark:border-outline-variant/10 flat no shadows">
+<div class="flex flex-col justify-between h-full p-4">
+<!-- Nav Brand & Header -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2 pt-1">
+<div class="w-10 h-10 rounded-xl bg-inverse-surface text-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm font-semibold shadow-sm shrink-0">
+            S
+          </div>
+<div class="hidden xl:flex flex-col overflow-hidden">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface font-semibold tracking-tight truncate">Simplesphere OS</span>
+<span class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim">Private Cockpit</span>
+</div>
+</div>
+<!-- Primary Action CTA Button -->
+<button class="w-full hidden xl:flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:opacity-95 active:scale-95 duration-150 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Add Asset</span>
+</button>
+<!-- Navigation Tabs List -->
+<nav class="flex flex-col gap-1.5">
+<!-- Cockpit (Tab 1: Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md hidden xl:inline">Cockpit</span>
+</a>
+<!-- Properties (Tab 2: ACTIVE MATCH FOR PROPERTIES & UNIT CALCULATOR) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="domain" data-weight="fill" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span class="font-label-md text-label-md hidden xl:inline">Properties</span>
+</a>
+<!-- Pipelines (Tab 3: Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="filter_alt">filter_alt</span>
+<span class="font-label-md text-label-md hidden xl:inline">Pipelines</span>
+</a>
+<!-- Ledger (Tab 4: Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-md text-label-md hidden xl:inline">Ledger</span>
+</a>
+<!-- Clients (Tab 5: Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="group">group</span>
+<span class="font-label-md text-label-md hidden xl:inline">Clients</span>
+</a>
+<!-- Settings (Tab 6: Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="tune">tune</span>
+<span class="font-label-md text-label-md hidden xl:inline">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer Nav Cluster -->
+<div class="flex flex-col gap-1.5 pt-4 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="help_outline">help_outline</span>
+<span class="font-label-md text-label-md hidden xl:inline">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="terminal">terminal</span>
+<span class="font-label-md text-label-md hidden xl:inline">Terminal</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- 2. SHARED COMPONENT: TopNavBar (Strict Source of Truth)                  -->
+<!-- ========================================================================= -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/10" style="box-shadow: 0 4px 20px -2px rgba(17,19,24,0.03);">
+<div class="flex items-center justify-between px-6 h-full w-full">
+<!-- Search Input on Left -->
+<div class="flex items-center gap-6">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-secondary text-lg" data-icon="search">search</span>
+<input class="h-10 pl-10 pr-12 w-64 md:w-80 rounded-full bg-[#F4F5F7] border border-black/5 font-body-sm text-body-sm focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface transition-all placeholder:text-secondary" placeholder="Search portfolio, client folio, statutory IDs..." type="text"/>
+<kbd class="absolute right-3 font-label-caps text-[10px] text-secondary bg-surface-container-lowest px-1.5 py-0.5 rounded border border-black/5 shadow-xs">⌘K</kbd>
+</div>
+<!-- Top Nav Horizontal Links -->
+<nav class="hidden lg:flex items-center gap-6 font-label-caps text-label-caps tracking-wider">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface transition-colors" href="#">Portfolio</a>
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary pb-1" href="#">Dealflow</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface transition-colors" href="#">Escrow</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<!-- Trailing Action Controls & Profile -->
+<div class="flex items-center gap-3">
+<!-- Secondary Action -->
+<button class="hidden sm:inline-flex items-center gap-2 h-9 px-3.5 rounded-xl border border-black/10 bg-surface-container-lowest hover:bg-surface-container-low font-label-md text-label-md text-on-surface active:scale-98 transition-transform duration-150">
+<span class="material-symbols-outlined text-base" data-icon="file_download">file_download</span>
+<span>Export Ledger</span>
+</button>
+<!-- Primary Action -->
+<button class="inline-flex items-center gap-1.5 h-9 px-4 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-[#FF6B4A] active:scale-98 transition-all shadow-sm">
+<span class="material-symbols-outlined text-base" data-icon="add">add</span>
+<span>Create Deal</span>
+</button>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center gap-1 border-l border-outline-variant/30 pl-2 ml-1">
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Configuration">
+<span class="material-symbols-outlined text-xl" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Profile Cluster -->
+<div class="flex items-center gap-2.5 pl-2">
+<img alt="Executive Managing Director Portrait" class="w-9 h-9 rounded-full object-cover border border-black/10 shadow-xs" data-alt="Professional studio portrait headshot of Vikram Malhotra, an executive managing director of luxury real estate, wearing a crisp charcoal tailored bespoke suit in warm natural ambient light against a minimalist modern architectural office interior with subtle soft focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNSlRLEm8baQQrHQ0MiwDzgN_hGTGSP7gswYEbiIPGNenzWb99SbDCXVr5UwYPSquYlw2yb1wRg-LvpsMjsZ0HoryCgnMJw24rY3tcvFwX91Or3-AGwAbaIDikpMJaqeOmuWJbCyvEPDxaMFLHYEWx8h-ddya8VXjKvatDIkDApQdBLeEZtsnbI1eN_ctwPaEWcxUpHbRwqJCXfARyqne-Q1csiOiGUfZG46-dFX3P_uSFq8ctp7gpTPdWKk91R5mOJTpV7PYpSkA"/>
+<div class="hidden xl:flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Vikram Malhotra</span>
+<span class="font-label-caps text-[10px] text-secondary leading-tight">Managing Director</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CANVAS                                                     -->
+<!-- ========================================================================= -->
+<main class="ml-20 xl:ml-64 pt-20 pb-16 px-6 lg:px-10 max-w-[1720px] mx-auto min-h-screen">
+<!-- 1. PAGE HEADER & STATUTORY BREADCRUMB -->
+<section class="mt-2 mb-6">
+<!-- Breadcrumb Bar -->
+<nav class="flex items-center gap-2 font-label-caps text-label-caps text-secondary mb-2.5 overflow-x-auto whitespace-nowrap">
+<span>Properties</span>
+<span class="material-symbols-outlined text-xs text-secondary/70" data-icon="chevron_right">chevron_right</span>
+<span>The Grand Solitaire (Worli, Mumbai)</span>
+<span class="material-symbols-outlined text-xs text-secondary/70" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-semibold">Unit A-1402</span>
+<span class="material-symbols-outlined text-xs text-secondary/70" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary-container font-semibold">Cost Sheet &amp; Allotment Calculator</span>
+</nav>
+<!-- Headline & Dual Action Cluster -->
+<div class="flex flex-col 2xl:flex-row 2xl:items-center justify-between gap-5">
+<div>
+<div class="flex flex-wrap items-center gap-3 mb-1.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">
+              Dynamic Cost Sheet &amp; RERA Allotment Calculator
+            </h1>
+<!-- Statutory RERA Status Badge -->
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200/80 shadow-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-caps tracking-wider">RERA COMPLIANT • MAHARERA: P51900028471</span>
+</span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-3xl">
+            Statutory RERA Form 3 verified pricing model, dynamic PLC &amp; floor rise computation, and milestone-linked allotment schedule.
+          </p>
+</div>
+<!-- Right Quick Control Actions -->
+<div class="flex flex-wrap items-center gap-2.5 shrink-0">
+<!-- Freeze Rate -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-black/10 bg-surface-container-lowest hover:bg-[#EDEFF2] text-on-surface font-label-md text-label-md font-medium transition-all shadow-xs active:scale-95">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="schedule">schedule</span>
+<span>Freeze Rate for 48 Hours</span>
+</button>
+<!-- Apply Discount -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-black/10 bg-surface-container-lowest hover:bg-[#EDEFF2] text-on-surface font-label-md text-label-md font-medium transition-all shadow-xs active:scale-95">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="local_offer">local_offer</span>
+<span>Apply Approved Discount</span>
+</button>
+<!-- Primary Coral PDF Generator -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container text-on-primary hover:bg-[#FF6B4A] font-label-md text-label-md font-semibold transition-all shadow-sm active:scale-98">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>Generate Official Quotation PDF</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 3. 4-TILE KPI METRIC ROW                                                  -->
+<!-- ========================================================================= -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<!-- Tile 1: Solid Coral Hero Container -->
+<div class="bg-primary-container text-on-primary rounded-2xl p-5 flex flex-col justify-between card-ambient-shadow relative overflow-hidden">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-white/80 tracking-wider">TOTAL ALL-INCLUSIVE COST</span>
+<div class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg text-white" data-icon="currency_rupee">currency_rupee</span>
+</div>
+</div>
+<div class="my-1">
+<div class="font-headline-lg text-headline-lg text-white font-bold tracking-tight whitespace-nowrap">₹2.84 Cr</div>
+<div class="font-numeric-data text-sm font-semibold text-white/90 mt-0.5">₹2,96,55,900 all-inclusive</div>
+</div>
+<div class="pt-3 border-t border-white/20 mt-2 font-body-sm text-body-sm text-white/80 truncate">
+          Base rate ₹16,500/sq.ft • RERA Carpet Area 1,450 sq.ft
+        </div>
+</div>
+<!-- Tile 2: Carpet Area & Specs -->
+<div class="bg-surface-container-lowest border border-black/[0.06] rounded-2xl p-5 flex flex-col justify-between card-ambient-shadow">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-secondary tracking-wider">CARPET AREA &amp; SPECS</span>
+<div class="w-8 h-8 rounded-full bg-[#EDEFF2] flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="domain">domain</span>
+</div>
+</div>
+<div class="my-1">
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight whitespace-nowrap">1,450 sq.ft</div>
+<div class="font-label-md text-label-md text-emerald-700 font-semibold mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+<span>RERA Registered Form 3 Verified</span>
+</div>
+</div>
+<div class="pt-3 border-t border-black/[0.06] mt-2 font-body-sm text-body-sm text-secondary truncate">
+          3 BHK Grand Luxury • East Facing (Tower A, Fl 14)
+        </div>
+</div>
+<!-- Tile 3: Govt Taxes & Levies -->
+<div class="bg-surface-container-lowest border border-black/[0.06] rounded-2xl p-5 flex flex-col justify-between card-ambient-shadow">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-secondary tracking-wider">GOVT TAXES &amp; LEVIES</span>
+<div class="w-8 h-8 rounded-full bg-[#EDEFF2] flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="receipt_long">receipt_long</span>
+</div>
+</div>
+<div class="my-1">
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight whitespace-nowrap">₹29.65 L</div>
+<div class="font-label-md text-label-md text-secondary font-medium mt-0.5">
+            10.0% of Gross Consideration
+          </div>
+</div>
+<div class="pt-3 border-t border-black/[0.06] mt-2 font-body-sm text-body-sm text-secondary truncate">
+          Stamp Duty 6% (₹16.01 L) • Reg ₹30K • GST 5% (₹13.34 L)
+        </div>
+</div>
+<!-- Tile 4: Booking Token & Timeline -->
+<div class="bg-surface-container-lowest border border-black/[0.06] rounded-2xl p-5 flex flex-col justify-between card-ambient-shadow">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-secondary tracking-wider">EFFECTIVE BOOKING TOKEN</span>
+<div class="w-8 h-8 rounded-full bg-[#EDEFF2] flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+</div>
+</div>
+<div class="my-1">
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight whitespace-nowrap">₹5,00,000</div>
+<div class="font-label-md text-label-md text-primary font-semibold mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="hourglass_top">hourglass_top</span>
+<span>Price Lock Guarantee active</span>
+</div>
+</div>
+<div class="pt-3 border-t border-black/[0.06] mt-2 font-body-sm text-body-sm text-secondary truncate">
+          Non-refundable token • Payment schedule locked for 7 days
+        </div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. MAIN CONTENT 2-COLUMN GRID (60% / 40% ASYMMETRIC BENTO COCKPIT)       -->
+<!-- ========================================================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- ===================================================================== -->
+<!-- LEFT COLUMN (60% ~ 7 or 8 Cols)                                       -->
+<!-- ===================================================================== -->
+<div class="lg:col-span-7 xl:col-span-7 flex flex-col gap-6">
+<!-- CARD: Itemized Agreement & Statutory Cost Breakdown -->
+<div class="bg-surface-container-lowest border border-black/[0.06] rounded-2xl p-6 card-ambient-shadow">
+<!-- Table Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-black/[0.06]">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-xl" data-icon="calculate">calculate</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Itemized Agreement &amp; Statutory Cost Breakdown</h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+                All figures strictly calculated in accordance with Maharashtra Real Estate Regulatory Authority standards.
+              </p>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-auto">
+<span class="font-label-caps text-label-caps text-secondary px-2.5 py-1 bg-[#EDEFF2] rounded-md font-medium">REV 4.2 LIVE</span>
+</div>
+</div>
+<!-- Interactive Segment Filter Rails -->
+<div class="flex items-center gap-2 pt-4 pb-3 overflow-x-auto custom-scrollbar">
+<button class="px-3.5 py-1.5 rounded-lg bg-on-surface text-surface-container-lowest font-label-md text-label-md font-semibold whitespace-nowrap shadow-xs">
+              All Items (8)
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-[#EDEFF2] hover:bg-slate-200 text-secondary hover:text-on-surface font-label-md text-label-md font-medium whitespace-nowrap transition-colors">
+              Agreement Components (5)
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-[#EDEFF2] hover:bg-slate-200 text-secondary hover:text-on-surface font-label-md text-label-md font-medium whitespace-nowrap transition-colors">
+              Statutory Levies (3)
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-[#EDEFF2] hover:bg-slate-200 text-secondary hover:text-on-surface font-label-md text-label-md font-medium whitespace-nowrap transition-colors">
+              Ancillary Deposits (2)
+            </button>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto mt-2">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-black/[0.08] text-secondary font-label-caps text-label-caps">
+<th class="py-3 px-3">#</th>
+<th class="py-3 px-3">Cost Component Description</th>
+<th class="py-3 px-3">Computation Basis</th>
+<th class="py-3 px-3 text-right">Rate / Basis</th>
+<th class="py-3 px-3 text-right">Statutory Value (INR)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-black/[0.04] font-body-sm text-body-sm">
+<!-- Row 1: Base Agreement -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3 font-numeric-data text-xs text-secondary">01</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface">Base Agreement Value</div>
+<div class="text-xs text-secondary">RERA Certified Enclosed Carpet Area</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">1,450 sq.ft RERA Area</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">₹16,500 / sq.ft</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹2,39,25,000</td>
+</tr>
+<!-- Row 2: Floor Rise Charges -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3 font-numeric-data text-xs text-secondary">02</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface">Floor Rise Charges (FRC)</div>
+<div class="text-xs text-secondary">Calculated from 4th Floor onward (Fl 14)</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">10 premium levels</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">₹250 / sq.ft</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹3,62,500</td>
+</tr>
+<!-- Row 3: Premium PLC -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3">
+<span class="font-numeric-data text-xs text-secondary">03</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface flex items-center gap-1.5">
+<span>Premium PLC (Clubhouse &amp; Sea View)</span>
+<span class="material-symbols-outlined text-xs text-amber-600" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="text-xs text-secondary">Arabian Sea uninterrupted vista</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">Direct Sea View premium</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">₹450 / sq.ft</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹6,52,500</td>
+</tr>
+<!-- Row 4: Car Parking -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3 font-numeric-data text-xs text-secondary">04</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface">Car Parking Allocation</div>
+<div class="text-xs text-secondary">Podium P-2, Covered Parallel bays #118 &amp; #119</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">2 Dedicated Covered Bays</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">₹5,00,000 / bay</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹10,00,000</td>
+</tr>
+<!-- Row 5: Infrastructure Levy -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3 font-numeric-data text-xs text-secondary">05</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface">Infrastructure &amp; Clubhouse Development</div>
+<div class="text-xs text-secondary">Substation, EV charging grid, Spa access club</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">One-time capital infrastructure</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">Lump Sum</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹7,50,000</td>
+</tr>
+<!-- SUBTOTAL ROW: Agreement Value (A) -->
+<tr class="bg-primary/5 font-semibold border-y border-primary/20">
+<td class="py-3.5 px-3 font-title-md text-title-md text-on-surface" colspan="3">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Subtotal Agreement Value (A)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-right font-label-caps text-label-caps text-secondary whitespace-nowrap">Net Rate: ₹18,406/sq.ft</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-base font-bold text-primary whitespace-nowrap">₹2,66,90,000</td>
+</tr>
+<!-- Row 6: Stamp Duty -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3 font-numeric-data text-xs text-secondary">06</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface">Statutory Stamp Duty</div>
+<div class="text-xs text-secondary">Maharashtra IGR Mandate (6.00% on Part A)</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">Statutory Government Levy</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">6.00%</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹16,01,400</td>
+</tr>
+<!-- Row 7: Registration Fee -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3 font-numeric-data text-xs text-secondary">07</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface">Government Registration Fee</div>
+<div class="text-xs text-secondary">Statutory Cap applicable above ₹30L valuation</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">Fixed Official Fee</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">Fixed Cap</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹30,000</td>
+</tr>
+<!-- Row 8: GST -->
+<tr class="hover:bg-[#F9F9FF] transition-colors group">
+<td class="py-3.5 px-3 font-numeric-data text-xs text-secondary">08</td>
+<td class="py-3.5 px-3">
+<div class="font-semibold text-on-surface">Goods &amp; Services Tax (GST)</div>
+<div class="text-xs text-secondary">Effective 5.00% on Under-Construction Housing</div>
+</td>
+<td class="py-3.5 px-3 text-secondary">Central &amp; State GST</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-secondary whitespace-nowrap">5.00%</td>
+<td class="py-3.5 px-3 text-right font-numeric-data text-on-surface font-semibold whitespace-nowrap">₹13,34,500</td>
+</tr>
+<!-- SUBTOTAL ROW: Statutory Levies (B) -->
+<tr class="bg-surface-container-high/40 font-semibold border-y border-black/[0.08]">
+<td class="py-3 px-3 font-title-md text-title-md text-on-surface" colspan="3">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span>Total Statutory &amp; Taxes (B)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-label-caps text-label-caps text-secondary whitespace-nowrap">Total Tax Ratio: 11.11%</td>
+<td class="py-3 px-3 text-right font-numeric-data text-base font-bold text-on-surface whitespace-nowrap">₹29,65,900</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- GRAND TOTAL PACKAGE SUMMARY BANNER -->
+<div class="mt-6 rounded-2xl bg-inverse-surface text-inverse-on-surface p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-black/10 shadow-lg">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary-container text-white uppercase tracking-wider">Form 3 Summary</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim">Zero Hidden Escrow Line Items</span>
+</div>
+<div class="font-headline-md text-headline-md text-white font-bold tracking-tight whitespace-nowrap">
+                Grand Total Package (A + B): <span class="text-primary-fixed-dim">₹2,96,55,900</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim mt-0.5">
+                Zero hidden charges. Inclusive of 2 covered car parks and all statutory fees.
+              </p>
+</div>
+<div class="shrink-0 flex items-center gap-3">
+<button class="px-4 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface hover:bg-slate-100 font-label-md text-label-md font-semibold transition-all shadow-xs flex items-center gap-2 active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="lock_clock">lock_clock</span>
+<span>Lock Allotment</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ADDITIONAL METRICS / AUDIT TRAIL CARD -->
+<div class="bg-surface-container-lowest border border-black/[0.06] rounded-2xl p-5 card-ambient-shadow">
+<div class="flex items-center justify-between pb-3 border-b border-black/[0.06]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="policy">policy</span>
+<span class="font-title-md text-title-md font-semibold">Statutory Compliance &amp; Legal Certification</span>
+</div>
+<span class="font-label-caps text-label-caps text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              AUDIT SIGN-OFF COMPLETE
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-xs">
+<div class="p-3 bg-[#F4F5F7] rounded-xl border border-black/[0.04]">
+<div class="font-label-caps text-label-caps text-secondary mb-1">ARCHITECT CERTIFICATE</div>
+<div class="font-semibold text-on-surface">Ar. Rohinton Mistry</div>
+<div class="text-secondary mt-0.5">Council of Architecture: CA/98/1209</div>
+</div>
+<div class="p-3 bg-[#F4F5F7] rounded-xl border border-black/[0.04]">
+<div class="font-label-caps text-label-caps text-secondary mb-1">STRUCTURAL ENGINEER</div>
+<div class="font-semibold text-on-surface">Sterling Eng Consultancy</div>
+<div class="text-secondary mt-0.5">Zone III Seismic Certified</div>
+</div>
+<div class="p-3 bg-[#F4F5F7] rounded-xl border border-black/[0.04]">
+<div class="font-label-caps text-label-caps text-secondary mb-1">CHARTERED ACCOUNTANT</div>
+<div class="font-semibold text-on-surface">Kapadia &amp; Associates LLP</div>
+<div class="text-secondary mt-0.5">Form 3 Escrow Certificate Issued</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- RIGHT COLUMN (40% ~ 5 Cols)                                           -->
+<!-- ===================================================================== -->
+<div class="lg:col-span-5 xl:col-span-5 flex flex-col gap-6">
+<!-- CARD: Payment Schedule Calculator & CLP Milestones -->
+<div class="bg-surface-container-lowest border border-black/[0.06] rounded-2xl p-6 card-ambient-shadow">
+<div class="flex items-center justify-between pb-4 border-b border-black/[0.06]">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-xl" data-icon="timeline">timeline</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Construction-Linked (CLP) Schedule</h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">RERA statutory payment stages aligned with construction stage certs.</p>
+</div>
+<button class="p-2 text-secondary hover:text-on-surface hover:bg-[#F4F5F7] rounded-lg transition-colors" title="Filter milestones">
+<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- Progress Bar Component -->
+<div class="pt-5 pb-4">
+<div class="flex justify-between items-center text-xs font-semibold mb-2">
+<span class="text-emerald-700 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>Demanded &amp; Realized: 30% (₹88.96 L)</span>
+</span>
+<span class="text-secondary">Upcoming: 70% (₹2.07 Cr)</span>
+</div>
+<div class="w-full h-3 bg-[#EDEFF2] rounded-full overflow-hidden flex shadow-inner">
+<div class="bg-emerald-500 h-full rounded-l-full" style="width: 30%"></div>
+<div class="bg-amber-400 h-full" style="width: 20%"></div>
+<div class="bg-slate-300 h-full" style="width: 50%"></div>
+</div>
+<div class="flex items-center justify-between mt-2 text-[11px] text-secondary">
+<span>Token &amp; Booking Confirmed</span>
+<span>10 Slabs Complete</span>
+<span>Possession Q4 2026</span>
+</div>
+</div>
+<!-- Milestones Timeline List -->
+<div class="space-y-3 pt-2">
+<!-- Milestone 1: Cleared -->
+<div class="p-3.5 rounded-xl border border-emerald-100 bg-emerald-50/40 flex items-start justify-between gap-3 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center font-numeric-data text-xs shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">10% on Booking Token &amp; Application</div>
+<div class="text-xs text-secondary mt-0.5">Paid via RTGS ICICI Escrow • 14 Jan 2025</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-numeric-data text-sm font-bold text-on-surface whitespace-nowrap">₹29,65,590</div>
+<span class="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 uppercase">Paid / Cleared</span>
+</div>
+</div>
+<!-- Milestone 2: Due Immediate -->
+<div class="p-3.5 rounded-xl border border-amber-300 bg-amber-50/50 flex items-start justify-between gap-3 shadow-xs">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center font-numeric-data text-xs shrink-0 mt-0.5">
+                  2
+                </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">20% on Registered Agreement for Sale</div>
+<div class="text-xs text-secondary mt-0.5">Due upon draft approval • Due within 7 days</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-numeric-data text-sm font-bold text-on-surface whitespace-nowrap">₹59,31,180</div>
+<span class="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-200 text-amber-900 uppercase">Due / Immediate</span>
+</div>
+</div>
+<!-- Milestone 3: Plinth Level -->
+<div class="p-3.5 rounded-xl border border-black/[0.06] bg-[#F9F9FF] flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-slate-200 text-secondary flex items-center justify-center font-numeric-data text-xs shrink-0 mt-0.5 font-semibold">
+                  3
+                </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">10% on Completion of Plinth Level</div>
+<div class="text-xs text-secondary mt-0.5">Architect Certificate Form 1 Verification</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-numeric-data text-sm font-bold text-on-surface whitespace-nowrap">₹29,65,590</div>
+<span class="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-medium bg-slate-200 text-slate-700 uppercase">Upcoming</span>
+</div>
+</div>
+<!-- Milestone 4: Slabs -->
+<div class="p-3.5 rounded-xl border border-black/[0.06] bg-[#F9F9FF] flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-slate-200 text-secondary flex items-center justify-center font-numeric-data text-xs shrink-0 mt-0.5 font-semibold">
+                  4
+                </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">50% on Slab Milestones</div>
+<div class="text-xs text-secondary mt-0.5">10 Slabs @ 5% each = ₹14,82,795 per slab</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-numeric-data text-sm font-bold text-on-surface whitespace-nowrap">₹1,48,27,950</div>
+<span class="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-medium bg-blue-100 text-blue-800 uppercase">In Progress</span>
+</div>
+</div>
+<!-- Milestone 5: Handover -->
+<div class="p-3.5 rounded-xl border border-black/[0.06] bg-[#F9F9FF] flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-slate-200 text-secondary flex items-center justify-center font-numeric-data text-xs shrink-0 mt-0.5 font-semibold">
+                  5
+                </div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">10% on Handover &amp; Possession</div>
+<div class="text-xs text-secondary mt-0.5">Occupancy Certificate (OC) handed over</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-numeric-data text-sm font-bold text-on-surface whitespace-nowrap">₹29,65,590</div>
+<span class="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-medium bg-purple-100 text-purple-800 uppercase">Final Tranche</span>
+</div>
+</div>
+</div>
+<!-- Total CLP Validation Footer -->
+<div class="mt-4 pt-3 border-t border-black/[0.06] flex items-center justify-between text-xs font-semibold">
+<span class="text-secondary font-label-caps">Total Tranche Validation</span>
+<span class="font-numeric-data text-sm text-on-surface font-bold">100.00% = ₹2,96,55,900</span>
+</div>
+</div>
+<!-- CARD: Unit Specifications & Financial Guarantee Card -->
+<div class="bg-surface-container-lowest border border-black/[0.06] rounded-2xl p-6 card-ambient-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 border-b border-black/[0.06]">
+<span class="font-label-caps text-label-caps text-secondary tracking-wider">SECURE ESCROW ALLOTMENT NODE</span>
+<span class="flex items-center gap-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Active 70% Escrow Rule</span>
+</span>
+</div>
+<!-- Customer Allottee Header -->
+<div class="py-3 flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-[#EDEFF2] flex items-center justify-center text-on-surface font-bold font-numeric-data text-base">
+                KM
+              </div>
+<div class="overflow-hidden">
+<div class="font-label-caps text-[10px] text-secondary">REGISTERED BUYER ALLOTTEE</div>
+<div class="font-title-md text-title-md font-semibold text-on-surface truncate">Kabir &amp; Rhea Mehta</div>
+<div class="font-body-sm text-xs text-secondary truncate">HNI Private Wealth Portfolio • Family Trust Folio</div>
+</div>
+</div>
+<!-- Bank & Lock Details Box -->
+<div class="space-y-2.5 mt-2 pt-2 border-t border-black/[0.06]">
+<div class="flex items-center justify-between text-xs py-1">
+<span class="text-secondary">Designated Escrow Node:</span>
+<span class="font-semibold text-on-surface text-right">ICICI Bank Luxury RERA Escrow</span>
+</div>
+<div class="flex items-center justify-between text-xs py-1">
+<span class="text-secondary">RERA Dedicated Account:</span>
+<span class="font-numeric-data text-on-surface font-semibold text-right">A/C #4092-019-2819</span>
+</div>
+<div class="flex items-center justify-between text-xs py-1">
+<span class="text-secondary">IFSC Bank Routing Code:</span>
+<span class="font-numeric-data text-secondary font-medium text-right">ICIC0000049 (Nariman Pt)</span>
+</div>
+<!-- Freeze Timer Alert Inset -->
+<div class="mt-3 p-3 rounded-xl bg-orange-50/70 border border-orange-200/60 flex items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="alarm">alarm</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-orange-950">Lock Expiry Window</div>
+<div class="text-[11px] text-orange-800">Unit pricing protected against general revision</div>
+</div>
+</div>
+<div class="font-numeric-data text-sm font-bold text-primary-container whitespace-nowrap bg-white px-2.5 py-1 rounded-lg border border-orange-200 shadow-xs">
+                  47h 58m
+                </div>
+</div>
+</div>
+</div>
+<!-- Bottom Micro Action -->
+<div class="mt-5 pt-4 border-t border-black/[0.06] flex items-center justify-between">
+<a class="font-label-md text-label-md text-primary hover:underline font-semibold flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+<span>Download Form 3 Statutory Annexure</span>
+</a>
+<span class="font-numeric-data text-xs text-secondary">Doc ID: #RERA-MUM-8492</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- 5. BOTTOM PERSISTENT ACTION DOCK                                         -->
+<!-- ========================================================================= -->
+<div class="mt-8 rounded-2xl bg-surface-container-lowest border border-black/[0.06] p-4 card-ambient-shadow flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Statutory Audit Checksum Validated</div>
+<div class="font-body-sm text-xs text-secondary">SHA-256 Verified Quotation Ledger Hash: 8f9b2d01c... • Digitally counter-signed by Lead Partner</div>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="px-4 py-2 rounded-xl border border-black/10 hover:bg-[#EDEFF2] text-on-surface font-label-md text-label-md font-medium transition-colors">
+          Email to Allottee
+        </button>
+<button class="px-5 py-2.5 rounded-xl bg-inverse-surface text-white hover:bg-black font-label-md text-label-md font-semibold transition-all active:scale-98 shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-base" data-icon="print">print</span>
+<span>Print Allotment Letter</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Interactive JavaScript for micro-interactions -->
+<script>
+    // Tab switching micro-interactions
+    document.querySelectorAll('.font-label-md.text-label-md').forEach(item => {
+      item.addEventListener('click', (e) => {
+        // Subtle ripple feedback
+      });
+    });
+
+    // Keyboard shortcut handler for Search ⌘K
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.querySelector('input[placeholder*="Search"]');
+        if (searchInput) searchInput.focus();
+      }
+    });
+  </script>
+</body></html>

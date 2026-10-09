@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — Inventory Matrix &amp; Architectural Stacking Plan</title>
+<!-- Google Fonts: Outfit & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#3d0600",
+            "error-container": "#ffdad6",
+            "primary-container": "#ff5b37",
+            "on-tertiary-fixed-variant": "#005049",
+            "inverse-on-surface": "#ecf0ff",
+            "on-primary-fixed-variant": "#8c1900",
+            "on-surface-variant": "#5b403b",
+            "surface-container": "#e8eeff",
+            "on-secondary-fixed": "#1a1b21",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#00201d",
+            "on-secondary": "#ffffff",
+            "on-background": "#111c2d",
+            "surface-dim": "#d0daf2",
+            "background": "#f9f9ff",
+            "surface-container-high": "#dfe8ff",
+            "tertiary-fixed": "#89f5e7",
+            "surface-variant": "#d9e3fb",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#5a0d00",
+            "secondary": "#5d5e64",
+            "primary-fixed-dim": "#ffb4a3",
+            "surface": "#f9f9ff",
+            "inverse-primary": "#ffb4a3",
+            "secondary-fixed-dim": "#c6c6cd",
+            "surface-container-low": "#f0f3ff",
+            "on-error": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "outline": "#8f7069",
+            "on-secondary-fixed-variant": "#45474c",
+            "on-tertiary-container": "#00322d",
+            "inverse-surface": "#273143",
+            "outline-variant": "#e3beb6",
+            "tertiary": "#006a61",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#e2e2e9",
+            "tertiary-container": "#2ca397",
+            "surface-tint": "#b52704",
+            "surface-container-highest": "#d9e3fb",
+            "on-surface": "#111c2d",
+            "primary-fixed": "#ffdad2",
+            "primary": "#b52704",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#dfdfe6",
+            "on-secondary-container": "#616269"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "2.5rem",
+            "margin": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.25rem",
+            "gutter": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter-lg": "1.75rem"
+          },
+          "fontFamily": {
+            "display-hero": [
+              "Outfit"
+            ],
+            "display-hero-mobile": [
+              "Outfit"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "headline-md": [
+              "Outfit"
+            ],
+            "headline-sm": [
+              "Outfit"
+            ],
+            "label-caps": [
+              "Inter"
+            ],
+            "headline-lg-mobile": [
+              "Outfit"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "numeric-data": [
+              "Outfit"
+            ],
+            "headline-lg": [
+              "Outfit"
+            ],
+            "title-md": [
+              "Outfit"
+            ],
+            "label-lg": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "label-md": [
+              "Inter"
+            ]
+          },
+          "fontSize": {
+            "display-hero": [
+              "48px",
+              {
+                "lineHeight": "56px",
+                "letterSpacing": "-0.03em",
+                "fontWeight": "600"
+              }
+            ],
+            "display-hero-mobile": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "-0.005em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "24px",
+              {
+                "lineHeight": "32px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-sm": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "500"
+              }
+            ],
+            "label-caps": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.05em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg-mobile": [
+              "26px",
+              {
+                "lineHeight": "34px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "numeric-data": [
+              "18px",
+              {
+                "lineHeight": "22px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "title-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "-0.005em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-lg": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.015em",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.02);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.12);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.22);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-low text-on-surface antialiased font-body-md text-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary">
+<!-- ========================================================================= -->
+<!-- SIDE NAVIGATION (Shared Component: SideNavBar)                            -->
+<!-- Active Tab: "Properties"                                                  -->
+<!-- ========================================================================= -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant/30 dark:border-outline-variant/10 flat no shadows">
+<div class="flex flex-col justify-between h-full p-4">
+<!-- Upper Section -->
+<div class="space-y-6">
+<!-- Brand Monogram & Title -->
+<div class="flex items-center gap-3 px-2 pt-1">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-semibold shadow-sm flex-shrink-0">
+            S
+          </div>
+<div class="hidden xl:flex flex-col overflow-hidden">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface font-semibold leading-tight tracking-tight truncate">Simplesphere OS</span>
+<span class="font-label-caps text-label-caps text-secondary tracking-wider uppercase">Private Cockpit</span>
+</div>
+</div>
+<!-- Primary CTA: Add Asset -->
+<button class="w-full h-11 bg-on-secondary-fixed text-on-secondary hover:bg-black rounded-xl px-3 font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-all active:scale-95 duration-150 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="hidden xl:inline">Add Asset</span>
+</button>
+<!-- Navigation Links -->
+<nav class="space-y-1">
+<!-- Cockpit -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="hidden xl:inline font-label-md text-label-md">Cockpit</span>
+</a>
+<!-- Properties (ACTIVE TAB per destination logic) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all scale-95 duration-150 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span class="hidden xl:inline font-label-md text-label-md">Properties</span>
+</a>
+<!-- Pipelines -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">filter_alt</span>
+<span class="hidden xl:inline font-label-md text-label-md">Pipelines</span>
+</a>
+<!-- Ledger -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="hidden xl:inline font-label-md text-label-md">Ledger</span>
+</a>
+<!-- Clients -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="hidden xl:inline font-label-md text-label-md">Clients</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="hidden xl:inline font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer Section of SideNav -->
+<div class="pt-4 border-t border-outline-variant/20 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[19px]">help_outline</span>
+<span class="hidden xl:inline font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[19px]">terminal</span>
+<span class="hidden xl:inline font-label-md text-label-md">Terminal</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- TOP NAVIGATION (Shared Component: TopNavBar)                              -->
+<!-- ========================================================================= -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/10 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<div class="flex items-center justify-between px-6 h-full w-full">
+<!-- Search Bar & Quick Context on the Left -->
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full h-10 pl-10 pr-12 rounded-full bg-surface-container-low text-on-surface border border-outline-variant/30 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-body-sm font-body-sm outline-none transition-all placeholder:text-secondary/70" placeholder="Search unit number, buyer portfolio, lock status..." type="text"/>
+<kbd class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-semibold text-secondary bg-surface-container-lowest border border-outline-variant/40 rounded shadow-xs">⌘K</kbd>
+</div>
+<!-- Navigation Links Cluster in Top Bar -->
+<nav class="hidden 2xl:flex items-center gap-6 pl-4 border-l border-outline-variant/30">
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary pb-1 text-body-sm font-body-sm" href="#">Portfolio</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface text-body-sm font-body-sm transition-colors" href="#">Dealflow</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface text-body-sm font-body-sm transition-colors" href="#">Escrow</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-on-surface text-body-sm font-body-sm transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<!-- Trailing Action Buttons & Executive Profile -->
+<div class="flex items-center gap-3">
+<!-- Secondary Action: Export Ledger -->
+<button class="hidden lg:flex items-center gap-1.5 h-9 px-3.5 rounded-xl border border-outline-variant/40 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold transition-all shadow-xs active:scale-98">
+<span class="material-symbols-outlined text-[17px]">download</span>
+<span>Export Ledger</span>
+</button>
+<!-- Primary Action: Create Deal -->
+<button class="flex items-center gap-1.5 h-9 px-4 rounded-xl bg-primary-container text-on-primary hover:bg-[#FF6B4A] font-label-md text-label-md font-semibold transition-all shadow-sm active:scale-98">
+<span class="material-symbols-outlined text-[17px]">add</span>
+<span>Create Deal</span>
+</button>
+<!-- Trailing Utility Icons -->
+<div class="flex items-center gap-1 pl-2 border-l border-outline-variant/30">
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="w-2 h-2 rounded-full bg-primary-container absolute top-2 right-2 ring-2 ring-white"></span>
+</button>
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Executive Portrait Pill -->
+<div class="flex items-center gap-2.5 pl-3 border-l border-outline-variant/30">
+<img class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20 shadow-xs" data-alt="A refined, modern executive headshot portrait of Vikram Malhotra, an ultra-luxury real estate director wearing a tailored midnight navy suit in a softly lit, architecturally styled Mumbai executive lounge with light-mode ivory highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6AYdzJYqZuatxkcKrd1s4yWyx5w8Th3lg1bre-EARdvj2IcXLoGsBqX04aMsrhnej9bamWGBv4tP0zHIGkkPsZbzyxWsSWX7UY2xV7qsom20MeRAPls1m0Qi7M1i3G-I4fxFxFspBgifIqGjfpWyP5mgvBrrljKD1JfzAKuJaAx76F-9F9HyTLboz9kDuig15dThjmnEw11XmGCnAJWfTxfoiQTZ4oMBpw7Ab7vks8RYp8Zwuo1ORu3_z8DusgCG-wKSIQ_rb20k"/>
+<div class="hidden xl:flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Vikram Malhotra</span>
+<span class="font-label-caps text-[10px] text-secondary leading-none">Managing Director</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN COCKPIT CANVAS                                                      -->
+<!-- ========================================================================= -->
+<main class="ml-20 xl:ml-64 mt-16 flex-1 min-h-[calc(100vh-4rem)] p-6 lg:p-8 space-y-6">
+<!-- 1. CONTEXT ROW & SUB-HEADER -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-1">
+<div>
+<div class="flex flex-wrap items-center gap-2.5 mb-1.5">
+<!-- Property Selector Pill -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest rounded-full border border-outline-variant/30 shadow-xs">
+<span class="material-symbols-outlined text-primary-container text-[17px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface">The Grand Solitaire (Worli, Mumbai)</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+</div>
+<!-- RERA Badge -->
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-secondary text-label-caps font-label-caps uppercase border border-outline-variant/20">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified_user</span>
+<span>RERA: P51900028471</span>
+</div>
+<!-- Base Rate Pill -->
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/60 font-numeric-data text-[12px] font-semibold">
+<span>Base: ₹28,500/sqft</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          Live Architectural Stacking Matrix &amp; Staging Inventory Control • Phase 1 Oceanfront Wing
+        </p>
+</div>
+<!-- Actions Cluster -->
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-1.5 h-10 px-4 rounded-xl border border-outline-variant/40 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold transition-all shadow-xs active:scale-98">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync</span>
+<span>Refresh Grid</span>
+</button>
+<button class="flex items-center gap-1.5 h-10 px-5 rounded-xl bg-primary-container text-on-primary hover:bg-[#FF6B4A] font-label-md text-label-md font-semibold transition-all shadow-sm active:scale-98">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ Fast Inbound Lead</span>
+</button>
+</div>
+</div>
+<!-- 2. CAPSULE FILTER TRACK -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 custom-scrollbar">
+<button class="px-4 py-2 rounded-full font-label-md text-label-md font-semibold bg-on-secondary-fixed text-white shadow-xs whitespace-nowrap transition-transform active:scale-95">
+        All Units (32)
+      </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-on-surface hover:bg-surface-container-low border border-outline-variant/30 shadow-xs whitespace-nowrap transition-all">
+        Tower A (Sea Crest)
+      </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-on-surface hover:bg-surface-container-low border border-outline-variant/30 shadow-xs whitespace-nowrap transition-all">
+        Tower B (Skyline)
+      </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-emerald-700 hover:bg-emerald-50/50 border border-emerald-200/50 shadow-xs whitespace-nowrap transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Available Only (27)
+      </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-amber-700 hover:bg-amber-50/50 border border-amber-200/50 shadow-xs whitespace-nowrap transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+        Held (15m Lock) (2)
+      </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-blue-700 hover:bg-blue-50/50 border border-blue-200/50 shadow-xs whitespace-nowrap transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+        Booked (3)
+      </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container-lowest text-secondary hover:bg-surface-container-low border border-outline-variant/30 shadow-xs whitespace-nowrap transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Sold (2)
+      </button>
+</div>
+<!-- 3. SUMMARY STAT ROW (Finexy 4-Tile Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Tile 1: Vibrant Solid Coral (#FF5B37 with White Text) -->
+<div class="rounded-[20px] bg-primary-container p-5 text-white shadow-[0_8px_24px_-4px_rgba(255,91,55,0.32)] flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-white/10 blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-white/90">Available for Sale</span>
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary-container shadow-xs">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">apartment</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-display-hero text-[36px] leading-tight font-headline-lg font-semibold tracking-tight">27 Units</div>
+<div class="flex items-center gap-1.5 mt-1 text-white/90 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">trending_up</span>
+<span>84.4% Available</span>
+<span class="text-white/60 text-[12px]">• Live Staged</span>
+</div>
+</div>
+</div>
+<!-- Tile 2: Crisp White Card - Total Inventory -->
+<div class="rounded-[20px] bg-white border border-outline-variant/30 p-5 shadow-[0_4px_24px_-4px_rgba(17,19,24,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Total Inventory</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight">32 Units</div>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] text-primary-container">apartment</span>
+<span>Across 2 Towers / 8 Floors</span>
+</div>
+</div>
+</div>
+<!-- Tile 3: Crisp White Card - On Hold / Locked -->
+<div class="rounded-[20px] bg-white border border-outline-variant/30 p-5 shadow-[0_4px_24px_-4px_rgba(17,19,24,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">On Hold / Locked</span>
+<div class="w-10 h-10 rounded-full bg-amber-50 border border-amber-200/60 flex items-center justify-center text-amber-700">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight">2 Units</div>
+<div class="flex items-center gap-1.5 mt-1 text-amber-700 font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+<span>Active 15-min reservation locks</span>
+</div>
+</div>
+</div>
+<!-- Tile 4: Crisp White Card - Booked & Sold -->
+<div class="rounded-[20px] bg-white border border-outline-variant/30 p-5 shadow-[0_4px_24px_-4px_rgba(17,19,24,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Booked &amp; Sold</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight">5 Units</div>
+<div class="flex items-center gap-1.5 mt-1 text-emerald-700 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">account_balance</span>
+<span class="font-semibold font-numeric-data">₹31.2 Cr Realized Value</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. DUAL-PANE COCKPIT WORKSPACE (Stacking Matrix Grid + Inspection Drawer) -->
+<div class="grid grid-cols-1 2xl:grid-cols-12 gap-6 items-start">
+<!-- LEFT 8.5 COLUMNS: ARCHITECTURAL STACKING PLAN -->
+<div class="2xl:col-span-9 rounded-[20px] bg-white border border-outline-variant/30 shadow-[0_4px_24px_-4px_rgba(17,19,24,0.04)] p-6 space-y-6">
+<!-- Header & Segmented Switcher & Legend -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-outline-variant/20">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[22px]">corporate_fare</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Tower A — Sea Crest (Floors 8 to 1)</h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">West-facing Arabian Sea front elevation • High-yield floor rises +₹150/sqft per tier</p>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<!-- View Switcher Segmented Control -->
+<div class="inline-flex bg-surface-container-low p-1 rounded-xl border border-outline-variant/30">
+<button class="px-3 py-1.5 rounded-lg text-body-sm font-body-sm font-semibold bg-white text-on-surface shadow-xs">
+                Stacking Grid
+              </button>
+<button class="px-3 py-1.5 rounded-lg text-body-sm font-body-sm font-medium text-secondary hover:text-on-surface transition-colors">
+                Tabular List
+              </button>
+<button class="px-3 py-1.5 rounded-lg text-body-sm font-body-sm font-medium text-secondary hover:text-on-surface transition-colors">
+                Elevation View
+              </button>
+</div>
+<!-- Stacking Legend -->
+<div class="hidden lg:flex items-center gap-3 pl-3 border-l border-outline-variant/30 text-label-caps font-label-caps">
+<span class="flex items-center gap-1.5 text-emerald-700">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Available
+              </span>
+<span class="flex items-center gap-1.5 text-amber-700">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Held (15m Lock)
+              </span>
+<span class="flex items-center gap-1.5 text-blue-700">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Booked
+              </span>
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Sold
+              </span>
+</div>
+</div>
+</div>
+<!-- STACKING PLAN ROWS (DESCENDING FROM FLOOR 8 PENTHOUSE TO FLOOR 6 PREVIEW) -->
+<div class="space-y-4">
+<!-- ==================== FLOOR 08 ROW (PENTHOUSE TIER) ==================== -->
+<div class="flex flex-col xl:flex-row items-stretch gap-3 bg-surface-container-low/40 p-3 rounded-2xl border border-outline-variant/20 hover:border-outline-variant/40 transition-colors">
+<!-- Floor Indicator Badge -->
+<div class="w-full xl:w-28 flex-shrink-0 bg-white rounded-xl p-3 border border-outline-variant/30 flex flex-row xl:flex-col justify-between items-center xl:items-start shadow-xs">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface block">Floor 08</span>
+<span class="font-label-caps text-label-caps text-primary-container font-semibold uppercase">Penthouse Tier</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/50 text-[11px] font-semibold">
+                3/4 Avail
+              </span>
+</div>
+<!-- 4 Unit Cards in Floor Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
+<!-- Unit A-801: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-801</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">4BHK Sky Penthouse</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>2,150 sqft</span>
+<span class="text-primary truncate">Arabian Sea View</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹9.57 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+<!-- Unit A-802: SELECTED (Held 11m 40s Left) -->
+<div class="bg-white rounded-xl p-3.5 border-2 border-primary-container shadow-md flex flex-col justify-between relative ring-2 ring-primary-container/20 group">
+<span class="absolute -top-2.5 right-4 bg-primary-container text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-xs">
+                  Inspecting Now
+                </span>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-802</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span> Held (11m 40s)
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">4BHK Sea Suite</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>2,150 sqft</span>
+<span class="text-primary truncate">Bandra-Worli Sealink</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-primary-container mb-2">₹9.62 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-primary-container text-white rounded-lg transition-colors">Escrow</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">3D View</button>
+</div>
+</div>
+</div>
+<!-- Unit A-803: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-803</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">3.5BHK Crest Panorama</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,850 sqft</span>
+<span class="text-primary truncate">Arabian Sea West</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹8.14 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+<!-- Unit A-804: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-804</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">3.5BHK Crest Panorama</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,850 sqft</span>
+<span class="text-primary truncate">Podium &amp; Ocean</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹8.10 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== FLOOR 07 ROW (EXECUTIVE TIER) ==================== -->
+<div class="flex flex-col xl:flex-row items-stretch gap-3 bg-surface-container-low/40 p-3 rounded-2xl border border-outline-variant/20 hover:border-outline-variant/40 transition-colors">
+<!-- Floor Indicator Badge -->
+<div class="w-full xl:w-28 flex-shrink-0 bg-white rounded-xl p-3 border border-outline-variant/30 flex flex-row xl:flex-col justify-between items-center xl:items-start shadow-xs">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface block">Floor 07</span>
+<span class="font-label-caps text-label-caps text-secondary font-semibold uppercase">Executive Tier</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/50 text-[11px] font-semibold">
+                3/4 Avail
+              </span>
+</div>
+<!-- 4 Unit Cards in Floor Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
+<!-- Unit A-701: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-701</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">3BHK Sea Suite</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,780 sqft</span>
+<span class="text-primary truncate">Arabian Sea View</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹6.82 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+<!-- Unit A-702: Booked -->
+<div class="bg-white rounded-xl p-3.5 border border-blue-200 bg-blue-50/20 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-702</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Booked
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">3BHK Sea Suite</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,780 sqft</span>
+<span class="text-secondary truncate">Buyer: Sharafat Trust</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-secondary mb-2">₹6.82 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low text-secondary rounded-lg">View Escrow</button>
+<button class="px-2 py-1 bg-surface-container-low text-secondary rounded-lg">Allotment</button>
+</div>
+</div>
+</div>
+<!-- Unit A-703: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-703</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">3BHK Sky View</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,620 sqft</span>
+<span class="text-primary truncate">Worli Horizon</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹6.28 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+<!-- Unit A-704: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-704</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">3BHK Sky View</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,620 sqft</span>
+<span class="text-primary truncate">Eastern Sea Bay</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹6.25 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== FLOOR 06 ROW (PRESTIGE TIER) ==================== -->
+<div class="flex flex-col xl:flex-row items-stretch gap-3 bg-surface-container-low/40 p-3 rounded-2xl border border-outline-variant/20 hover:border-outline-variant/40 transition-colors">
+<!-- Floor Indicator Badge -->
+<div class="w-full xl:w-28 flex-shrink-0 bg-white rounded-xl p-3 border border-outline-variant/30 flex flex-row xl:flex-col justify-between items-center xl:items-start shadow-xs">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface block">Floor 06</span>
+<span class="font-label-caps text-label-caps text-secondary font-semibold uppercase">Prestige Tier</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/50 text-[11px] font-semibold">
+                3/4 Avail
+              </span>
+</div>
+<!-- 4 Unit Cards in Floor Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
+<!-- Unit A-601: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-601</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">3BHK Oceanfront</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,550 sqft</span>
+<span class="text-primary truncate">Sealink Frontage</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹5.87 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+<!-- Unit A-602: Sold -->
+<div class="bg-surface-container-lowest/60 rounded-xl p-3.5 border border-outline-variant/20 bg-gray-50/60 shadow-xs flex flex-col justify-between opacity-85">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-secondary tracking-tight">A-602</span>
+<span class="px-2 py-0.5 rounded-full bg-gray-100 text-secondary border border-gray-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Sold
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-secondary truncate">3BHK Oceanfront</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary/70 mt-1">
+<span>1,550 sqft</span>
+<span>Deed Registered</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/10">
+<div class="font-numeric-data text-[16px] font-bold text-secondary mb-2">₹5.87 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<span class="text-secondary text-[11px] italic">Fully Settled</span>
+<button class="px-2 py-1 bg-surface-container text-on-surface rounded-lg">Audit Log</button>
+</div>
+</div>
+</div>
+<!-- Unit A-603: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-603</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">2.5BHK Urban Bay</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,420 sqft</span>
+<span class="text-primary truncate">Worli Sea Face</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹5.14 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+<!-- Unit A-604: Available -->
+<div class="bg-white rounded-xl p-3.5 border border-outline-variant/30 shadow-xs hover:border-primary-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-headline-sm text-[17px] font-bold text-on-surface tracking-tight">A-604</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Available
+                    </span>
+</div>
+<div class="font-title-md text-[13px] font-semibold text-on-surface truncate">2.5BHK Urban Bay</div>
+<div class="flex items-center justify-between text-body-sm text-[12px] text-secondary mt-1">
+<span>1,420 sqft</span>
+<span class="text-primary truncate">Gardens &amp; Bay</span>
+</div>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20">
+<div class="font-numeric-data text-[16px] font-bold text-on-surface mb-2">₹5.12 Cr</div>
+<div class="flex items-center justify-between gap-1 text-[11px] font-semibold">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Cost Sheet</button>
+<button class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg transition-colors">Hold Unit</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg transition-colors">Floor Plan</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Micro Expansion Strip for Floors 5 down to 1 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-dashed border-outline-variant/40 flex items-center justify-between text-body-sm text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">unfold_more</span>
+<span>Floors 05 to 01 (16 additional units staged with Podium Garden frontage)</span>
+</div>
+<button class="text-primary-container hover:underline font-semibold font-label-md text-label-md">
+              Expand All 8 Floors
+            </button>
+</div>
+</div>
+</div>
+<!-- RIGHT 3.5 COLUMNS: INSPECTION DRAWER & QUICK DOSSIER -->
+<div class="2xl:col-span-3 space-y-4">
+<!-- Selected Unit Preview Card -->
+<div class="rounded-[20px] bg-white border border-outline-variant/30 shadow-[0_4px_24px_-4px_rgba(17,19,24,0.04)] p-5 space-y-4">
+<!-- Top Card Eyebrow & Status -->
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Quick Unit Dossier</span>
+<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 font-label-md text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span> Lock: 11m 40s
+            </span>
+</div>
+<!-- Unit Media Visual Thumbnail -->
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] border border-outline-variant/20 group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A grand interior architectural render of a luxury sea-facing living room in Mumbai Worli with floor-to-ceiling glass windows framing the Bandra-Worli Sea Link at golden hour, curated with Italian marble, minimal modernist furniture, and warm luminous light-mode styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSfWwOdU6RuCKWBqUu2gHw0-TY9KcYDNOw-qf2sX-vCLNxAA--dM0MKZo_Svwo_kmYCN3fx1CwKNmpX2v3bzeIUEUMsyo87HhcvOsjjXfzcrFuxQcMe2CmNsdtl_p2QERLQNsDjy8NPfXVgRK-h2Tf3E0mcN-TTpBtrEETr0wC94W9VFaycW-DTPmVZLYtFDZecROzUdQD3lrWJaWIjEQz2PiZHK0qSvlnl_I6m9r8LzCseBzd8ynBd6lnDUtMqrCcWWLnHG4DG98"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-3">
+<div class="text-white">
+<div class="font-headline-sm text-headline-sm font-bold leading-tight">Unit A-802</div>
+<div class="text-[12px] text-white/90 font-medium">Floor 8 • 4BHK Sea Suite</div>
+</div>
+</div>
+</div>
+<!-- Price & Valuation Delta Cluster -->
+<div class="bg-surface-container-low p-3.5 rounded-xl border border-outline-variant/20 flex items-center justify-between">
+<div>
+<span class="font-label-caps text-[10px] text-secondary uppercase block">Gross All-Inclusive Cost</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">₹9,62,40,000</span>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-[10px] text-emerald-800 uppercase block">Yield Index</span>
+<span class="font-numeric-data text-[13px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">+4.8% Est.</span>
+</div>
+</div>
+<!-- Detailed Carpet & Financial Breakup Table -->
+<div class="space-y-2.5 pt-1 text-body-sm">
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/15 text-secondary">
+<span>Carpet Area (RERA)</span>
+<span class="font-semibold text-on-surface font-numeric-data">2,150 sqft (199.7 m²)</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/15 text-secondary">
+<span>Balcony Deck</span>
+<span class="font-semibold text-on-surface font-numeric-data">320 sqft Deck</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/15 text-secondary">
+<span>Base Rate Value</span>
+<span class="font-semibold text-on-surface font-numeric-data">₹28,500 / sqft</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/15 text-secondary">
+<span>Floor Rise Premium</span>
+<span class="font-semibold text-on-surface font-numeric-data">₹1,200 / sqft (Tier 8)</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/15 text-secondary">
+<span>Infrastructure &amp; Club Levy</span>
+<span class="font-semibold text-on-surface font-numeric-data">₹18,50,000</span>
+</div>
+<div class="flex justify-between items-center py-1 text-secondary">
+<span>Covered Car Bays</span>
+<span class="font-semibold text-on-surface">3 Dedicated Basements</span>
+</div>
+</div>
+<!-- Lead Contact Snapshot -->
+<div class="p-3 bg-amber-50/60 rounded-xl border border-amber-200/80 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-amber-200 text-amber-900 flex items-center justify-center font-bold text-label-md flex-shrink-0">
+              RN
+            </div>
+<div class="overflow-hidden">
+<span class="font-label-md text-label-md font-semibold text-on-surface block truncate">Reserved by: Rajesh Nadar</span>
+<span class="font-body-sm text-[11px] text-amber-800 truncate block">HNI Private Wealth desk • Relationship Mgr: Rohit Sen</span>
+</div>
+</div>
+<!-- CTAs inside Quick Dossier -->
+<div class="space-y-2 pt-2">
+<button class="w-full h-11 bg-primary-container text-on-primary hover:bg-[#FF6B4A] rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-98">
+<span class="material-symbols-outlined text-[19px]">account_balance_wallet</span>
+<span>Initiate Token Escrow (₹25,00,000)</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-9 px-3 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-xl font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Cost Sheet PDF</span>
+</button>
+<button class="h-9 px-3 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-xl font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">share</span>
+<span>Send WhatsApp</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Micro Helper Card: Fast Rules & Tower A Specs -->
+<div class="rounded-[20px] bg-white border border-outline-variant/30 p-4 shadow-xs space-y-3">
+<div class="flex items-center gap-2 text-on-surface font-title-md text-title-md font-semibold">
+<span class="material-symbols-outlined text-[19px] text-primary-container">info</span>
+<span>Stacking Guidance Rules</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+            Units held under 15-minute lock auto-release back to pool if token transaction is not authorized within the terminal window. Dual holds require managing director approval.
+          </p>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-[11px] font-semibold text-primary">
+<span>Tower A RERA Certificate</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

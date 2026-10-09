@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — Real Estate Sales Pipeline &amp; Kanban Funnel</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#5d5e64",
+            "surface-dim": "#d0daf2",
+            "on-surface-variant": "#5b403b",
+            "surface-container-highest": "#d9e3fb",
+            "surface-container": "#e8eeff",
+            "inverse-primary": "#ffb4a3",
+            "on-primary-container": "#5a0d00",
+            "surface-container-high": "#dfe8ff",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#ffdad2",
+            "surface-tint": "#b52704",
+            "outline": "#8f7069",
+            "on-secondary-container": "#616269",
+            "on-background": "#111c2d",
+            "on-tertiary-container": "#00322d",
+            "on-surface": "#111c2d",
+            "secondary-fixed-dim": "#c6c6cd",
+            "inverse-surface": "#273143",
+            "tertiary-container": "#2ca397",
+            "secondary-fixed": "#e2e2e9",
+            "on-error-container": "#93000a",
+            "surface-bright": "#f9f9ff",
+            "tertiary-fixed": "#89f5e7",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#dfdfe6",
+            "on-secondary-fixed-variant": "#45474c",
+            "outline-variant": "#e3beb6",
+            "on-tertiary-fixed-variant": "#005049",
+            "surface": "#f9f9ff",
+            "on-secondary-fixed": "#1a1b21",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#ecf0ff",
+            "on-tertiary-fixed": "#00201d",
+            "primary": "#b52704",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "primary-fixed-dim": "#ffb4a3",
+            "background": "#f9f9ff",
+            "surface-container-low": "#f0f3ff",
+            "tertiary": "#006a61",
+            "surface-variant": "#d9e3fb",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#8c1900",
+            "primary-container": "#ff5b37",
+            "on-primary-fixed": "#3d0600",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.25rem",
+            "space-lg": "1.5rem",
+            "margin-lg": "2.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "gutter-lg": "1.75rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "numeric-data": ["Outfit"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "display-hero-mobile": ["Outfit"],
+            "headline-sm": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "label-lg": ["Inter"],
+            "display-hero": ["Outfit"],
+            "headline-lg": ["Outfit"],
+            "title-md": ["Outfit"],
+            "headline-lg-mobile": ["Outfit"],
+            "label-caps": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "numeric-data": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 8px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(223, 232, 255, 0.3);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(93, 94, 100, 0.2);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(93, 94, 100, 0.4);
+    }
+  </style>
+</head>
+<body class="h-full text-on-surface bg-surface font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- ========================================================= -->
+<!-- 1. PERSISTENT FIXED SIDENAVBAR (Shared Component)         -->
+<!-- ========================================================= -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col justify-between p-4">
+<!-- Brand / Cockpit Header -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2 pt-1">
+<div class="w-10 h-10 rounded-xl bg-on-background flex items-center justify-center text-on-primary shrink-0 shadow-sm">
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">S</span>
+</div>
+<div class="hidden xl:flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight leading-none">Simplesphere OS</span>
+<span class="font-label-md text-label-md text-secondary mt-1">Private Cockpit</span>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<div class="hidden xl:block">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container border border-outline-variant/20 transition-all font-label-lg text-label-lg group">
+<span class="material-symbols-outlined text-primary text-[20px] transition-transform group-hover:rotate-90 duration-200" data-icon="add">add</span>
+<span>Add Asset</span>
+</button>
+</div>
+<!-- Primary Navigation Cluster -->
+<nav class="flex flex-col gap-1.5">
+<!-- 1. Cockpit -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Cockpit">
+<span class="material-symbols-outlined shrink-0 text-[22px] group-hover:text-on-surface" data-icon="dashboard">dashboard</span>
+<span class="hidden xl:inline font-label-md text-label-md">Cockpit</span>
+</a>
+<!-- 2. Properties -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Properties">
+<span class="material-symbols-outlined shrink-0 text-[22px] group-hover:text-on-surface" data-icon="domain">domain</span>
+<span class="hidden xl:inline font-label-md text-label-md">Properties</span>
+</a>
+<!-- 3. Pipelines (ACTIVE TAB) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all shadow-sm" href="#" title="Pipelines">
+<span class="material-symbols-outlined shrink-0 text-[22px]" data-icon="filter_alt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">filter_alt</span>
+<span class="hidden xl:inline font-label-md text-label-md">Pipelines</span>
+</a>
+<!-- 4. Ledger -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Ledger">
+<span class="material-symbols-outlined shrink-0 text-[22px] group-hover:text-on-surface" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="hidden xl:inline font-label-md text-label-md">Ledger</span>
+</a>
+<!-- 5. Clients -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Clients">
+<span class="material-symbols-outlined shrink-0 text-[22px] group-hover:text-on-surface" data-icon="group">group</span>
+<span class="hidden xl:inline font-label-md text-label-md">Clients</span>
+</a>
+<!-- 6. Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Settings">
+<span class="material-symbols-outlined shrink-0 text-[22px] group-hover:text-on-surface" data-icon="tune">tune</span>
+<span class="hidden xl:inline font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Utility Footer -->
+<div class="flex flex-col gap-1.5 pt-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Support">
+<span class="material-symbols-outlined shrink-0 text-[20px]" data-icon="help_outline">help_outline</span>
+<span class="hidden xl:inline font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all group" href="#" title="Terminal">
+<span class="material-symbols-outlined shrink-0 text-[20px]" data-icon="terminal">terminal</span>
+<span class="hidden xl:inline font-label-md text-label-md">Terminal</span>
+</a>
+</div>
+</aside>
+<!-- ========================================================= -->
+<!-- 2. PERSISTENT FIXED TOPNAVBAR (Shared Component)         -->
+<!-- ========================================================= -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant/30 flex items-center justify-between px-6 transition-all" style="box-shadow: 0 4px 20px -2px rgba(17,19,24,0.03);">
+<!-- Left Section: Search Command Bar -->
+<div class="flex items-center gap-6">
+<div class="relative flex items-center w-64 lg:w-96">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px]" data-icon="search">search</span>
+<input class="w-full h-10 pl-9 pr-12 rounded-full bg-surface-container-low border border-black/[0.06] font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Search buyers, units, SLA alerts..." type="text"/>
+<span class="absolute right-3 px-1.5 py-0.5 rounded text-[10px] font-label-caps text-secondary bg-surface-container-lowest border border-black/[0.08]">⌘K</span>
+</div>
+<!-- Navigation Links Cluster -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md text-secondary hover:text-on-surface font-medium transition-colors" href="#">Portfolio</a>
+<a class="font-body-md text-body-md text-primary font-semibold border-b-2 border-primary pb-1" href="#">Dealflow</a>
+<a class="font-body-md text-body-md text-secondary hover:text-on-surface font-medium transition-colors" href="#">Escrow</a>
+<a class="font-body-md text-body-md text-secondary hover:text-on-surface font-medium transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<!-- Right Trailing Controls -->
+<div class="flex items-center gap-3">
+<!-- Export Ledger -->
+<button class="hidden lg:inline-flex items-center gap-2 h-9 px-3.5 rounded-xl bg-surface-container-lowest border border-black/[0.08] text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="file_download">file_download</span>
+<span>Export Ledger</span>
+</button>
+<!-- Primary Action: + Create Deal -->
+<button class="inline-flex items-center gap-2 h-9 px-4 rounded-xl bg-primary-container text-white font-label-lg text-label-lg hover:brightness-105 active:scale-98 transition-all shadow-sm" style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>Create Deal</span>
+</button>
+<div class="h-5 w-px bg-outline-variant/40 mx-1"></div>
+<!-- Notification Vector -->
+<button class="relative w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container"></span>
+</button>
+<!-- Settings / Tune -->
+<button class="w-9 h-9 rounded-xl flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Tune Settings">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+<!-- Profile Avatar -->
+<div class="flex items-center gap-2 ml-1 cursor-pointer">
+<img class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20" data-alt="A distinguished senior executive managing director in a sharply tailored charcoal suit standing inside a high-ceiling luxury penthouse in Mumbai with floor-to-ceiling glass windows overlooking the sunlit Arabian Sea. High-key natural lighting, cinematic soft shadows, neutral warm tones with immaculate architectural detailing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF5gdUvuk04_q79TJ8FP07CW8FhWW2QTNC-o1uDUScnoTBH6gbmeb59h67bzIyHimpx0G4cgrmhwiBQXiiuMCZaX8qOcz30m471f6Tt3BBeQGJ6upDvLhWSIzE0Q_E1RAAPS5smBPNhrlpbtCteXS8ngop1wpz0FLNHf1882zA97JhLhLDYYHbAPPRxjj1vhCmMFJq7icApY2yNN7xkWFv46CoDb-0LTgvTCw2oOxAU6n0ern22DnYHHh2zAA8EDB-sm2DixCtwqo"/>
+</div>
+</div>
+</header>
+<!-- ========================================================= -->
+<!-- 3. MAIN COCKPIT VIEWPORT                                  -->
+<!-- ========================================================= -->
+<main class="ml-20 xl:ml-64 pt-24 px-6 lg:px-8 pb-12 min-h-screen">
+<!-- HEADER BAR & INGESTION CONTROLS -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Real Estate Sales Pipeline &amp; Funnel</h1>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-label-caps text-[#065F46] bg-[#10B981]/15 border border-[#10B981]/20">JARVIS AI ACTIVE</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-1">Pre-Sales &amp; Direct Sales Funnel with Jarvis AI Intent Scoring &amp; Dynamic Stage Tracking</p>
+</div>
+<!-- Quick Action Cluster -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-surface-container-lowest border border-black/[0.08] text-on-surface hover:bg-surface-container-low transition-all font-label-lg text-label-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="refresh">refresh</span>
+<span>Refresh Leads</span>
+</button>
+<button class="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-primary-container text-white font-label-lg text-label-lg hover:brightness-105 active:scale-98 transition-all shadow-sm" style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);">
+<span class="material-symbols-outlined text-[20px]" data-icon="person_add">person_add</span>
+<span>+ Ingest Inbound Lead</span>
+</button>
+</div>
+</div>
+<!-- HORIZONTAL CAPSULE FILTER TRACK -->
+<div class="flex items-center gap-2.5 overflow-x-auto pb-2 custom-scrollbar mb-7">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#111318] text-white font-label-lg text-label-lg shadow-sm whitespace-nowrap">
+<span>All Leads</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-xs">14</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10B981]/15 text-[#065F46] border border-[#10B981]/25 font-label-lg text-label-lg hover:bg-[#10B981]/20 transition-colors whitespace-nowrap">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+<span>Hot Intent (80%+)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F59E0B]/15 text-[#92400E] border border-[#F59E0B]/25 font-label-lg text-label-lg hover:bg-[#F59E0B]/20 transition-colors whitespace-nowrap">
+<span class="w-2 h-2 rounded-full bg-[#F59E0B]"></span>
+<span>Warm Intent (50-79%)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EF4444]/15 text-[#991B1B] border border-[#EF4444]/25 font-label-lg text-label-lg hover:bg-[#EF4444]/20 transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]" data-icon="alarm">alarm</span>
+<span>SLA Due Today</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-secondary border border-black/[0.08] font-label-lg text-label-lg hover:text-on-surface hover:bg-surface-container-low transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]" data-icon="assignment_ind">assignment_ind</span>
+<span>My Assigned Leads</span>
+</button>
+</div>
+<!-- 4-TILE EXECUTIVE KPI ROW (Finexy Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<!-- TILE 1: Pipeline Value (Solid Coral Primary Container) -->
+<div class="p-6 rounded-[20px] bg-primary-container text-white shadow-sm flex flex-col justify-between relative overflow-hidden" style="box-shadow: 0 4px 20px -2px rgba(255,91,55,0.25);">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-white/80 uppercase tracking-wider">Pipeline Value</span>
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-white text-[22px]" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-numeric-data text-[32px] leading-tight font-bold tracking-tight">₹42.8 Cr</div>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 font-label-md text-label-md text-white backdrop-blur-sm">
+<span>↑ 18.2% vs target</span>
+</div>
+</div>
+</div>
+<!-- TILE 2: Total Active Leads -->
+<div class="p-6 rounded-[20px] bg-surface-container-lowest border border-black/[0.06] shadow-sm flex flex-col justify-between" style="box-shadow: 0 4px 20px -2px rgba(17,19,24,0.03);">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-secondary uppercase tracking-wider">Total Active Leads</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center border border-black/[0.04]">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="filter_list">filter_list</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-numeric-data text-[32px] leading-tight font-bold tracking-tight text-on-surface">24 Leads</div>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/60 font-label-md text-label-md text-on-secondary-fixed">
+<span>6 Stages Active</span>
+</div>
+</div>
+</div>
+<!-- TILE 3: Visits Scheduled -->
+<div class="p-6 rounded-[20px] bg-surface-container-lowest border border-black/[0.06] shadow-sm flex flex-col justify-between" style="box-shadow: 0 4px 20px -2px rgba(17,19,24,0.03);">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-secondary uppercase tracking-wider">Visits Scheduled</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center border border-black/[0.04]">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="calendar_month">calendar_month</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-numeric-data text-[32px] leading-tight font-bold tracking-tight text-on-surface">8 Visits</div>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container font-label-md text-label-md text-primary">
+<span>Within 48 hours</span>
+</div>
+</div>
+</div>
+<!-- TILE 4: Avg Deal Velocity -->
+<div class="p-6 rounded-[20px] bg-surface-container-lowest border border-black/[0.06] shadow-sm flex flex-col justify-between" style="box-shadow: 0 4px 20px -2px rgba(17,19,24,0.03);">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-secondary uppercase tracking-wider">Avg Deal Velocity</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center border border-black/[0.04]">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="speed">speed</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-numeric-data text-[32px] leading-tight font-bold tracking-tight text-on-surface">4.2 Days</div>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#10B981]/15 font-label-md text-label-md text-[#065F46]">
+<span>Enquiry to Booking</span>
+</div>
+</div>
+</div>
+</div>
+<!-- KANBAN PIPELINE BOARD (Spacious 6-Column Flex Horizon) -->
+<div class="overflow-x-auto pb-6 custom-scrollbar -mx-2 px-2">
+<div class="flex gap-5 min-w-[1580px] items-start">
+<!-- ========================================== -->
+<!-- COLUMN 1: NEW ENQUIRIES                    -->
+<!-- ========================================== -->
+<div class="w-[280px] shrink-0 flex flex-col bg-surface-container-low/60 rounded-[20px] p-3 border border-black/[0.04]">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+<span class="font-headline-sm text-[15px] font-semibold text-on-surface">New Enquiries</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-xs font-semibold text-secondary">4</span>
+</div>
+<span class="font-label-caps text-secondary font-semibold">₹14.2 Cr</span>
+</div>
+<!-- Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Aanya Vardhan</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  96% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Google Ads</span>
+<span class="text-xs text-secondary">• Rep: Rohit Sen</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹5.5 - 7.5 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">3BHK Sea Suite • The Grand Solitaire</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-[#BA1A1A] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="alarm">alarm</span>
+                  Follow-up due: 2h
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors" title="Direct Dial">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors" title="WhatsApp Message">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Dr. Rajiv Menon</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F59E0B]/15 text-[#92400E] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="bolt">bolt</span>
+                  72% Warm
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Magicbricks</span>
+<span class="text-xs text-secondary">• Rep: Priya S.</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹4.2 - 5.0 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">2BHK Garden Duplex • Aurum Bay</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                  Intake: 45m ago
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Sunil Mittal</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  89% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Direct HNI</span>
+<span class="text-xs text-secondary">• Rep: Rohit Sen</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹12.0 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">Sky Villa • Crescent Royale</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                  Follow-up: 4h
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop Pad -->
+<div class="mt-3 p-3 rounded-[14px] border-2 border-dashed border-black/[0.08] hover:border-primary/40 flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer text-xs font-medium">
+<span>+ Drop lead here or create card</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- COLUMN 2: CONTACTED                        -->
+<!-- ========================================== -->
+<div class="w-[280px] shrink-0 flex flex-col bg-surface-container-low/60 rounded-[20px] p-3 border border-black/[0.04]">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
+<span class="font-headline-sm text-[15px] font-semibold text-on-surface">Contacted</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-xs font-semibold text-secondary">5</span>
+</div>
+<span class="font-label-caps text-secondary font-semibold">₹18.5 Cr</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Kabir Mehta</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  91% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">99acres</span>
+<span class="text-xs text-secondary">• Rep: Karan V.</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹8.5 - 10.0 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">4BHK Panoramic Suite • Horizon Tower</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="call_made">call_made</span>
+                  Pitch sent: Yesterday
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Devika Rastogi</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F59E0B]/15 text-[#92400E] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="bolt">bolt</span>
+                  68% Warm
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Meta Ads</span>
+<span class="text-xs text-secondary">• Rep: Priya S.</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹3.8 - 4.5 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">2BHK Coastal Bay • Marine Drive</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="forum">forum</span>
+                  WhatsApp active
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop Pad -->
+<div class="mt-3 p-3 rounded-[14px] border-2 border-dashed border-black/[0.08] hover:border-primary/40 flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer text-xs font-medium">
+<span>+ Drop lead here or create card</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- COLUMN 3: VISIT SCHEDULED                  -->
+<!-- ========================================== -->
+<div class="w-[280px] shrink-0 flex flex-col bg-surface-container-low/60 rounded-[20px] p-3 border border-black/[0.04]">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="font-headline-sm text-[15px] font-semibold text-on-surface">Visit Scheduled</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-xs font-semibold text-secondary">3</span>
+</div>
+<span class="font-label-caps text-secondary font-semibold">₹15.2 Cr</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Rhea Singhania</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  94% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Direct HNI</span>
+<span class="text-xs text-secondary">• Rep: Rohit Sen</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹9.2 - 12.0 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">4BHK Penthouse • Skyline Horizon</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-semibold text-[#006A61] flex items-center gap-1 bg-tertiary-fixed/30 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span>
+                  Tomorrow, 11 AM
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Vikram Goenka</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  86% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Google Ads</span>
+<span class="text-xs text-secondary">• Rep: Karan V.</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹6.0 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">3BHK Deck Residence • The Solitaire</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                  Friday, 4:30 PM
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop Pad -->
+<div class="mt-3 p-3 rounded-[14px] border-2 border-dashed border-black/[0.08] hover:border-primary/40 flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer text-xs font-medium">
+<span>+ Drop lead here or create card</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- COLUMN 4: VISIT COMPLETED                  -->
+<!-- ========================================== -->
+<div class="w-[280px] shrink-0 flex flex-col bg-surface-container-low/60 rounded-[20px] p-3 border border-black/[0.04]">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+<span class="font-headline-sm text-[15px] font-semibold text-on-surface">Visit Completed</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-xs font-semibold text-secondary">4</span>
+</div>
+<span class="font-label-caps text-secondary font-semibold">₹21.0 Cr</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Aditya Birla Trust</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  98% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Institutional</span>
+<span class="text-xs text-secondary">• Rep: Rohit Sen</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹14.5 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">Dual Penthouse 5001 &amp; 5002 • Skyline</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="thumb_up">thumb_up</span>
+                  Loved high floor view
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Natasha Poonawalla</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  92% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Private Office</span>
+<span class="text-xs text-secondary">• Rep: Priya S.</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹6.5 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">3BHK Private Deck • Solitaire</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="description">description</span>
+                  Floor plan shared
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop Pad -->
+<div class="mt-3 p-3 rounded-[14px] border-2 border-dashed border-black/[0.08] hover:border-primary/40 flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer text-xs font-medium">
+<span>+ Drop lead here or create card</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- COLUMN 5: NEGOTIATION                      -->
+<!-- ========================================== -->
+<div class="w-[280px] shrink-0 flex flex-col bg-surface-container-low/60 rounded-[20px] p-3 border border-black/[0.04]">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+<span class="font-headline-sm text-[15px] font-semibold text-on-surface">Negotiation</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-xs font-semibold text-secondary">5</span>
+</div>
+<span class="font-label-caps text-secondary font-semibold">₹27.8 Cr</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Sameer Jindal</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  95% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Direct HNI</span>
+<span class="text-xs text-secondary">• Rep: Rohit Sen</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹11.8 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">Sky Penthouse 42 • The Grand Solitaire</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-amber-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="edit_note">edit_note</span>
+                  Counter: ₹11.4 Cr sent
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Anita Godrej</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="local_fire_department">local_fire_department</span>
+                  90% Hot
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Referral</span>
+<span class="text-xs text-secondary">• Rep: Karan V.</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹7.2 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">3BHK Ocean Residence • Aurum Bay</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="handshake">handshake</span>
+                  Payment plan review
+                </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="call">call</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="chat">chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop Pad -->
+<div class="mt-3 p-3 rounded-[14px] border-2 border-dashed border-black/[0.08] hover:border-primary/40 flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer text-xs font-medium">
+<span>+ Drop lead here or create card</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- COLUMN 6: BOOKING INITIATED                -->
+<!-- ========================================== -->
+<div class="w-[280px] shrink-0 flex flex-col bg-surface-container-low/60 rounded-[20px] p-3 border border-black/[0.04]">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-2 py-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-headline-sm text-[15px] font-semibold text-on-surface">Booking Initiated</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/15 text-xs font-semibold text-primary">3</span>
+</div>
+<span class="font-label-caps text-secondary font-semibold">₹19.6 Cr</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border-2 border-primary-container/20 shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Tariq Al-Mansoor</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="verified">verified</span>
+                  100% Won
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-primary-container/10 text-[11px] font-medium text-primary">NRI Direct</span>
+<span class="text-xs text-secondary">• Rep: Rohit Sen</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹12.4 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">Duplex Crown Suite 52 • The Solitaire</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-semibold text-[#006A61] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                  Token ₹50L Received
+                </span>
+<div class="flex items-center gap-1">
+<a class="px-2 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-[11px] font-semibold text-primary transition-colors" href="#">
+                    Dossier
+                  </a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4 rounded-[16px] bg-surface-container-lowest border border-black/[0.06] shadow-sm hover:shadow-md transition-shadow group cursor-grab">
+<div class="flex items-start justify-between gap-2">
+<h4 class="font-title-md text-title-md font-semibold text-on-surface group-hover:text-primary transition-colors">Kishore Biyani Fam.</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#065F46] text-xs font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="verified">verified</span>
+                  Token Stage
+                </span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-[11px] font-medium text-secondary">Direct HNI</span>
+<span class="text-xs text-secondary">• Rep: Priya S.</span>
+</div>
+<div class="mt-3">
+<div class="font-numeric-data text-[17px] font-bold text-on-surface">₹7.2 Cr</div>
+<div class="text-xs text-secondary truncate mt-0.5">3BHK Penthouse B • Skyline Horizon</div>
+</div>
+<div class="mt-3 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="text-[11px] font-medium text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="receipt_long">receipt_long</span>
+                  KYC &amp; Escrow Ingest
+                </span>
+<div class="flex items-center gap-1">
+<a class="px-2 py-1 rounded-md bg-surface-container-low hover:bg-surface-container text-[11px] font-semibold text-primary transition-colors" href="#">
+                    Dossier
+                  </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop Pad -->
+<div class="mt-3 p-3 rounded-[14px] border-2 border-dashed border-black/[0.08] hover:border-primary/40 flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer text-xs font-medium">
+<span>+ Drop lead here or create card</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

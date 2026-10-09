@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#F4F5F7]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — Homebuyer Experience Portal</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#dfe8ff",
+            "on-tertiary-container": "#00322d",
+            "secondary-container": "#dfdfe6",
+            "error-container": "#ffdad6",
+            "primary-container": "#ff5b37",
+            "inverse-surface": "#273143",
+            "on-surface": "#111c2d",
+            "outline-variant": "#e3beb6",
+            "primary-fixed-dim": "#ffb4a3",
+            "inverse-on-surface": "#ecf0ff",
+            "surface-tint": "#b52704",
+            "primary": "#b52704",
+            "on-secondary-container": "#616269",
+            "primary-fixed": "#ffdad2",
+            "on-tertiary-fixed": "#00201d",
+            "outline": "#8f7069",
+            "tertiary": "#006a61",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#ffb4a3",
+            "on-tertiary-fixed-variant": "#005049",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#3d0600",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#1a1b21",
+            "on-background": "#111c2d",
+            "on-primary-container": "#5a0d00",
+            "surface-variant": "#d9e3fb",
+            "secondary": "#5d5e64",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "surface-container-low": "#f0f3ff",
+            "secondary-fixed": "#e2e2e9",
+            "background": "#f9f9ff",
+            "surface": "#f9f9ff",
+            "on-surface-variant": "#5b403b",
+            "tertiary-fixed": "#89f5e7",
+            "tertiary-container": "#2ca397",
+            "on-secondary-fixed-variant": "#45474c",
+            "surface-container": "#e8eeff",
+            "surface-bright": "#f9f9ff",
+            "surface-container-highest": "#d9e3fb",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#8c1900",
+            "secondary-fixed-dim": "#c6c6cd",
+            "surface-dim": "#d0daf2"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-sm": "0.5rem",
+            "gutter-lg": "1.75rem",
+            "space-md": "1rem",
+            "space-xl": "2.25rem",
+            "space-lg": "1.5rem",
+            "margin": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "2.5rem",
+            "gutter": "1.25rem"
+          },
+          fontFamily: {
+            "headline-sm": ["Outfit"],
+            "headline-lg-mobile": ["Outfit"],
+            "label-md": ["Inter"],
+            "display-hero": ["Outfit"],
+            "body-sm": ["Inter"],
+            "label-caps": ["Inter"],
+            "title-md": ["Outfit"],
+            "label-lg": ["Inter"],
+            "display-hero-mobile": ["Outfit"],
+            "body-md": ["Inter"],
+            "headline-md": ["Outfit"],
+            "body-lg": ["Inter"],
+            "numeric-data": ["Outfit"],
+            "headline-lg": ["Outfit"]
+          },
+          fontSize: {
+            "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "500" }],
+            "headline-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.015em", fontWeight: "500" }],
+            "display-hero": ["48px", { lineHeight: "56px", letterSpacing: "-0.03em", fontWeight: "600" }],
+            "body-sm": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }],
+            "label-caps": ["11px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "title-md": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "label-lg": ["13px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "display-hero-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "20px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "400" }],
+            "numeric-data": ["18px", { lineHeight: "22px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      border: 1px solid rgba(17, 19, 24, 0.06);
+      box-shadow: 0 4px 20px -2px rgba(17, 19, 24, 0.03), 0 2px 6px -1px rgba(17, 19, 24, 0.02);
+    }
+    .coral-card {
+      background-color: #ff5b37;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px -4px rgba(255, 91, 55, 0.3);
+    }
+  </style>
+</head>
+<body class="h-full text-[#111318] antialiased bg-[#F4F5F7] font-body-md text-body-md selection:bg-[#ff5b37] selection:text-white">
+<!-- SideNavBar Anchor -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant/30 dark:border-outline-variant/10 flex flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<!-- Header Logo / Monogram -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="h-10 w-10 rounded-xl bg-[#111318] text-white flex items-center justify-center font-headline-sm text-headline-sm font-semibold shadow-sm shrink-0">
+          S
+        </div>
+<div class="hidden xl:flex flex-col overflow-hidden">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface font-semibold tracking-tight truncate">Simplesphere OS</span>
+<span class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim uppercase tracking-wider">Private Cockpit</span>
+</div>
+</div>
+<!-- Add Asset CTA Button -->
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#111318] hover:bg-[#273143] text-white text-body-sm font-semibold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="hidden xl:inline">Add Asset</span>
+</button>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<!-- Cockpit -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="hidden xl:inline font-label-md text-label-md">Cockpit</span>
+</a>
+<!-- Properties -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span class="hidden xl:inline font-label-md text-label-md">Properties</span>
+</a>
+<!-- Pipelines -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">filter_alt</span>
+<span class="hidden xl:inline font-label-md text-label-md">Pipelines</span>
+</a>
+<!-- Ledger -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="hidden xl:inline font-label-md text-label-md">Ledger</span>
+</a>
+<!-- Clients (Active Destination: Buyer CX) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="hidden xl:inline font-label-md text-label-md">Clients</span>
+</div>
+<span class="hidden xl:inline px-1.5 py-0.5 text-[10px] uppercase font-bold tracking-wider bg-white/20 text-white rounded">Buyer CX</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="hidden xl:inline font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Side Footer Tabs -->
+<div class="flex flex-col gap-1 border-t border-outline-variant/30 pt-3">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="hidden xl:inline font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="hidden xl:inline font-label-md text-label-md">Terminal</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/10 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex items-center justify-between px-6">
+<div class="flex items-center gap-6 flex-1 max-w-2xl">
+<!-- Search Command Bar (on_left) -->
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full h-10 pl-10 pr-12 rounded-full bg-[#F4F5F7] border border-black/[0.08] text-body-sm text-[#111318] placeholder:text-secondary focus:outline-none focus:border-[#FF5B37] focus:ring-2 focus:ring-[#FF5B37]/15 transition-all" placeholder="Search allottees, RERA dossiers, receipts..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 bg-white border border-black/[0.08] rounded text-[10px] font-mono font-medium text-secondary">⌘K</span>
+</div>
+<!-- Navigation Links from JSON -->
+<nav class="hidden 2xl:flex items-center gap-6">
+<a class="text-secondary hover:text-[#111318] font-body-md text-body-md transition-colors" href="#">Portfolio</a>
+<a class="text-secondary hover:text-[#111318] font-body-md text-body-md transition-colors" href="#">Dealflow</a>
+<a class="text-secondary hover:text-[#111318] font-body-md text-body-md transition-colors" href="#">Escrow</a>
+<a class="text-secondary hover:text-[#111318] font-body-md text-body-md transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center gap-3">
+<!-- Secondary Export / Trailing Action -->
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-black/[0.08] bg-white hover:bg-[#F4F5F7] text-[#111318] font-label-md text-label-md font-semibold transition-all">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Ledger</span>
+</button>
+<!-- Primary Action (+ Raise Service Ticket / Create Deal) -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#111318] hover:bg-[#273143] text-white font-label-md text-label-md font-semibold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>+ Raise Service Ticket</span>
+</button>
+<div class="h-5 w-[1px] bg-black/[0.1] mx-1"></div>
+<!-- Notifications -->
+<button class="relative p-2 rounded-xl text-secondary hover:bg-[#F4F5F7] hover:text-[#111318] transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-[#FF5B37] ring-2 ring-white"></span>
+</button>
+<!-- Tune -->
+<button class="p-2 rounded-xl text-secondary hover:bg-[#F4F5F7] hover:text-[#111318] transition-colors" title="Configure Cockpit">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<!-- User Profile Header Cluster -->
+<div class="flex items-center gap-2.5 pl-2">
+<div class="h-9 w-9 rounded-full ring-2 ring-black/[0.06] overflow-hidden bg-[#EDEFF2] flex items-center justify-center font-semibold text-xs text-[#111318]">
+          VM
+        </div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-body-sm font-semibold leading-tight text-[#111318]">Vikram Malhotra</span>
+<span class="text-[11px] text-secondary leading-tight">Managing Director</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-20 xl:ml-64 pt-20 pb-16 px-6 lg:px-10 max-w-[1720px] mx-auto min-h-screen">
+<!-- Breadcrumbs & Meta Eyebrow -->
+<div class="flex items-center gap-2 text-[12px] font-medium text-secondary mb-3">
+<span>Properties</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>The Grand Solitaire</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Unit A-1402</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#FF5B37] font-semibold">Homebuyer CX Portal</span>
+</div>
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-black/[0.06] mb-8">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h1 class="font-headline-lg text-headline-lg text-[#111318] tracking-tight">The Grand Solitaire — Homebuyer Experience Portal</h1>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wide bg-[#065F46]/10 text-[#065F46] border border-[#065F46]/20">
+            Tower A Verified
+          </span>
+</div>
+<p class="text-secondary font-body-sm text-body-sm flex flex-wrap items-center gap-2 mt-1">
+<span class="font-semibold text-[#111318]">Unit A-1402</span> (3 BHK Sea Suite, 1,450 sq.ft)
+          <span class="text-black/20">•</span>
+<span>Primary Allottee: <strong class="text-[#111318] font-semibold">Kabir &amp; Rhea Mehta</strong></span>
+<span class="text-black/20">•</span>
+<span class="font-mono text-[12px] bg-white px-2 py-0.5 rounded border border-black/[0.06]">MahaRERA Reg: P51900028471</span>
+</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-black/[0.08] bg-white hover:bg-[#F4F5F7] text-[#111318] font-label-md text-label-md font-semibold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Download Unit Dossier (PDF)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#FF5B37] hover:bg-[#FF6B4A] active:scale-[0.98] text-white font-label-md text-label-md font-semibold transition-all shadow-[0_4px_16px_rgba(255,91,55,0.35)]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span>Schedule Site Inspection</span>
+</button>
+</div>
+</section>
+<!-- Top 4-Tile KPI Row -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<!-- Tile 1: Solid #FF5B37 Coral Card -->
+<div class="coral-card p-6 text-white flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps tracking-wider text-white/80 uppercase">Total Demand Cleared</span>
+<div class="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-white" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div>
+<div class="font-numeric-data text-[32px] leading-tight font-bold tracking-tight mb-1 text-white">₹1.45 Cr</div>
+<p class="text-white/80 text-[12px] font-medium">100% On-Time • Allotment A-1402</p>
+</div>
+<div class="mt-4 pt-3 border-t border-white/20 flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/20 text-[11px] font-semibold text-white">
+<span class="h-1.5 w-1.5 rounded-full bg-white"></span>
+            Escrow Confirmed
+          </span>
+<span class="text-[11px] text-white/70 font-mono">Axis Bank ESC-77</span>
+</div>
+</div>
+<!-- Tile 2: Construction Progress -->
+<div class="custom-card p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps tracking-wider text-secondary uppercase">Construction Progress</span>
+<div class="h-8 w-8 rounded-full bg-[#F4F5F7] flex items-center justify-center text-[#111318]">
+<span class="material-symbols-outlined text-[18px]">apartment</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline justify-between mb-2">
+<span class="font-numeric-data text-[32px] leading-tight font-bold text-[#111318]">62%</span>
+<span class="text-[12px] font-semibold text-[#065F46]">+4% this month</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-[#EDEFF2] h-2.5 rounded-full overflow-hidden mb-2">
+<div class="bg-[#FF5B37] h-full rounded-full transition-all duration-500" style="width: 62%;"></div>
+</div>
+<p class="text-secondary text-[12px]">Current Stage: <strong class="text-[#111318] font-semibold">14th Slab Completed</strong> • Tower A</p>
+</div>
+<div class="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between text-[11px] text-secondary">
+<span>Target Slab 15: Nov 2026</span>
+<span class="font-medium text-[#111318]">Ahead of Schedule</span>
+</div>
+</div>
+<!-- Tile 3: Next Due Tranche -->
+<div class="custom-card p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps tracking-wider text-secondary uppercase">Next Due Tranche</span>
+<div class="h-8 w-8 rounded-full bg-[#F4F5F7] flex items-center justify-center text-[#111318]">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+</div>
+<div>
+<div class="font-numeric-data text-[30px] leading-tight font-bold text-[#111318] mb-1">24 Oct 2026</div>
+<p class="text-secondary text-[12px]">Tranche <strong class="text-[#111318] font-semibold">₹14.82 L</strong> for 15th Slab Casting</p>
+</div>
+<div class="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#92400E]/10 text-[#92400E] text-[11px] font-semibold">
+            Notice Sent (7 Days Grace)
+          </span>
+<a class="text-[11px] font-semibold text-[#FF5B37] hover:underline" href="#">Pay Demand</a>
+</div>
+</div>
+<!-- Tile 4: Legal & KYC Status -->
+<div class="custom-card p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps tracking-wider text-secondary uppercase">Legal &amp; KYC Status</span>
+<div class="h-8 w-8 rounded-full bg-[#F4F5F7] flex items-center justify-center text-[#111318]">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-headline-sm text-[20px] font-bold text-[#111318]">RERA Form 4 Approved</span>
+<span class="material-symbols-outlined text-[#065F46] text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="text-secondary text-[12px]">Allotment Agreement Registered • Stamp Duty Paid</p>
+</div>
+<div class="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#065F46]/10 text-[#065F46] text-[11px] font-semibold">
+            Maharashtra IGR Verified
+          </span>
+<span class="text-[11px] font-mono text-secondary">DOC-8942-B</span>
+</div>
+</div>
+</section>
+<!-- Main Content Grid (Split 62% / 38%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN (Approx 62% -> 7 or 8 cols on desktop) -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-6">
+<!-- 1. Interactive Construction Live Cam & Telemetry Card -->
+<div class="custom-card p-6 flex flex-col">
+<!-- Card Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+<div>
+<div class="flex items-center gap-2.5">
+<h2 class="font-headline-sm text-headline-sm font-bold text-[#111318]">Live Construction Feed &amp; Site Telemetry</h2>
+<span class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-50 text-red-600 text-[11px] font-semibold border border-red-200">
+<span class="h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
+                  Live • 11:42 AM IST
+                </span>
+</div>
+<p class="text-secondary text-[12px] mt-0.5">Camera 04 — Tower A Sea Crest (1080p Ultra-Low Latency Telemetry)</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-xl border border-black/[0.08] hover:bg-[#F4F5F7] text-secondary hover:text-[#111318] transition-all" title="Refresh Feed">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+<button class="p-2 rounded-xl border border-black/[0.08] hover:bg-[#F4F5F7] text-secondary hover:text-[#111318] transition-all" title="Expand Fullscreen">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Video / Photo Container with Telemetry Overlays -->
+<div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-black/90 group shadow-inner">
+<img alt="Live high-resolution construction view of Tower A luxury residential skyscraper" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPkcGv3pEJIAspQi2PieKVkKgOAD5CSOJxN7T_ER1MbC1jwMHHmgad9sApRdidXycm5CDENxbc9XuPNSDREk0uixHNJcB6JXWYmVzzg8tAcgNpMN5bk0ng8Y5J0YV6Oky1Je1M5U9-fdbJAd7HzqrPKvXteiuYEGiLCdd4vBy1HNGXa7ALrAF1cEcAGR_ifxGJHXlx_BI0p7B8p-ccPXVdIeFkLQZUZaKXEAihSkoVq30sw6RxSzAWCXTE1snubJY5SoXnryuMo5Y"/>
+<!-- Atmospheric Dark Vignette Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none"></div>
+<!-- Top Left Status Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-2">
+<div class="px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/20 text-[#111318] text-[11px] font-semibold flex items-center gap-2 shadow-sm">
+<span class="h-2 w-2 rounded-full bg-[#FF5B37] animate-ping"></span>
+<span>Tower A • Floor 14 Deck Cam</span>
+</div>
+</div>
+<!-- Top Right Sensor Telemetry Pills -->
+<div class="absolute top-4 right-4 hidden sm:flex items-center gap-2">
+<div class="px-3 py-1 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 text-white text-[11px] font-mono flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-amber-400">air</span>
+<span>Wind: 14 km/h WNW</span>
+</div>
+<div class="px-3 py-1 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 text-white text-[11px] font-mono flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-400">thermostat</span>
+<span>29°C Ambient</span>
+</div>
+</div>
+<!-- Bottom Floating Live Telemetry HUD Bar -->
+<div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/75 backdrop-blur-md border border-white/15 text-white flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-4 text-[12px]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-amber-400">construction</span>
+<span class="text-white/70">Cranes Active:</span>
+<strong class="font-mono text-white font-semibold">2 Units</strong>
+</div>
+<div class="h-3 w-[1px] bg-white/20 hidden sm:block"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-blue-400">engineering</span>
+<span class="text-white/70">Workers Logged:</span>
+<strong class="font-mono text-white font-semibold">184 Personnel</strong>
+</div>
+<div class="h-3 w-[1px] bg-white/20 hidden sm:block"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">water_drop</span>
+<span class="text-white/70">RCC Curing:</span>
+<strong class="font-mono text-emerald-400 font-semibold">In Progress (Grade M50)</strong>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white text-[11px] font-semibold transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+<span>Preset Angles</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Direct Mode Switcher Tabs -->
+<div class="flex items-center gap-2 mt-4 pt-4 border-t border-black/[0.06]">
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#111318] text-white font-label-md text-label-md font-semibold transition-all">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span>Live Site Cam</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#EDEFF2] hover:bg-[#E2E4E8] text-[#111318] font-label-md text-label-md font-medium transition-all">
+<span class="material-symbols-outlined text-[16px]">360</span>
+<span>360° Virtual Walkthrough</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#EDEFF2] hover:bg-[#E2E4E8] text-[#111318] font-label-md text-label-md font-medium transition-all">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+<span>Structural BIM Model</span>
+</button>
+</div>
+</div>
+<!-- 2. Milestone Timeline Tracker (Construction-Linked Plan) -->
+<div class="custom-card p-6 flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-bold text-[#111318]">Construction-Linked Milestone Progress</h2>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200">RERA Schedule VII</span>
+</div>
+<p class="text-secondary text-[12px] mt-0.5">All milestone demands validated by Council of Architecture certified engineer</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[12px] text-secondary font-medium">Cleared: <strong>₹1,48,27,950</strong> / ₹2,96,55,900</span>
+</div>
+</div>
+<!-- Vertical Timeline Steps -->
+<div class="relative pl-6 space-y-6 before:content-[''] before:absolute before:left-[11px] before:top-3 before:bottom-3 before:w-[2px] before:bg-[#EDEFF2]">
+<!-- Stage 1: Completed -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white hover:bg-[#F9FAFB] border border-black/[0.04] transition-all">
+<div class="flex items-start gap-3.5">
+<div class="absolute -left-6 top-3 h-5 w-5 rounded-full bg-[#065F46] text-white flex items-center justify-center ring-4 ring-[#F4F5F7]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md text-[#111318] font-semibold">Stage 1: Booking &amp; Token (10%)</h4>
+<span class="px-2 py-0.2 rounded text-[10px] font-mono bg-emerald-100/70 text-[#065F46] font-semibold">Receipt #REC-901</span>
+</div>
+<p class="text-secondary text-[12px] mt-0.5">Completed 14 Jan 2025 • HDFC Bank Wire Confirmed</p>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:text-right">
+<div>
+<div class="font-numeric-data text-numeric-data text-[#111318] font-bold">₹29,65,590</div>
+<span class="text-[11px] text-[#065F46] font-semibold flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Paid In Full
+                  </span>
+</div>
+</div>
+</div>
+<!-- Stage 2: Completed -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white hover:bg-[#F9FAFB] border border-black/[0.04] transition-all">
+<div class="flex items-start gap-3.5">
+<div class="absolute -left-6 top-3 h-5 w-5 rounded-full bg-[#065F46] text-white flex items-center justify-center ring-4 ring-[#F4F5F7]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md text-[#111318] font-semibold">Stage 2: Registered Agreement (20%)</h4>
+<span class="px-2 py-0.2 rounded text-[10px] font-mono bg-emerald-100/70 text-[#065F46] font-semibold">Receipt #REC-982</span>
+</div>
+<p class="text-secondary text-[12px] mt-0.5">Completed 28 Feb 2025 • Sub-Registrar Mumbai Suburbs</p>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:text-right">
+<div>
+<div class="font-numeric-data text-numeric-data text-[#111318] font-bold">₹59,31,180</div>
+<span class="text-[11px] text-[#065F46] font-semibold flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Paid In Full
+                  </span>
+</div>
+</div>
+</div>
+<!-- Stage 3: Completed -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white hover:bg-[#F9FAFB] border border-black/[0.04] transition-all">
+<div class="flex items-start gap-3.5">
+<div class="absolute -left-6 top-3 h-5 w-5 rounded-full bg-[#065F46] text-white flex items-center justify-center ring-4 ring-[#F4F5F7]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md text-[#111318] font-semibold">Stage 3: Plinth Completion (10%)</h4>
+<span class="px-2 py-0.2 rounded text-[10px] font-mono bg-emerald-100/70 text-[#065F46] font-semibold">Cert ARCH-992</span>
+</div>
+<p class="text-secondary text-[12px] mt-0.5">Completed 18 May 2025 • Architect Cert ARCH-992</p>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:text-right">
+<div>
+<div class="font-numeric-data text-numeric-data text-[#111318] font-bold">₹29,65,590</div>
+<span class="text-[11px] text-[#065F46] font-semibold flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Paid In Full
+                  </span>
+</div>
+</div>
+</div>
+<!-- Stage 4: Completed -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white hover:bg-[#F9FAFB] border border-black/[0.04] transition-all">
+<div class="flex items-start gap-3.5">
+<div class="absolute -left-6 top-3 h-5 w-5 rounded-full bg-[#065F46] text-white flex items-center justify-center ring-4 ring-[#F4F5F7]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md text-[#111318] font-semibold">Stage 4: Slabs 1 to 14 RCC Cast (20%)</h4>
+<span class="px-2 py-0.2 rounded text-[10px] font-mono bg-emerald-100/70 text-[#065F46] font-semibold">Drone Audit Passed</span>
+</div>
+<p class="text-secondary text-[12px] mt-0.5">Completed 12 Sep 2025 • Structural Engineer Sign-off</p>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:text-right">
+<div>
+<div class="font-numeric-data text-numeric-data text-[#111318] font-bold">₹59,31,180</div>
+<span class="text-[11px] text-[#065F46] font-semibold flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Paid In Full
+                  </span>
+</div>
+</div>
+</div>
+<!-- Stage 5: Active / Current (Highlighted Coral Border) -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-[#FFF8F6] border-2 border-[#FF5B37] shadow-sm">
+<div class="flex items-start gap-3.5">
+<div class="absolute -left-6 top-4 h-5 w-5 rounded-full bg-[#FF5B37] text-white flex items-center justify-center ring-4 ring-[#F4F5F7]">
+<span class="h-2 w-2 rounded-full bg-white animate-ping"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md text-[#111318] font-bold">Stage 5: 15th Slab RCC Casting (5%)</h4>
+<span class="px-2.5 py-0.5 rounded-full text-[10px] uppercase font-bold tracking-wider bg-[#FF5B37] text-white">Tranche Ready</span>
+</div>
+<p class="text-[#FF5B37] text-[12px] font-medium mt-0.5">Demand Due 24 Oct 2026 • Structural Rebar Grid Verified</p>
+</div>
+</div>
+<div class="flex items-center gap-3 sm:text-right">
+<div>
+<div class="font-numeric-data text-[20px] text-[#111318] font-bold">₹14,82,795</div>
+<span class="text-[11px] text-[#FF5B37] font-semibold">Awaiting Initiation</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-[#FF5B37] hover:bg-[#FF6B4A] text-white text-[12px] font-semibold transition-all shadow-sm">
+                  Pay Now
+                </button>
+</div>
+</div>
+<!-- Stage 6: Upcoming -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white/60 border border-black/[0.04] opacity-75">
+<div class="flex items-start gap-3.5">
+<div class="absolute -left-6 top-3 h-5 w-5 rounded-full bg-[#EDEFF2] text-secondary flex items-center justify-center ring-4 ring-[#F4F5F7]">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-secondary font-medium">Stage 6: Finishing &amp; Glazing (15%)</h4>
+<p class="text-secondary/70 text-[12px]">Estimated Jan 2027 • Reynaers Aluminium Glazing &amp; VRV HVAC</p>
+</div>
+</div>
+<div class="sm:text-right">
+<div class="font-numeric-data text-numeric-data text-secondary font-medium">₹44,48,385</div>
+<span class="text-[11px] text-secondary">Upcoming Milestone</span>
+</div>
+</div>
+<!-- Stage 7: Handover & OC -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white/60 border border-black/[0.04] opacity-75">
+<div class="flex items-start gap-3.5">
+<div class="absolute -left-6 top-3 h-5 w-5 rounded-full bg-[#EDEFF2] text-secondary flex items-center justify-center ring-4 ring-[#F4F5F7]">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-secondary font-medium">Stage 7: Handover &amp; OC Possession (20%)</h4>
+<p class="text-secondary/70 text-[12px]">Targeted Q4 2027 • Final Key Handover &amp; Club Membership Activation</p>
+</div>
+</div>
+<div class="sm:text-right">
+<div class="font-numeric-data text-numeric-data text-secondary font-medium">₹59,31,180</div>
+<span class="text-[11px] text-secondary">Target Q4 2027</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (Approx 38% -> 5 or 4 cols on desktop) -->
+<div class="lg:col-span-5 xl:col-span-4 flex flex-col gap-6">
+<!-- 1. Document Locker & Statutory Vault Card -->
+<div class="custom-card p-6 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-[#111318]">RERA Document Locker</h3>
+<p class="text-secondary text-[12px]">Statutory archives and allottee vault</p>
+</div>
+<span class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-semibold border border-blue-200">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+              Encrypted DigiLocker Sync
+            </span>
+</div>
+<!-- Document List -->
+<div class="flex flex-col divide-y divide-black/[0.05]">
+<!-- Item 1 -->
+<div class="py-3 flex items-center justify-between gap-3 hover:bg-[#F9FAFB] rounded-lg px-2 -mx-2 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="overflow-hidden">
+<h5 class="text-body-sm font-semibold text-[#111318] truncate">RERA Registered Allotment Letter (Form 3)</h5>
+<p class="text-[11px] text-secondary">PDF • 2.4 MB • Stamped &amp; Signed</p>
+</div>
+</div>
+<button class="p-2 text-secondary hover:text-[#FF5B37] hover:bg-white rounded-lg transition-colors shrink-0" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="py-3 flex items-center justify-between gap-3 hover:bg-[#F9FAFB] rounded-lg px-2 -mx-2 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="overflow-hidden">
+<h5 class="text-body-sm font-semibold text-[#111318] truncate">Tax Invoice &amp; Section 194H TDS Reconciliation</h5>
+<p class="text-[11px] text-secondary">PDF • 840 KB • Paid &amp; Verified</p>
+</div>
+</div>
+<button class="p-2 text-secondary hover:text-[#FF5B37] hover:bg-white rounded-lg transition-colors shrink-0" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Item 3 -->
+<div class="py-3 flex items-center justify-between gap-3 hover:bg-[#F9FAFB] rounded-lg px-2 -mx-2 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="overflow-hidden">
+<h5 class="text-body-sm font-semibold text-[#111318] truncate">Council of Architecture Slab 14 Certificate</h5>
+<p class="text-[11px] text-secondary">PDF • 1.8 MB • Ar. Rohinton Mistry</p>
+</div>
+</div>
+<button class="p-2 text-secondary hover:text-[#FF5B37] hover:bg-white rounded-lg transition-colors shrink-0" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Item 4 -->
+<div class="py-3 flex items-center justify-between gap-3 hover:bg-[#F9FAFB] rounded-lg px-2 -mx-2 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0 border border-amber-100">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+</div>
+<div class="overflow-hidden">
+<h5 class="text-body-sm font-semibold text-[#111318] truncate">Sanctioned Floor Layout (A-1402 3BHK)</h5>
+<p class="text-[11px] text-secondary">CAD/PDF • 4.1 MB • Approved Municipal Corp</p>
+</div>
+</div>
+<button class="p-2 text-secondary hover:text-[#FF5B37] hover:bg-white rounded-lg transition-colors shrink-0" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Item 5 -->
+<div class="py-3 flex items-center justify-between gap-3 hover:bg-[#F9FAFB] rounded-lg px-2 -mx-2 transition-colors">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="h-10 w-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="overflow-hidden">
+<h5 class="text-body-sm font-semibold text-[#111318] truncate">Encumbrance Certificate &amp; Title Search Report</h5>
+<p class="text-[11px] text-secondary">PDF • 3.2 MB • Clear Title Legal Opinion</p>
+</div>
+</div>
+<button class="p-2 text-secondary hover:text-[#FF5B37] hover:bg-white rounded-lg transition-colors shrink-0" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Upload CTA -->
+<button class="mt-4 w-full py-2.5 px-3 rounded-xl border border-dashed border-black/20 hover:border-[#FF5B37] text-secondary hover:text-[#FF5B37] bg-[#F4F5F7]/60 hover:bg-white text-[12px] font-semibold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+<span>+ Upload Custom Stamp Document</span>
+</button>
+</div>
+<!-- 2. Direct Relationship Manager Card -->
+<div class="custom-card p-6 flex flex-col">
+<div class="flex items-center justify-between mb-5">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-[#111318]">Dedicated Relationship Manager</h3>
+<p class="text-secondary text-[12px]">Private Escrow &amp; Construction Liaison</p>
+</div>
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-semibold border border-emerald-200">
+<span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              Online • Direct Line
+            </span>
+</div>
+<!-- Profile Info Cluster -->
+<div class="flex items-center gap-4 mb-4">
+<div class="relative">
+<img alt="Priya Kulkarni, Senior Vice President Client Experience" class="w-16 h-16 rounded-2xl object-cover ring-2 ring-black/[0.06] shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1X8hyPD3V2fqFr5_O0l_-SlktpmtFg5E5x60-D4Gs50fo77oC1krDzWfr5EeXdSNfNUPmDko84HMK19gS-gWqH6Yk_FOnPa9wbAckACYg-HHPnAIxvc9c-WYmfNMgFQmaYivqjlVC0c-MM0cYdxx09b0HRiDES7qFIphe9Wjf1CnD_SX3hKNYcO7xFPvPmtck5wb15irKQ83EHGj3TBfKvOrzOMS8GIlmZM6tZaLDBUiq64313W05Yd-RL1ZqZPe-HPKPvu7jlKc"/>
+<span class="absolute -bottom-1 -right-1 h-4 w-4 rounded-full bg-emerald-500 ring-2 ring-white flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[10px]">check</span>
+</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-[#111318]">Priya Kulkarni</h4>
+<p class="text-secondary text-[12px] font-medium">Senior Vice President — Client Experience</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center text-amber-500 text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  4.98
+                </span>
+<span class="text-black/20">•</span>
+<span class="text-[11px] text-secondary">9+ Yrs Simplesphere</span>
+<span class="text-black/20">•</span>
+<span class="text-[11px] text-secondary">142 HNI Allottees</span>
+</div>
+</div>
+</div>
+<!-- Recent Message Preview Box -->
+<div class="p-3.5 rounded-xl bg-[#F4F5F7] border border-black/[0.04] mb-5">
+<div class="flex items-center justify-between text-[11px] text-secondary mb-1">
+<span class="font-semibold text-[#111318] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-[#FF5B37]">chat</span>
+                Latest Update Note
+              </span>
+<span>Today 10:15 AM</span>
+</div>
+<p class="text-[12px] text-[#111318] leading-relaxed italic">
+              "Hi Kabir, the 14th slab structural audit has just cleared. Let me know if you would like me to arrange private access for the Sunday drone review!"
+            </p>
+</div>
+<!-- Contact Actions -->
+<div class="flex flex-col gap-2.5">
+<button class="w-full py-2.5 px-4 rounded-xl bg-[#FF5B37] hover:bg-[#FF6B4A] active:scale-[0.98] text-white font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Start Instant Chat</span>
+</button>
+<button class="w-full py-2.5 px-4 rounded-xl border border-black/[0.08] hover:bg-[#F4F5F7] active:scale-[0.98] text-[#111318] font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Direct (+91 98201 44920)</span>
+</button>
+<button class="w-full py-2.5 px-4 rounded-xl bg-[#EDEFF2] hover:bg-[#E2E4E8] text-[#111318] font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">event</span>
+<span>Book In-Person Site Walkthrough</span>
+</button>
+</div>
+<!-- Escrow Guarantee Footer Note -->
+<div class="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between text-[11px] text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">shield</span>
+              MahaRERA Escrow Protected
+            </span>
+<span>Ref: AP-1402-ESC</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

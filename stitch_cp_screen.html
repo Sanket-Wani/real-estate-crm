@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#F4F5F7]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Simplesphere OS — Channel Partner &amp; Section 194H TDS Ledger</title>
+<!-- Google Fonts: Inter & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#616269",
+            "surface-tint": "#b52704",
+            "surface": "#f9f9ff",
+            "secondary": "#5d5e64",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#00322d",
+            "surface-variant": "#d9e3fb",
+            "on-primary-fixed": "#3d0600",
+            "tertiary-fixed": "#89f5e7",
+            "tertiary": "#006a61",
+            "inverse-on-surface": "#ecf0ff",
+            "on-primary-fixed-variant": "#8c1900",
+            "surface-container-low": "#f0f3ff",
+            "surface-container-high": "#dfe8ff",
+            "surface-container": "#e8eeff",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#5b403b",
+            "on-primary-container": "#5a0d00",
+            "inverse-primary": "#ffb4a3",
+            "surface-bright": "#f9f9ff",
+            "on-secondary-fixed": "#1a1b21",
+            "tertiary-container": "#2ca397",
+            "error": "#ba1a1a",
+            "surface-dim": "#d0daf2",
+            "secondary-fixed": "#e2e2e9",
+            "primary": "#b52704",
+            "on-surface": "#111c2d",
+            "primary-fixed": "#ffdad2",
+            "on-tertiary-fixed": "#00201d",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "background": "#f9f9ff",
+            "secondary-container": "#dfdfe6",
+            "outline": "#8f7069",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#111c2d",
+            "secondary-fixed-dim": "#c6c6cd",
+            "primary-fixed-dim": "#ffb4a3",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#005049",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#45474c",
+            "inverse-surface": "#273143",
+            "outline-variant": "#e3beb6",
+            "surface-container-highest": "#d9e3fb",
+            "primary-container": "#ff5b37"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin-lg": "2.5rem",
+            "gutter": "1.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "gutter-lg": "1.75rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Outfit"],
+            "numeric-data": ["Outfit"],
+            "display-hero-mobile": ["Outfit"],
+            "headline-lg-mobile": ["Outfit"],
+            "headline-sm": ["Outfit"],
+            "body-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "display-hero": ["Outfit"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Outfit"],
+            "title-md": ["Outfit"],
+            "label-caps": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "numeric-data": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.015em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #E2E2E9;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F5F7] text-on-surface antialiased min-h-screen flex selection:bg-primary-container selection:text-white">
+<!-- ==================== SIDENAVBAR (JSON ANCHOR) ==================== -->
+<aside class="docked top-0 left-0 h-screen w-20 xl:w-64 fixed z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant/30 dark:border-outline-variant/10">
+<div class="flex flex-col justify-between h-full p-4">
+<!-- Brand & Header -->
+<div>
+<div class="flex items-center gap-3 px-2 py-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-on-surface flex items-center justify-center text-white shrink-0 shadow-sm">
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">S</span>
+</div>
+<div class="hidden xl:flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface font-semibold tracking-tight leading-tight truncate">Simplesphere OS</span>
+<span class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim leading-none">Private Cockpit</span>
+</div>
+</div>
+<!-- Quick Primary Action -->
+<button class="w-full mb-6 hidden xl:flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-on-surface text-white text-label-lg font-label-lg active:scale-95 duration-150 transition-transform shadow-sm hover:bg-black">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Add Asset</span>
+</button>
+<!-- Navigation Links -->
+<nav class="space-y-1">
+<!-- Cockpit -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md text-label-md hidden xl:inline">Cockpit</span>
+</a>
+<!-- Properties -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span class="font-label-md text-label-md hidden xl:inline">Properties</span>
+</a>
+<!-- Pipelines -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">filter_alt</span>
+<span class="font-label-md text-label-md hidden xl:inline">Pipelines</span>
+</a>
+<!-- Ledger (MAPPED ACTIVE TAB: TDS Commission Ledger screen) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary font-semibold transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md hidden xl:inline">Ledger</span>
+</a>
+<!-- Clients -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-md text-label-md hidden xl:inline">Clients</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-surface-variant transition-all scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="font-label-md text-label-md hidden xl:inline">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer Actions -->
+<div class="pt-4 border-t border-outline-variant/20 dark:border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="font-label-md text-label-md hidden xl:inline">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-secondary hover:text-on-surface hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+<span class="font-label-md text-label-md hidden xl:inline">Terminal</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+<div class="flex-1 ml-20 xl:ml-64 min-w-0 flex flex-col">
+<!-- ==================== TOPNAVBAR (JSON ANCHOR) ==================== -->
+<header class="docked top-0 right-0 w-[calc(100%-5rem)] xl:w-[calc(100%-16rem)] fixed z-30 h-16 bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/10 shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<div class="flex items-center justify-between px-6 h-full w-full gap-4">
+<!-- Left: Search Bar -->
+<div class="flex items-center gap-4 flex-1 max-w-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full h-10 pl-10 pr-12 rounded-full bg-[#EDEFF2] border-0 text-on-surface placeholder:text-secondary font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Search CP Ledger, TAN, RERA ID, or Voucher..." type="text"/>
+<kbd class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-semibold bg-white border border-black/10 text-secondary px-1.5 py-0.5 rounded shadow-2xs">⌘K</kbd>
+</div>
+</div>
+<!-- Center: Navigation Links -->
+<div class="hidden lg:flex items-center gap-8">
+<a class="font-body-md text-body-md text-secondary hover:text-on-surface font-medium transition-colors" href="#">Portfolio</a>
+<a class="font-body-md text-body-md text-secondary hover:text-on-surface font-medium transition-colors" href="#">Dealflow</a>
+<a class="font-body-md text-body-md text-primary font-semibold border-b-2 border-primary pb-1" href="#">Escrow</a>
+<a class="font-body-md text-body-md text-secondary hover:text-on-surface font-medium transition-colors" href="#">Analytics</a>
+</div>
+<!-- Right: Actions & Profile -->
+<div class="flex items-center gap-3">
+<!-- Secondary Action -->
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-black/10 bg-white hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Ledger</span>
+</button>
+<!-- Primary Action -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-on-surface text-white hover:bg-black font-label-md text-label-md active:scale-98 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Create Deal</span>
+</button>
+<!-- Trailing Icons -->
+<div class="flex items-center border-l border-black/10 pl-3 space-x-1">
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors" title="Preferences">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Profile Avatar -->
+<div class="flex items-center gap-2 pl-2">
+<img class="w-8 h-8 rounded-full ring-2 ring-white object-cover" data-alt="An executive managing director headshot in a bespoke tailored slate grey suit, sitting in a luminous minimalist glass boardroom with soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_HR1XEh4ptxtYqikPXYd65Nj75Wx9EF5cflzdZVt1Q1YIt4MY7xi8Aq7JKHQgrZpAJoj-HufrtT5g6DgzZIFO0jZVku3SJ7h8hpe4VnQVmEKy8CXHSps3tl_GeTiwF1vSp8GzsD1tca5I-A1Xl9SQ5Xu-HFqXGu2dozy3a8DzuSJ_Zg1zmtc9vIq_R3QqTSII7LFFxPIeJuMkRlMH4BP2k8nAGcSqJWzWhNOqVoiQlPQyQDwYYSmCEimpHpBItd9xL9S5AQOKRZ0"/>
+</div>
+</div>
+</div>
+</header>
+<!-- ==================== MAIN COCKPIT VIEW ==================== -->
+<main class="flex-1 pt-24 px-6 pb-12 max-w-[1720px] w-full mx-auto space-y-7">
+<!-- ==================== PAGE HEADER & TOP CTAs ==================== -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 bg-white p-6 rounded-[20px] border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)]">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">
+              Channel Partner (Broker) Platform
+            </h1>
+<span class="px-2.5 py-0.5 rounded-full text-label-caps font-label-caps bg-emerald-50 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
+              Statutory Compliant
+            </span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-4xl">
+            RERA KYC verification, lead protection window (60 days), slab commissions, and statutory Section 194H TDS ledger.
+          </p>
+</div>
+<!-- Action bar on right -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-black/[0.08] text-on-surface hover:bg-[#F4F5F7] font-label-lg text-label-lg transition-all active:scale-98 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">calculate</span>
+<span>194H TDS Calculator</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#FF5B37] text-white hover:bg-[#FF6B4A] font-label-lg text-label-lg transition-all active:scale-98 shadow-[0_4px_14px_rgba(255,91,55,0.25)]">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ Onboard New CP</span>
+</button>
+</div>
+</section>
+<!-- ==================== CAPSULE FILTER TRACK ==================== -->
+<section class="flex items-center gap-2 overflow-x-auto custom-scroll pb-1">
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-on-surface text-white shadow-sm flex items-center gap-2 shrink-0">
+<span>All Brokers</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-white text-[11px] font-semibold">3</span>
+</button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-white border border-black/[0.08] text-secondary hover:text-on-surface hover:bg-slate-50 transition-colors shrink-0">
+          Tier 1 Platinum (2.5%)
+        </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-white border border-black/[0.08] text-secondary hover:text-on-surface hover:bg-slate-50 transition-colors shrink-0">
+          Tier 2 Gold (2.0%)
+        </button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-white border border-black/[0.08] text-secondary hover:text-on-surface hover:bg-slate-50 transition-colors shrink-0 flex items-center gap-2">
+<span>Pending Invoices</span>
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+</button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-white border border-black/[0.08] text-secondary hover:text-on-surface hover:bg-slate-50 transition-colors shrink-0">
+          Passbook Settled
+        </button>
+<div class="h-5 w-px bg-black/10 mx-1 shrink-0"></div>
+<button class="px-3.5 py-2 rounded-full font-label-md text-label-md bg-white border border-black/[0.08] text-secondary hover:text-on-surface hover:bg-slate-50 transition-colors shrink-0 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Lead Rules (60 Days Active)</span>
+</button>
+</section>
+<!-- ==================== 4-TILE EXECUTIVE KPI ROW (FINEXY 4-TILE STYLE) ==================== -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Tile 1 (Solid Coral #FF5B37, white text) -->
+<div class="bg-[#FF5B37] text-white rounded-[20px] p-6 shadow-[0_8px_24px_-4px_rgba(255,91,55,0.35)] relative overflow-hidden flex flex-col justify-between h-[154px]">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-white/80">Brokerage Disbursed</span>
+<div class="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div>
+<div class="font-numeric-data text-[32px] leading-tight font-semibold tracking-tight text-white">₹46.0 L</div>
+<div class="font-body-sm text-body-sm text-white/90 mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Net of 5% Section 194H TDS</span>
+</div>
+</div>
+</div>
+<!-- Tile 2 (Crisp White #FFFFFF, dark text, subtle border) -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between h-[154px]">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Active Channel Partners</span>
+<div class="w-9 h-9 rounded-full bg-[#F4F5F7] flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+</div>
+<div>
+<div class="font-numeric-data text-[32px] leading-tight font-semibold tracking-tight text-on-surface">3 Brokers</div>
+<div class="font-body-sm text-body-sm text-emerald-700 mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>100% RERA Registered</span>
+</div>
+</div>
+</div>
+<!-- Tile 3 (Crisp White #FFFFFF, dark text, subtle border) -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between h-[154px]">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Pending Invoices</span>
+<div class="w-9 h-9 rounded-full bg-[#F4F5F7] flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+</div>
+<div>
+<div class="font-numeric-data text-[32px] leading-tight font-semibold tracking-tight text-on-surface">₹13.3 L</div>
+<div class="font-body-sm text-body-sm text-amber-700 mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>Awaiting Token Milestone Sign-Off</span>
+</div>
+</div>
+</div>
+<!-- Tile 4 (Crisp White #FFFFFF, dark text, subtle border) -->
+<div class="bg-white rounded-[20px] p-6 border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] flex flex-col justify-between h-[154px]">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Total Bookings via CPs</span>
+<div class="w-9 h-9 rounded-full bg-[#F4F5F7] flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">real_estate_agent</span>
+</div>
+</div>
+<div>
+<div class="font-numeric-data text-[32px] leading-tight font-semibold tracking-tight text-on-surface">7 Units</div>
+<div class="font-body-sm text-body-sm text-secondary mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">trending_up</span>
+<span>₹59.3 Cr Pipeline Contribution</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== CHANNEL PARTNER DIRECTORY & COMMISSION LEDGER TABLE ==================== -->
+<section class="bg-white rounded-[20px] border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] overflow-hidden">
+<!-- Table Card Header -->
+<div class="p-6 border-b border-black/[0.06] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+              Channel Partner Directory &amp; Commission Ledger
+            </h2>
+<span class="px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-[#EDEFF2] text-secondary font-medium">
+              3 Active Brokers
+            </span>
+</div>
+<!-- Table Controls -->
+<div class="flex items-center gap-3">
+<div class="relative w-64 md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-4 rounded-xl bg-[#F4F5F7] border border-black/[0.06] text-on-surface placeholder:text-secondary font-body-sm text-body-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#FF5B37]" placeholder="Search broker, agency, or RERA ID..." type="text"/>
+</div>
+<button class="h-10 px-3.5 rounded-xl bg-white border border-black/[0.08] hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-98 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span>Filter</span>
+</button>
+<button class="h-10 px-3.5 rounded-xl bg-white border border-black/[0.08] hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-98 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-secondary">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Tabular Grid (No wrap, high density luxury layout) -->
+<div class="overflow-x-auto custom-scroll">
+<table class="w-full text-left border-collapse whitespace-nowrap">
+<thead>
+<tr class="bg-[#F8F9FA] border-b border-black/[0.06]">
+<th class="py-3.5 pl-6 pr-3 w-10 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary-container" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold">PARTNER / AGENCY</th>
+<th class="py-3.5 px-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold">RERA CERTIFICATE</th>
+<th class="py-3.5 px-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold">COMMISSION TIER</th>
+<th class="py-3.5 px-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold text-center">BOOKINGS</th>
+<th class="py-3.5 px-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold text-right">TOTAL EARNED (INR)</th>
+<th class="py-3.5 px-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold text-right">PASSBOOK BALANCE</th>
+<th class="py-3.5 px-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold text-center">STATUS</th>
+<th class="py-3.5 pr-6 pl-4 font-label-caps text-label-caps uppercase text-secondary tracking-wider font-semibold text-right">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-black/[0.04]">
+<!-- ROW 1 -->
+<tr class="hover:bg-slate-50/75 transition-colors">
+<td class="py-4 pl-6 pr-3 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-primary font-semibold text-xs shrink-0">
+                      PR
+                    </div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">Prime Realty Advisors LLP</div>
+<div class="font-body-sm text-body-sm text-secondary">Rajesh Gupta (Managing Director)</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-numeric-data text-[13px] text-on-surface font-medium">A51900012938</div>
+<div class="font-label-caps text-label-caps text-secondary">PAN: AAACP1234D • TAN Valid</div>
+</td>
+<td class="py-4 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 border border-indigo-100 font-label-md text-label-md font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+<span>Slab 2 (2.5%)</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-numeric-data text-numeric-data text-on-surface">5 Units</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-numeric-data text-[15px] font-semibold text-on-surface">₹42,50,000</div>
+<div class="font-body-sm text-[11px] text-secondary">Gross Accrued</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-numeric-data text-[15px] font-semibold text-emerald-700">₹34.00L Paid</div>
+<div class="font-body-sm text-[11px] text-secondary">TDS: ₹1,70,000 (5%) Remitted</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-black/[0.08] bg-white hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md active:scale-95 transition-all">
+                      Passbook Ledger
+                    </button>
+<button class="px-3 py-1.5 rounded-lg bg-on-surface text-white hover:bg-black font-label-md text-label-md active:scale-95 transition-all">
+                      Pay Invoice
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-slate-50/75 transition-colors">
+<td class="py-4 pl-6 pr-3 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-semibold text-xs shrink-0">
+                      AP
+                    </div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">Apex Prop Consultancy</div>
+<div class="font-body-sm text-body-sm text-secondary">Suresh Menon (Principal Partner)</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-numeric-data text-[13px] text-on-surface font-medium">A51900088219</div>
+<div class="font-label-caps text-label-caps text-secondary">PAN: BBBCP5678E • TAN Valid</div>
+</td>
+<td class="py-4 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-800 border border-slate-200 font-label-md text-label-md font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+<span>Slab 1 (2.0%)</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-numeric-data text-numeric-data text-on-surface">2 Units</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-numeric-data text-[15px] font-semibold text-on-surface">₹16,80,000</div>
+<div class="font-body-sm text-[11px] text-secondary">Gross Accrued</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-numeric-data text-[15px] font-semibold text-emerald-700">₹12.00L Paid</div>
+<div class="font-body-sm text-[11px] text-secondary">TDS: ₹60,000 (5%) Remitted</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-black/[0.08] bg-white hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md active:scale-95 transition-all">
+                      Passbook Ledger
+                    </button>
+<button class="px-3 py-1.5 rounded-lg bg-on-surface text-white hover:bg-black font-label-md text-label-md active:scale-95 transition-all">
+                      Pay Invoice
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-slate-50/75 transition-colors">
+<td class="py-4 pl-6 pr-3 text-center">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-700 font-semibold text-xs shrink-0">
+                      UN
+                    </div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">Urban Nest Associates</div>
+<div class="font-body-sm text-body-sm text-secondary">Deepak Rao (Partner)</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="font-numeric-data text-[13px] text-on-surface font-medium">A51900044552</div>
+<div class="font-label-caps text-label-caps text-secondary">PAN: CCCCP9988F • Verification Done</div>
+</td>
+<td class="py-4 px-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-800 border border-slate-200 font-label-md text-label-md font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+<span>Slab 1 (2.0%)</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="font-numeric-data text-numeric-data text-secondary">0 Units</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-numeric-data text-[15px] font-semibold text-secondary">₹0.00L</div>
+<div class="font-body-sm text-[11px] text-secondary">No Accruals</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-numeric-data text-[15px] font-semibold text-secondary">₹0.00L Paid</div>
+<div class="font-body-sm text-[11px] text-secondary">No Disbursals</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Active</span>
+</span>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-black/[0.08] bg-white hover:bg-[#F4F5F7] text-on-surface font-label-md text-label-md active:scale-95 transition-all">
+                      Passbook Ledger
+                    </button>
+<button class="px-3 py-1.5 rounded-lg border border-black/[0.08] bg-white hover:bg-[#F4F5F7] text-primary font-label-md text-label-md active:scale-95 transition-all">
+                      Invite
+                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Summary Bar -->
+<div class="p-4 bg-[#F8F9FA] border-t border-black/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-secondary font-body-sm text-body-sm">
+<div>
+            Showing <span class="font-semibold text-on-surface">1</span> to <span class="font-semibold text-on-surface">3</span> of 3 registered channel partners
+          </div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-lg border border-black/[0.08] bg-white hover:bg-slate-50 disabled:opacity-50 text-on-surface" disabled="">Previous</button>
+<button class="px-3 py-1 rounded-lg bg-on-surface text-white font-medium">1</button>
+<button class="px-3 py-1 rounded-lg border border-black/[0.08] bg-white hover:bg-slate-50 disabled:opacity-50 text-on-surface" disabled="">Next</button>
+</div>
+</div>
+</section>
+<!-- ==================== SECTION 194H STATUTORY TDS COMPLIANCE STRIP ==================== -->
+<section class="bg-white rounded-[20px] border border-black/[0.06] shadow-[0_4px_20px_-2px_rgba(17,19,24,0.03)] p-6">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<!-- Left: Statutory Context -->
+<div class="flex items-start gap-4 max-w-2xl">
+<div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/80 flex items-center justify-center text-amber-800 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">
+                  Section 194H — Statutory Income Tax Act 1961 Compliance Engine
+                </h3>
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-semibold border border-blue-200">TAN Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1 leading-relaxed">
+                All brokerage pay-outs automatically deduct <strong>5.00% TDS</strong> under Section 194H. Passbook reconciles automatically with NSDL/TRACES TAN registers for seamless quarterly Form 16A generation and zero audit friction.
+              </p>
+</div>
+</div>
+<!-- Right: Compliance Micro-Tiles / Status -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 shrink-0">
+<div class="p-3 rounded-xl bg-[#F8F9FA] border border-black/[0.04] text-center min-w-[130px]">
+<div class="font-label-caps text-label-caps uppercase text-secondary">TDS DEDUCTION RATE</div>
+<div class="font-numeric-data text-[18px] text-on-surface font-semibold mt-0.5">5.00% Flat</div>
+<div class="font-body-sm text-[11px] text-emerald-700 font-medium">Statutory Limit</div>
+</div>
+<div class="p-3 rounded-xl bg-[#F8F9FA] border border-black/[0.04] text-center min-w-[130px]">
+<div class="font-label-caps text-label-caps uppercase text-secondary">FORM 16A CERTIFICATES</div>
+<div class="font-numeric-data text-[18px] text-on-surface font-semibold mt-0.5">Q3 FY24</div>
+<div class="font-body-sm text-[11px] text-blue-700 font-medium">Ready for Dispatch</div>
+</div>
+<div class="p-3 rounded-xl bg-[#F8F9FA] border border-black/[0.04] text-center min-w-[130px] col-span-2 sm:col-span-1">
+<div class="font-label-caps text-label-caps uppercase text-secondary">IT-PORTAL SYNC</div>
+<div class="font-numeric-data text-[18px] text-emerald-700 font-semibold mt-0.5 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Real-Time</span>
+</div>
+<div class="font-body-sm text-[11px] text-secondary">24h Automated Cycle</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>
