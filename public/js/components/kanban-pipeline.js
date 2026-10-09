@@ -169,12 +169,12 @@ function renderKanbanPipeline(container, state) {
         ondrop="window.handleDropLead(event, '${stg.id}')">
         
         <!-- Column Header -->
-        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; border-bottom: 1.5px solid rgba(0,0,0,0.06);">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="width: 8px; height: 8px; border-radius: 50%; background: ${stg.dotColor};"></span>
-            <span style="font-family: 'Outfit', sans-serif; font-size: 14.5px; font-weight: 700; color: #111318; white-space: nowrap;">${stg.label}</span>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; border-bottom: 1.5px solid rgba(0,0,0,0.06); gap: 6px;">
+          <div style="display: flex; align-items: center; gap: 7px; min-width: 0; flex: 1;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: ${stg.dotColor}; flex-shrink: 0;"></span>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; color: #111318; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${stg.label}">${stg.label}</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 6px;">
+          <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
             <span style="font-family: 'Outfit', sans-serif; font-size: 11.5px; font-weight: 700; color: #667085; white-space: nowrap;">₹${colValCr}Cr</span>
             <span style="padding: 2px 7px; border-radius: 9999px; background: #FFFFFF; font-size: 11px; font-weight: 700; color: #111318; border: 1px solid rgba(0,0,0,0.08); white-space: nowrap;">${colLeads.length}</span>
           </div>
@@ -200,7 +200,7 @@ function renderKanbanPipeline(container, state) {
                 slaHtml = `
                   <div style="display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: #B91C1C; background: #FEF2F2; padding: 4px 8px; border-radius: 8px; border: 1px solid #FECACA; white-space: nowrap;">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                    <span>SLA Breached • Priority Escalation</span>
+                    <span>SLA Breached • Escalation</span>
                   </div>
                 `;
               }
@@ -222,38 +222,43 @@ function renderKanbanPipeline(container, state) {
                 onclick="window.openLeadDetailsModal('${lead.id}')">
                 
                 <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-                  <span style="font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: #111318; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                  <span style="font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: #111318; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${lead.name}">
                     ${lead.name}
                   </span>
-                  <span style="padding: 2px 7px; border-radius: 9999px; background: ${scoreBg}; color: ${scoreColor}; border: 1px solid ${scoreBorder}; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; gap: 3px; white-space: nowrap;">
+                  <span style="padding: 2px 7px; border-radius: 9999px; background: ${scoreBg}; color: ${scoreColor}; border: 1px solid ${scoreBorder}; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; flex-shrink: 0;">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     ${score}
                   </span>
                 </div>
 
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #667085; white-space: nowrap;">
-                  <span style="padding: 2px 6px; border-radius: 6px; background: #F4F5F7; font-weight: 600; text-transform: uppercase;">
-                    ${lead.source || 'INBOUND'} • ${lead.preferred_config || '3BHK'}
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #667085; white-space: nowrap; gap: 6px;">
+                  <span style="padding: 2px 6px; border-radius: 6px; background: #F4F5F7; font-weight: 600; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px;" title="${lead.source || 'INBOUND'}">
+                    ${lead.source || 'INBOUND'}
                   </span>
-                  <span style="font-weight: 500;">${lead.assigned_rep_name || 'Priya K.'}</span>
+                  <span style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0;" title="Rep: ${lead.assigned_rep_name || 'Priya K.'}">
+                    • Rep: ${(lead.assigned_rep_name || 'Priya K.').split(' ')[0]}
+                  </span>
                 </div>
 
-                <div style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; color: #111318; white-space: nowrap;">
-                  ${budgetText}
+                <div>
+                  <div style="font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: #111318; white-space: nowrap;">
+                    ${budgetText}
+                  </div>
+                  <div style="font-size: 11.5px; color: #667085; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px;" title="${lead.preferred_config || '3BHK Sea Suite'}">
+                    ${lead.preferred_config || '3BHK Sea Suite'}
+                  </div>
                 </div>
 
                 ${slaHtml}
 
                 <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.06); font-size: 11.5px;" onclick="event.stopPropagation();">
-                  <span style="color: #667085; font-weight: 500; white-space: nowrap;">Calls: ${lead.call_count || 0}</span>
-                  <div style="display: flex; gap: 6px;">
-                    <button class="finexy-filter-btn" style="padding: 4px 8px; font-size: 11px; border-radius: 8px;" onclick="window.openDialerModal('${lead.id}')" title="Virtual Dialer">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                      Call
+                  <span style="color: #667085; font-weight: 500; white-space: nowrap; font-size: 11px;">Calls: ${lead.call_count || 0}</span>
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <button class="finexy-icon-action-btn" onclick="window.openDialerModal('${lead.id}')" title="Virtual Dialer (Click to Call)" style="width: 28px; height: 28px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); background: #F4F5F7; display: inline-flex; align-items: center; justify-content: center; color: #111318; cursor: pointer; transition: all 0.15s ease;">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     </button>
-                    <button class="finexy-filter-btn" style="padding: 4px 8px; font-size: 11px; border-radius: 8px;" onclick="window.openLeadDetailsModal('${lead.id}', 'whatsapp')" title="WhatsApp Chat">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                      WhatsApp
+                    <button class="finexy-icon-action-btn" onclick="window.openLeadDetailsModal('${lead.id}', 'whatsapp')" title="WhatsApp Instant Chat" style="width: 28px; height: 28px; border-radius: 8px; border: 1px solid rgba(16,185,129,0.25); background: #ECFDF5; display: inline-flex; align-items: center; justify-content: center; color: #065F46; cursor: pointer; transition: all 0.15s ease;">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                     </button>
                   </div>
                 </div>

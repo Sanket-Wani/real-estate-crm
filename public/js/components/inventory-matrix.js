@@ -280,7 +280,7 @@ function renderInventoryMatrix(container, state) {
               <div class="stitch-unit-config" title="${unit.configuration}">${unit.configuration}</div>
               <div class="stitch-unit-specs">
                 <span>${unit.carpet_area} sqft</span>
-                <span style="color: #FF5B37; font-weight: 600;">${unit.facing || 'Sea Facing'}</span>
+                <span style="color: #FF5B37; font-weight: 600;" title="${unit.facing || 'Sea Facing'}">${unit.facing || 'Sea Facing'}</span>
               </div>
             </div>
 
