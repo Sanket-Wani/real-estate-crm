@@ -1,11 +1,28 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
+const { execSync } = require('child_process');
 const crypto = require('crypto');
+const multer = require('multer');
 const { getDb, saveDb, checkExpiredHolds, resetDb } = require('./database');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Multer storage for CAD & DWG uploads
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+const cadUpload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => cb(null, uploadDir),
+    filename: (req, file, cb) => cb(null, `cad-${Date.now()}-${file.originalname}`)
+  }),
+  limits: { fileSize: 50 * 1024 * 1024 } // 50MB CAD DWG limit
+});
 
 app.use(cors());
 app.use(express.json());
@@ -2164,6 +2181,272 @@ app.post('/v1/ai/voice-call/finalize', (req, res) => {
     lead,
     visit
   });
+});
+
+// ----------------------------------------------------
+// CAD / DWG Land Plotting Masterplan Module Endpoints
+// ----------------------------------------------------
+let cadMasterplanCache = null;
+
+function loadCadMasterplan() {
+  const masterplanFile = path.join(__dirname, 'public', 'data', 'kesnand_masterplan.json');
+  if (fs.existsSync(masterplanFile)) {
+    try {
+      const raw = fs.readFileSync(masterplanFile, 'utf8');
+      cadMasterplanCache = JSON.parse(raw);
+    } catch (err) {
+      console.error('Error loading CAD masterplan cache:', err);
+    }
+  }
+  return cadMasterplanCache;
+}
+
+function saveCadMasterplan() {
+  if (!cadMasterplanCache) return;
+  const masterplanFile = path.join(__dirname, 'public', 'data', 'kesnand_masterplan.json');
+  try {
+    fs.writeFileSync(masterplanFile, JSON.stringify(cadMasterplanCache, null, 2), 'utf8');
+  } catch (err) {
+    console.error('Error saving CAD masterplan cache:', err);
+  }
+}
+
+// 1. Get Masterplan Data
+app.get('/v1/cad/masterplan', (req, res) => {
+  const plan = loadCadMasterplan();
+  if (!plan) {
+    return res.status(404).json({ success: false, error: 'No CAD masterplan loaded' });
+  }
+
+  // Recalculate stats dynamically
+  const plots = plan.plots || [];
+  plan.stats.totalPlots = plots.length;
+  plan.stats.available = plots.filter(p => p.status === 'available').length;
+  plan.stats.held = plots.filter(p => p.status === 'held').length;
+  plan.stats.booked = plots.filter(p => p.status === 'booked').length;
+  plan.stats.sold = plots.filter(p => p.status === 'sold').length;
+
+  res.json({ success: true, masterplan: plan });
+});
+
+// 2. Import DWG / CAD File (Supports multipart upload or local filesystem path)
+app.post('/v1/cad/import', cadUpload.single('file'), (req, res) => {
+  let targetFilePath = null;
+
+  if (req.file) {
+    targetFilePath = req.file.path;
+  } else if (req.body && req.body.filePath) {
+    targetFilePath = req.body.filePath;
+  } else {
+    // Default to provided Kesnand DWG file
+    targetFilePath = "C:\\Users\\sanke\\Downloads\\SUB-KESNAND-13.11.2025.dwg";
+  }
+
+  if (!fs.existsSync(targetFilePath)) {
+    return res.status(400).json({
+      success: false,
+      error: `Specified CAD file not found at path: ${targetFilePath}`
+    });
+  }
+
+  try {
+    const parserScript = path.join(__dirname, 'scripts', 'cad_parser.py');
+    const pythonCmd = `python "${parserScript}" "${targetFilePath}"`;
+    execSync(pythonCmd, { stdio: 'pipe' });
+
+    // Reload masterplan
+    const refreshed = loadCadMasterplan();
+
+    broadcastSSE('cad_imported', {
+      fileName: path.basename(targetFilePath),
+      totalPlots: refreshed ? refreshed.plots.length : 0,
+      timestamp: new Date().toISOString()
+    });
+
+    res.json({
+      success: true,
+      message: `DWG/CAD file successfully parsed and plotted! (${path.basename(targetFilePath)})`,
+      metadata: refreshed.metadata,
+      stats: refreshed.stats,
+      masterplan: refreshed
+    });
+  } catch (err) {
+    console.error('CAD Parsing Error:', err);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to parse DWG layout: ' + (err.stderr ? err.stderr.toString() : err.message)
+    });
+  }
+});
+
+// 3. Place 15-Minute Priority Hold on Plot
+app.post('/v1/cad/plots/:id/hold', (req, res) => {
+  const plan = loadCadMasterplan();
+  if (!plan) return res.status(404).json({ success: false, error: 'Masterplan not found' });
+
+  const plot = plan.plots.find(p => p.id === req.params.id);
+  if (!plot) return res.status(404).json({ success: false, error: 'Plot not found' });
+
+  if (plot.status === 'booked' || plot.status === 'sold') {
+    return res.status(400).json({ success: false, error: `Plot ${plot.plotNumber} is already ${plot.status}` });
+  }
+
+  plot.status = 'held';
+  plot.holdRemainingSeconds = 900; // 15 minutes
+  plot.heldAt = new Date().toISOString();
+  plot.buyerName = req.body.buyerName || '15-Min Priority Reservation';
+
+  saveCadMasterplan();
+  broadcastSSE('plot_updated', plot);
+
+  res.json({
+    success: true,
+    message: `Priority 15-minute lock placed on ${plot.label}`,
+    plot
+  });
+});
+
+// 4. Book Plot / Initiate Token Advance
+app.post('/v1/cad/plots/:id/book', (req, res) => {
+  const plan = loadCadMasterplan();
+  if (!plan) return res.status(404).json({ success: false, error: 'Masterplan not found' });
+
+  const plot = plan.plots.find(p => p.id === req.params.id);
+  if (!plot) return res.status(404).json({ success: false, error: 'Plot not found' });
+
+  if (plot.status === 'sold') {
+    return res.status(400).json({ success: false, error: `Plot ${plot.plotNumber} has already been registered and sold` });
+  }
+
+  const { buyerName, buyerPhone, tokenAmount, paymentScheme, leadId } = req.body;
+  plot.status = 'booked';
+  plot.holdRemainingSeconds = null;
+  plot.buyerName = buyerName || 'Confirmed Buyer Allotment';
+  plot.bookedAt = new Date().toISOString();
+  plot.bookingTokenAmount = Number(tokenAmount) || 100000;
+  plot.paymentScheme = paymentScheme || 'clp';
+  plot.leadId = leadId || null;
+
+  saveCadMasterplan();
+
+  // Create booking entry in CRM database if database exists
+  const db = getDb();
+  if (db && db.bookings) {
+    const bookingRecord = {
+      id: `bk-plot-${plot.plotNumber}-${Date.now()}`,
+      unit_id: plot.id,
+      unit_number: plot.label,
+      project_id: 'proj-kesnand',
+      buyer_name: buyerName || 'Plotted County Allottee',
+      buyer_phone: buyerPhone || '+91 98200 00000',
+      token_amount: plot.bookingTokenAmount,
+      total_price: plot.totalPrice,
+      payment_scheme: plot.paymentScheme,
+      status: 'confirmed',
+      created_at: new Date().toISOString()
+    };
+    db.bookings.unshift(bookingRecord);
+    saveDb();
+    broadcastSSE('booking_created', bookingRecord);
+  }
+
+  broadcastSSE('plot_updated', plot);
+
+  res.json({
+    success: true,
+    message: `Token booking confirmed for ${plot.label}! Allotment receipt generated.`,
+    plot
+  });
+});
+
+// 5. Update Plot Status (Admin / Sales Manager Override)
+app.patch('/v1/cad/plots/:id/status', (req, res) => {
+  const plan = loadCadMasterplan();
+  if (!plan) return res.status(404).json({ success: false, error: 'Masterplan not found' });
+
+  const plot = plan.plots.find(p => p.id === req.params.id);
+  if (!plot) return res.status(404).json({ success: false, error: 'Plot not found' });
+
+  const { status, buyerName } = req.body;
+  if (!['available', 'held', 'booked', 'sold'].includes(status)) {
+    return res.status(400).json({ success: false, error: 'Invalid status' });
+  }
+
+  plot.status = status;
+  if (status === 'available') {
+    plot.buyerName = null;
+    plot.holdRemainingSeconds = null;
+  } else if (status === 'held') {
+    plot.holdRemainingSeconds = 900;
+    plot.buyerName = buyerName || '15-Min Reservation';
+  } else if (buyerName) {
+    plot.buyerName = buyerName;
+  }
+
+  saveCadMasterplan();
+  broadcastSSE('plot_updated', plot);
+
+  res.json({
+    success: true,
+    message: `${plot.label} status updated to ${status.toUpperCase()}`,
+    plot
+  });
+});
+
+// 6. Generate Official Plotted Cost Sheet Quotation
+app.post('/v1/cad/plots/:id/cost-sheet', (req, res) => {
+  const plan = loadCadMasterplan();
+  if (!plan) return res.status(404).json({ success: false, error: 'Masterplan not found' });
+
+  const plot = plan.plots.find(p => p.id === req.params.id);
+  if (!plot) return res.status(404).json({ success: false, error: 'Plot not found' });
+
+  const discountPct = Math.min(Number(req.body.discountPct) || 0, 5);
+  const baseRate = plot.baseRatePerSqFt;
+  const effectiveRate = Math.round(baseRate * (1 - discountPct / 100));
+  const baseCost = Math.round(plot.areaSqFt * effectiveRate);
+  const cornerPlc = plot.isCorner ? Math.round(baseCost * 0.05) : 0;
+  const infraCharges = 250000;
+  const clubDeposit = 150000;
+  const legalCharges = 35000;
+  const agreementVal = baseCost + cornerPlc + infraCharges;
+
+  // Pune Maharashtra PMRDA Statutory Charges
+  const stampDutyPct = 7; // 6% Stamp Duty + 1% Metro Cess
+  const stampDuty = Math.round((agreementVal * stampDutyPct) / 100);
+  const registrationFee = 30000;
+  const gstPct = 0; // 0% GST on Land (Schedule III exemption)
+  const gst = 0;
+  const grandTotal = agreementVal + clubDeposit + legalCharges + stampDuty + registrationFee;
+
+  const costSheet = {
+    plotId: plot.id,
+    plotNumber: plot.label,
+    sector: plot.sector,
+    areaSqFt: plot.areaSqFt,
+    guntha: plot.guntha,
+    dimensions: plot.dimensions,
+    facing: plot.facing,
+    baseRatePerSqFt: baseRate,
+    discountPct,
+    effectiveRate,
+    baseCost,
+    cornerPlc,
+    infraCharges,
+    clubDeposit,
+    legalCharges,
+    agreementVal,
+    stampDuty,
+    stampDutyPct,
+    registrationFee,
+    gst,
+    gstPct,
+    grandTotal,
+    bookingToken: 100000,
+    generatedAt: new Date().toISOString()
+  };
+
+  res.json({ success: true, costSheet });
 });
 
 // Reset Demo Data Endpoint

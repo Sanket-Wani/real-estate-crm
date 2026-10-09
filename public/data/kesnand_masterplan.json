@@ -1,0 +1,3307 @@
+{
+  "success": true,
+  "metadata": {
+    "fileName": "SUB-KESNAND-13.11.2025.dwg",
+    "filePath": "C:\\Users\\sanke\\Downloads\\SUB-KESNAND-13.11.2025.dwg",
+    "fileSize": 1539520,
+    "fileSizeFormatted": "1.47 MB",
+    "format": "AutoCAD Drawing Binary (DWG AC1032 / 2018-2024)",
+    "projectTitle": "Proposed Amalgamation & Plotted Development Layout at Kesnand",
+    "developer": "Vishal Ashok Chugera Properties India Pvt. Ltd. / Wanwari Shanti Construction",
+    "location": "Gat No. 71/1, 91/1, 91/2(P), 92/1, Kesnand, Taluka Haveli, Dist. Pune (PMRDA)",
+    "sanctionAuthority": "PMRDA (Pune Metropolitan Region Development Authority)",
+    "totalSchemeAreaSqM": 102000,
+    "totalSchemeAreaAcres": 25.2,
+    "totalLayers": 15,
+    "layerNames": [
+      "0",
+      "DIM",
+      "Text",
+      "WALL",
+      "TEXT-1",
+      "North",
+      "PLOT TEXT",
+      "ROAD1",
+      "Defpoints",
+      "2MM",
+      "DIM1",
+      "HID",
+      "AREA",
+      "TEXT1",
+      "NAME"
+    ],
+    "cadEntitiesTotal": 5560,
+    "layerCounts": {
+      "0": 63,
+      "Text": 457,
+      "2MM": 21,
+      "DIM": 631,
+      "WALL": 737,
+      "TEXT-1": 267,
+      "TEXT1": 10,
+      "PLOT TEXT": 1911,
+      "ROAD1": 18,
+      "HID": 4,
+      "Defpoints": 3,
+      "NAME": 11,
+      "DIM1": 1424,
+      "North": 3
+    },
+    "parsedAt": "2026-10-10T00:15:00Z"
+  },
+  "stats": {
+    "totalPlots": 60,
+    "available": 45,
+    "held": 4,
+    "booked": 8,
+    "sold": 3,
+    "totalInventoryValue": 409087396,
+    "totalInventoryValueCr": "₹40.91 Cr",
+    "totalPlottedSqFt": 136551.59999999998,
+    "avgPlotSizeSqFt": 2275.9
+  },
+  "viewBox": "0 0 1260 700",
+  "roads": [
+    {
+      "id": "RD-DP",
+      "name": "18.00 M.W. Main DP Road (Kesnand - Wagholi Link)",
+      "width": "18.0 Meters",
+      "path": "M 20 45 L 1240 45",
+      "strokeWidth": 26
+    },
+    {
+      "id": "RD-12M-A",
+      "name": "12.00 M.W. Arterial Spine (Between Sector A & B)",
+      "width": "12.0 Meters",
+      "path": "M 20 215 L 1240 215",
+      "strokeWidth": 18
+    },
+    {
+      "id": "RD-9M-B",
+      "name": "9.00 M.W. Central Promenade (Between Sector B & C)",
+      "width": "9.0 Meters",
+      "path": "M 20 360 L 1240 360",
+      "strokeWidth": 14
+    },
+    {
+      "id": "RD-9M-C",
+      "name": "9.00 M.W. South Avenue (Between Sector C & D)",
+      "width": "9.0 Meters",
+      "path": "M 20 505 L 1240 505",
+      "strokeWidth": 14
+    },
+    {
+      "id": "RD-12M-D",
+      "name": "12.00 M.W. Southern Perimeter Road",
+      "width": "12.0 Meters",
+      "path": "M 20 650 L 1240 650",
+      "strokeWidth": 16
+    },
+    {
+      "id": "RD-VERT-1",
+      "name": "9.00 M.W. West Access Avenue",
+      "width": "9.0 Meters",
+      "path": "M 230 45 L 230 650",
+      "strokeWidth": 14
+    },
+    {
+      "id": "RD-VERT-2",
+      "name": "9.00 M.W. East Access Avenue",
+      "width": "9.0 Meters",
+      "path": "M 1030 45 L 1030 650",
+      "strokeWidth": 14
+    }
+  ],
+  "amenities": [
+    {
+      "id": "AMENITY-1",
+      "name": "Grand Clubhouse, Swimming Pool & Sports Arena",
+      "areaSqM": 7601.69,
+      "areaSqFt": 81824.2,
+      "guntha": 75.14,
+      "type": "Amenity Space 1 (PMRDA Sanctioned)",
+      "svg": {
+        "x": 40,
+        "y": 110,
+        "w": 180,
+        "h": 210,
+        "labelX": 130,
+        "labelY": 215
+      }
+    },
+    {
+      "id": "AMENITY-2",
+      "name": "Community Wellness & Healthcare Center",
+      "areaSqM": 6957.49,
+      "areaSqFt": 74890.3,
+      "guntha": 68.77,
+      "type": "Amenity Space 2 (PMRDA Sanctioned)",
+      "svg": {
+        "x": 40,
+        "y": 360,
+        "w": 180,
+        "h": 240,
+        "labelX": 130,
+        "labelY": 480
+      }
+    },
+    {
+      "id": "OPEN-SPACE-1",
+      "name": "Central Oxygen Botanical Park & Jogging Track",
+      "areaSqM": 5485.61,
+      "areaSqFt": 59046.6,
+      "guntha": 54.22,
+      "type": "Open Space 1 (10% Sanctioned Green)",
+      "svg": {
+        "x": 1040,
+        "y": 110,
+        "w": 180,
+        "h": 210,
+        "labelX": 1130,
+        "labelY": 215
+      }
+    },
+    {
+      "id": "OPEN-SPACE-2",
+      "name": "Children Adventure Play Garden & Sports Field",
+      "areaSqM": 1998.13,
+      "areaSqFt": 21507.7,
+      "guntha": 19.75,
+      "type": "Open Space 2 (Sanctioned Green)",
+      "svg": {
+        "x": 1040,
+        "y": 360,
+        "w": 180,
+        "h": 240,
+        "labelX": 1130,
+        "labelY": 480
+      }
+    }
+  ],
+  "plots": [
+    {
+      "id": "KES-P-001",
+      "plotNumber": 1,
+      "label": "Plot 1",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": true,
+      "dimensions": "30.2' × 75.4'",
+      "dimensionsMetric": "9.2m × 23.0m",
+      "areaSqM": 211.42,
+      "areaSqFt": 2275.7,
+      "guntha": 2.09,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6485745,
+      "cornerPlc": 324287,
+      "infraCharges": 250000,
+      "totalPrice": 7060032,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10245.04,
+        "y": -1546.53
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            113
+          ],
+          [
+            299,
+            113
+          ],
+          [
+            299,
+            157
+          ],
+          [
+            221,
+            157
+          ]
+        ],
+        "svgPath": "M 221.0 113.0 L 299.0 113.0 L 299.0 157.0 L 221.0 157.0 Z"
+      },
+      "heldAt": "2026-10-09T19:14:07.946Z",
+      "bookedAt": "2026-10-09T19:14:07.992Z",
+      "paymentScheme": "clp",
+      "leadId": null
+    },
+    {
+      "id": "KES-P-002",
+      "plotNumber": 2,
+      "label": "Plot 2",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1002 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10321.27,
+        "y": -1548.35
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            113
+          ],
+          [
+            394,
+            113
+          ],
+          [
+            394,
+            157
+          ],
+          [
+            316,
+            157
+          ]
+        ],
+        "svgPath": "M 316.0 113.0 L 394.0 113.0 L 394.0 157.0 L 316.0 157.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-003",
+      "plotNumber": 3,
+      "label": "Plot 3",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10126.55,
+        "y": -1533.27
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            113
+          ],
+          [
+            489,
+            113
+          ],
+          [
+            489,
+            157
+          ],
+          [
+            411,
+            157
+          ]
+        ],
+        "svgPath": "M 411.0 113.0 L 489.0 113.0 L 489.0 157.0 L 411.0 157.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-004",
+      "plotNumber": 4,
+      "label": "Plot 4",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10432.11,
+        "y": -1541.3
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            113
+          ],
+          [
+            584,
+            113
+          ],
+          [
+            584,
+            157
+          ],
+          [
+            506,
+            157
+          ]
+        ],
+        "svgPath": "M 506.0 113.0 L 584.0 113.0 L 584.0 157.0 L 506.0 157.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-005",
+      "plotNumber": 5,
+      "label": "Plot 5",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "held",
+      "buyerName": "Hold in Progress (15-min Priority Queue)",
+      "holdRemainingSeconds": 780,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10518.44,
+        "y": -1548.37
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            113
+          ],
+          [
+            679,
+            113
+          ],
+          [
+            679,
+            157
+          ],
+          [
+            601,
+            157
+          ]
+        ],
+        "svgPath": "M 601.0 113.0 L 679.0 113.0 L 679.0 157.0 L 601.0 157.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-006",
+      "plotNumber": 6,
+      "label": "Plot 6",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10162.97,
+        "y": -1549.19
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            113
+          ],
+          [
+            774,
+            113
+          ],
+          [
+            774,
+            157
+          ],
+          [
+            696,
+            157
+          ]
+        ],
+        "svgPath": "M 696.0 113.0 L 774.0 113.0 L 774.0 157.0 L 696.0 157.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-007",
+      "plotNumber": 7,
+      "label": "Plot 7",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1007 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10534.4,
+        "y": -1541.21
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            113
+          ],
+          [
+            869,
+            113
+          ],
+          [
+            869,
+            157
+          ],
+          [
+            791,
+            157
+          ]
+        ],
+        "svgPath": "M 791.0 113.0 L 869.0 113.0 L 869.0 157.0 L 791.0 157.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-008",
+      "plotNumber": 8,
+      "label": "Plot 8",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": true,
+      "dimensions": "30.2' × 67.5'",
+      "dimensionsMetric": "9.2m × 20.6m",
+      "areaSqM": 189.15,
+      "areaSqFt": 2036,
+      "guntha": 1.87,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5802600,
+      "cornerPlc": 290130,
+      "infraCharges": 250000,
+      "totalPrice": 6342730,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10539.04,
+        "y": -1534.48
+      },
+      "svg": {
+        "cx": 925,
+        "cy": 135,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            886,
+            113
+          ],
+          [
+            964,
+            113
+          ],
+          [
+            964,
+            157
+          ],
+          [
+            886,
+            157
+          ]
+        ],
+        "svgPath": "M 886.0 113.0 L 964.0 113.0 L 964.0 157.0 L 886.0 157.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-009",
+      "plotNumber": 9,
+      "label": "Plot 9",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": true,
+      "dimensions": "30.2' × 83.3'",
+      "dimensionsMetric": "9.2m × 25.4m",
+      "areaSqM": 233.68,
+      "areaSqFt": 2515.3,
+      "guntha": 2.31,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168605,
+      "cornerPlc": 358430,
+      "infraCharges": 250000,
+      "totalPrice": 7777035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10543.15,
+        "y": -1528.4
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 200,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            178
+          ],
+          [
+            299,
+            178
+          ],
+          [
+            299,
+            222
+          ],
+          [
+            221,
+            222
+          ]
+        ],
+        "svgPath": "M 221.0 178.0 L 299.0 178.0 L 299.0 222.0 L 221.0 222.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-010",
+      "plotNumber": 10,
+      "label": "Plot 10",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10446.16,
+        "y": -1532.64
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 200,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            178
+          ],
+          [
+            394,
+            178
+          ],
+          [
+            394,
+            222
+          ],
+          [
+            316,
+            222
+          ]
+        ],
+        "svgPath": "M 316.0 178.0 L 394.0 178.0 L 394.0 222.0 L 316.0 222.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-011",
+      "plotNumber": 11,
+      "label": "Plot 11",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "sold",
+      "buyerName": "Registered Sale Deed Executed",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10662.93,
+        "y": -1515.53
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 200,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            178
+          ],
+          [
+            489,
+            178
+          ],
+          [
+            489,
+            222
+          ],
+          [
+            411,
+            222
+          ]
+        ],
+        "svgPath": "M 411.0 178.0 L 489.0 178.0 L 489.0 222.0 L 411.0 222.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-012",
+      "plotNumber": 12,
+      "label": "Plot 12",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10570.3,
+        "y": -1492.93
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 200,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            178
+          ],
+          [
+            584,
+            178
+          ],
+          [
+            584,
+            222
+          ],
+          [
+            506,
+            222
+          ]
+        ],
+        "svgPath": "M 506.0 178.0 L 584.0 178.0 L 584.0 222.0 L 506.0 222.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-013",
+      "plotNumber": 13,
+      "label": "Plot 13",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10577.57,
+        "y": -1483.66
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 200,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            178
+          ],
+          [
+            679,
+            178
+          ],
+          [
+            679,
+            222
+          ],
+          [
+            601,
+            222
+          ]
+        ],
+        "svgPath": "M 601.0 178.0 L 679.0 178.0 L 679.0 222.0 L 601.0 222.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-014",
+      "plotNumber": 14,
+      "label": "Plot 14",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1014 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10583.11,
+        "y": -1476.54
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 200,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            178
+          ],
+          [
+            774,
+            178
+          ],
+          [
+            774,
+            222
+          ],
+          [
+            696,
+            222
+          ]
+        ],
+        "svgPath": "M 696.0 178.0 L 774.0 178.0 L 774.0 222.0 L 696.0 222.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-015",
+      "plotNumber": 15,
+      "label": "Plot 15",
+      "sector": "Sector A — Royal Boulevard",
+      "isCorner": true,
+      "dimensions": "30.2' × 59.5'",
+      "dimensionsMetric": "9.2m × 18.1m",
+      "areaSqM": 166.89,
+      "areaSqFt": 1796.4,
+      "guntha": 1.65,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "12.0M Arterial Master Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5119740,
+      "cornerPlc": 255987,
+      "infraCharges": 250000,
+      "totalPrice": 5625727,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10359.09,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 200,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            178
+          ],
+          [
+            869,
+            178
+          ],
+          [
+            869,
+            222
+          ],
+          [
+            791,
+            222
+          ]
+        ],
+        "svgPath": "M 791.0 178.0 L 869.0 178.0 L 869.0 222.0 L 791.0 222.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-016",
+      "plotNumber": 16,
+      "label": "Plot 16",
+      "sector": "Sector B — Central Greens",
+      "isCorner": true,
+      "dimensions": "30.2' × 75.4'",
+      "dimensionsMetric": "9.2m × 23.0m",
+      "areaSqM": 211.42,
+      "areaSqFt": 2275.7,
+      "guntha": 2.09,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6485745,
+      "cornerPlc": 324287,
+      "infraCharges": 250000,
+      "totalPrice": 7060032,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10367.59,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            258
+          ],
+          [
+            299,
+            258
+          ],
+          [
+            299,
+            302
+          ],
+          [
+            221,
+            302
+          ]
+        ],
+        "svgPath": "M 221.0 258.0 L 299.0 258.0 L 299.0 302.0 L 221.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-017",
+      "plotNumber": 17,
+      "label": "Plot 17",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10376.09,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            258
+          ],
+          [
+            394,
+            258
+          ],
+          [
+            394,
+            302
+          ],
+          [
+            316,
+            302
+          ]
+        ],
+        "svgPath": "M 316.0 258.0 L 394.0 258.0 L 394.0 302.0 L 316.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-018",
+      "plotNumber": 18,
+      "label": "Plot 18",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "held",
+      "buyerName": "Hold in Progress (15-min Priority Queue)",
+      "holdRemainingSeconds": 780,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10384.59,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            258
+          ],
+          [
+            489,
+            258
+          ],
+          [
+            489,
+            302
+          ],
+          [
+            411,
+            302
+          ]
+        ],
+        "svgPath": "M 411.0 258.0 L 489.0 258.0 L 489.0 302.0 L 411.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-019",
+      "plotNumber": 19,
+      "label": "Plot 19",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10393.09,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            258
+          ],
+          [
+            584,
+            258
+          ],
+          [
+            584,
+            302
+          ],
+          [
+            506,
+            302
+          ]
+        ],
+        "svgPath": "M 506.0 258.0 L 584.0 258.0 L 584.0 302.0 L 506.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-020",
+      "plotNumber": 20,
+      "label": "Plot 20",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10401.59,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            258
+          ],
+          [
+            679,
+            258
+          ],
+          [
+            679,
+            302
+          ],
+          [
+            601,
+            302
+          ]
+        ],
+        "svgPath": "M 601.0 258.0 L 679.0 258.0 L 679.0 302.0 L 601.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-021",
+      "plotNumber": 21,
+      "label": "Plot 21",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1021 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10410.09,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            258
+          ],
+          [
+            774,
+            258
+          ],
+          [
+            774,
+            302
+          ],
+          [
+            696,
+            302
+          ]
+        ],
+        "svgPath": "M 696.0 258.0 L 774.0 258.0 L 774.0 302.0 L 696.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-022",
+      "plotNumber": 22,
+      "label": "Plot 22",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10418.59,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            258
+          ],
+          [
+            869,
+            258
+          ],
+          [
+            869,
+            302
+          ],
+          [
+            791,
+            302
+          ]
+        ],
+        "svgPath": "M 791.0 258.0 L 869.0 258.0 L 869.0 302.0 L 791.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-023",
+      "plotNumber": 23,
+      "label": "Plot 23",
+      "sector": "Sector B — Central Greens",
+      "isCorner": true,
+      "dimensions": "30.2' × 67.5'",
+      "dimensionsMetric": "9.2m × 20.6m",
+      "areaSqM": 189.15,
+      "areaSqFt": 2036,
+      "guntha": 1.87,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5802600,
+      "cornerPlc": 290130,
+      "infraCharges": 250000,
+      "totalPrice": 6342730,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10427.09,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 925,
+        "cy": 280,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            886,
+            258
+          ],
+          [
+            964,
+            258
+          ],
+          [
+            964,
+            302
+          ],
+          [
+            886,
+            302
+          ]
+        ],
+        "svgPath": "M 886.0 258.0 L 964.0 258.0 L 964.0 302.0 L 886.0 302.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-024",
+      "plotNumber": 24,
+      "label": "Plot 24",
+      "sector": "Sector B — Central Greens",
+      "isCorner": true,
+      "dimensions": "30.2' × 83.3'",
+      "dimensionsMetric": "9.2m × 25.4m",
+      "areaSqM": 233.68,
+      "areaSqFt": 2515.3,
+      "guntha": 2.31,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168605,
+      "cornerPlc": 358430,
+      "infraCharges": 250000,
+      "totalPrice": 7777035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10435.59,
+        "y": -1404.85
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 345,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            323
+          ],
+          [
+            299,
+            323
+          ],
+          [
+            299,
+            367
+          ],
+          [
+            221,
+            367
+          ]
+        ],
+        "svgPath": "M 221.0 323.0 L 299.0 323.0 L 299.0 367.0 L 221.0 367.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-025",
+      "plotNumber": 25,
+      "label": "Plot 25",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10435.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 345,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            323
+          ],
+          [
+            394,
+            323
+          ],
+          [
+            394,
+            367
+          ],
+          [
+            316,
+            367
+          ]
+        ],
+        "svgPath": "M 316.0 323.0 L 394.0 323.0 L 394.0 367.0 L 316.0 367.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-026",
+      "plotNumber": 26,
+      "label": "Plot 26",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "sold",
+      "buyerName": "Registered Sale Deed Executed",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10427.09,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 345,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            323
+          ],
+          [
+            489,
+            323
+          ],
+          [
+            489,
+            367
+          ],
+          [
+            411,
+            367
+          ]
+        ],
+        "svgPath": "M 411.0 323.0 L 489.0 323.0 L 489.0 367.0 L 411.0 367.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-027",
+      "plotNumber": 27,
+      "label": "Plot 27",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10418.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 345,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            323
+          ],
+          [
+            584,
+            323
+          ],
+          [
+            584,
+            367
+          ],
+          [
+            506,
+            367
+          ]
+        ],
+        "svgPath": "M 506.0 323.0 L 584.0 323.0 L 584.0 367.0 L 506.0 367.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-028",
+      "plotNumber": 28,
+      "label": "Plot 28",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1028 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10410.09,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 345,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            323
+          ],
+          [
+            679,
+            323
+          ],
+          [
+            679,
+            367
+          ],
+          [
+            601,
+            367
+          ]
+        ],
+        "svgPath": "M 601.0 323.0 L 679.0 323.0 L 679.0 367.0 L 601.0 367.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-029",
+      "plotNumber": 29,
+      "label": "Plot 29",
+      "sector": "Sector B — Central Greens",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "North (Park Facing)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10401.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 345,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            323
+          ],
+          [
+            774,
+            323
+          ],
+          [
+            774,
+            367
+          ],
+          [
+            696,
+            367
+          ]
+        ],
+        "svgPath": "M 696.0 323.0 L 774.0 323.0 L 774.0 367.0 L 696.0 367.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-030",
+      "plotNumber": 30,
+      "label": "Plot 30",
+      "sector": "Sector B — Central Greens",
+      "isCorner": true,
+      "dimensions": "30.2' × 59.5'",
+      "dimensionsMetric": "9.2m × 18.1m",
+      "areaSqM": 166.89,
+      "areaSqFt": 1796.4,
+      "guntha": 1.65,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Sector Road",
+      "status": "held",
+      "buyerName": "Hold in Progress (15-min Priority Queue)",
+      "holdRemainingSeconds": 780,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5119740,
+      "cornerPlc": 255987,
+      "infraCharges": 250000,
+      "totalPrice": 5625727,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10393.09,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 345,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            323
+          ],
+          [
+            869,
+            323
+          ],
+          [
+            869,
+            367
+          ],
+          [
+            791,
+            367
+          ]
+        ],
+        "svgPath": "M 791.0 323.0 L 869.0 323.0 L 869.0 367.0 L 791.0 367.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-031",
+      "plotNumber": 31,
+      "label": "Plot 31",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": true,
+      "dimensions": "30.2' × 75.4'",
+      "dimensionsMetric": "9.2m × 23.0m",
+      "areaSqM": 211.42,
+      "areaSqFt": 2275.7,
+      "guntha": 2.09,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6485745,
+      "cornerPlc": 324287,
+      "infraCharges": 250000,
+      "totalPrice": 7060032,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10384.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            403
+          ],
+          [
+            299,
+            403
+          ],
+          [
+            299,
+            447
+          ],
+          [
+            221,
+            447
+          ]
+        ],
+        "svgPath": "M 221.0 403.0 L 299.0 403.0 L 299.0 447.0 L 221.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-032",
+      "plotNumber": 32,
+      "label": "Plot 32",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10376.09,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            403
+          ],
+          [
+            394,
+            403
+          ],
+          [
+            394,
+            447
+          ],
+          [
+            316,
+            447
+          ]
+        ],
+        "svgPath": "M 316.0 403.0 L 394.0 403.0 L 394.0 447.0 L 316.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-033",
+      "plotNumber": 33,
+      "label": "Plot 33",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1033 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10367.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            403
+          ],
+          [
+            489,
+            403
+          ],
+          [
+            489,
+            447
+          ],
+          [
+            411,
+            447
+          ]
+        ],
+        "svgPath": "M 411.0 403.0 L 489.0 403.0 L 489.0 447.0 L 411.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-034",
+      "plotNumber": 34,
+      "label": "Plot 34",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10359.09,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            403
+          ],
+          [
+            584,
+            403
+          ],
+          [
+            584,
+            447
+          ],
+          [
+            506,
+            447
+          ]
+        ],
+        "svgPath": "M 506.0 403.0 L 584.0 403.0 L 584.0 447.0 L 506.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-035",
+      "plotNumber": 35,
+      "label": "Plot 35",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10350.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            403
+          ],
+          [
+            679,
+            403
+          ],
+          [
+            679,
+            447
+          ],
+          [
+            601,
+            447
+          ]
+        ],
+        "svgPath": "M 601.0 403.0 L 679.0 403.0 L 679.0 447.0 L 601.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-036",
+      "plotNumber": 36,
+      "label": "Plot 36",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10342.09,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            403
+          ],
+          [
+            774,
+            403
+          ],
+          [
+            774,
+            447
+          ],
+          [
+            696,
+            447
+          ]
+        ],
+        "svgPath": "M 696.0 403.0 L 774.0 403.0 L 774.0 447.0 L 696.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-037",
+      "plotNumber": 37,
+      "label": "Plot 37",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10333.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            403
+          ],
+          [
+            869,
+            403
+          ],
+          [
+            869,
+            447
+          ],
+          [
+            791,
+            447
+          ]
+        ],
+        "svgPath": "M 791.0 403.0 L 869.0 403.0 L 869.0 447.0 L 791.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-038",
+      "plotNumber": 38,
+      "label": "Plot 38",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": true,
+      "dimensions": "30.2' × 67.5'",
+      "dimensionsMetric": "9.2m × 20.6m",
+      "areaSqM": 189.15,
+      "areaSqFt": 2036,
+      "guntha": 1.87,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5802600,
+      "cornerPlc": 290130,
+      "infraCharges": 250000,
+      "totalPrice": 6342730,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10325.09,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 925,
+        "cy": 425,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            886,
+            403
+          ],
+          [
+            964,
+            403
+          ],
+          [
+            964,
+            447
+          ],
+          [
+            886,
+            447
+          ]
+        ],
+        "svgPath": "M 886.0 403.0 L 964.0 403.0 L 964.0 447.0 L 886.0 447.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-039",
+      "plotNumber": 39,
+      "label": "Plot 39",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": true,
+      "dimensions": "30.2' × 83.3'",
+      "dimensionsMetric": "9.2m × 25.4m",
+      "areaSqM": 233.68,
+      "areaSqFt": 2515.3,
+      "guntha": 2.31,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168605,
+      "cornerPlc": 358430,
+      "infraCharges": 250000,
+      "totalPrice": 7777035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10316.59,
+        "y": -1382.37
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 490,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            468
+          ],
+          [
+            299,
+            468
+          ],
+          [
+            299,
+            512
+          ],
+          [
+            221,
+            512
+          ]
+        ],
+        "svgPath": "M 221.0 468.0 L 299.0 468.0 L 299.0 512.0 L 221.0 512.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-040",
+      "plotNumber": 40,
+      "label": "Plot 40",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "sold",
+      "buyerName": "Registered Sale Deed Executed",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10316.59,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 490,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            468
+          ],
+          [
+            394,
+            468
+          ],
+          [
+            394,
+            512
+          ],
+          [
+            316,
+            512
+          ]
+        ],
+        "svgPath": "M 316.0 468.0 L 394.0 468.0 L 394.0 512.0 L 316.0 512.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-041",
+      "plotNumber": 41,
+      "label": "Plot 41",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10325.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 490,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            468
+          ],
+          [
+            489,
+            468
+          ],
+          [
+            489,
+            512
+          ],
+          [
+            411,
+            512
+          ]
+        ],
+        "svgPath": "M 411.0 468.0 L 489.0 468.0 L 489.0 512.0 L 411.0 512.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-042",
+      "plotNumber": 42,
+      "label": "Plot 42",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1042 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10334.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 490,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            468
+          ],
+          [
+            584,
+            468
+          ],
+          [
+            584,
+            512
+          ],
+          [
+            506,
+            512
+          ]
+        ],
+        "svgPath": "M 506.0 468.0 L 584.0 468.0 L 584.0 512.0 L 506.0 512.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-043",
+      "plotNumber": 43,
+      "label": "Plot 43",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10343.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 490,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            468
+          ],
+          [
+            679,
+            468
+          ],
+          [
+            679,
+            512
+          ],
+          [
+            601,
+            512
+          ]
+        ],
+        "svgPath": "M 601.0 468.0 L 679.0 468.0 L 679.0 512.0 L 601.0 512.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-044",
+      "plotNumber": 44,
+      "label": "Plot 44",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "East (Sunrise)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10352.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 490,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            468
+          ],
+          [
+            774,
+            468
+          ],
+          [
+            774,
+            512
+          ],
+          [
+            696,
+            512
+          ]
+        ],
+        "svgPath": "M 696.0 468.0 L 774.0 468.0 L 774.0 512.0 L 696.0 512.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-045",
+      "plotNumber": 45,
+      "label": "Plot 45",
+      "sector": "Sector C — Club & Amenity View",
+      "isCorner": true,
+      "dimensions": "30.2' × 59.5'",
+      "dimensionsMetric": "9.2m × 18.1m",
+      "areaSqM": 166.89,
+      "areaSqFt": 1796.4,
+      "guntha": 1.65,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "9.0M Internal Avenue",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5119740,
+      "cornerPlc": 255987,
+      "infraCharges": 250000,
+      "totalPrice": 5625727,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10361.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 490,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            468
+          ],
+          [
+            869,
+            468
+          ],
+          [
+            869,
+            512
+          ],
+          [
+            791,
+            512
+          ]
+        ],
+        "svgPath": "M 791.0 468.0 L 869.0 468.0 L 869.0 512.0 L 791.0 512.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-046",
+      "plotNumber": 46,
+      "label": "Plot 46",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": true,
+      "dimensions": "30.2' × 75.4'",
+      "dimensionsMetric": "9.2m × 23.0m",
+      "areaSqM": 211.42,
+      "areaSqFt": 2275.7,
+      "guntha": 2.09,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6485745,
+      "cornerPlc": 324287,
+      "infraCharges": 250000,
+      "totalPrice": 7060032,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10370.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            548
+          ],
+          [
+            299,
+            548
+          ],
+          [
+            299,
+            592
+          ],
+          [
+            221,
+            592
+          ]
+        ],
+        "svgPath": "M 221.0 548.0 L 299.0 548.0 L 299.0 592.0 L 221.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-047",
+      "plotNumber": 47,
+      "label": "Plot 47",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10379.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            548
+          ],
+          [
+            394,
+            548
+          ],
+          [
+            394,
+            592
+          ],
+          [
+            316,
+            592
+          ]
+        ],
+        "svgPath": "M 316.0 548.0 L 394.0 548.0 L 394.0 592.0 L 316.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-048",
+      "plotNumber": 48,
+      "label": "Plot 48",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "held",
+      "buyerName": "Hold in Progress (15-min Priority Queue)",
+      "holdRemainingSeconds": 780,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10388.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            548
+          ],
+          [
+            489,
+            548
+          ],
+          [
+            489,
+            592
+          ],
+          [
+            411,
+            592
+          ]
+        ],
+        "svgPath": "M 411.0 548.0 L 489.0 548.0 L 489.0 592.0 L 411.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-049",
+      "plotNumber": 49,
+      "label": "Plot 49",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10397.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            548
+          ],
+          [
+            584,
+            548
+          ],
+          [
+            584,
+            592
+          ],
+          [
+            506,
+            592
+          ]
+        ],
+        "svgPath": "M 506.0 548.0 L 584.0 548.0 L 584.0 592.0 L 506.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-050",
+      "plotNumber": 50,
+      "label": "Plot 50",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10406.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            548
+          ],
+          [
+            679,
+            548
+          ],
+          [
+            679,
+            592
+          ],
+          [
+            601,
+            592
+          ]
+        ],
+        "svgPath": "M 601.0 548.0 L 679.0 548.0 L 679.0 592.0 L 601.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-051",
+      "plotNumber": 51,
+      "label": "Plot 51",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "booked",
+      "buyerName": "Allotted to Client #1051 (Agreement Done)",
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10415.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            548
+          ],
+          [
+            774,
+            548
+          ],
+          [
+            774,
+            592
+          ],
+          [
+            696,
+            592
+          ]
+        ],
+        "svgPath": "M 696.0 548.0 L 774.0 548.0 L 774.0 592.0 L 696.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-052",
+      "plotNumber": 52,
+      "label": "Plot 52",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10424.67,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            548
+          ],
+          [
+            869,
+            548
+          ],
+          [
+            869,
+            592
+          ],
+          [
+            791,
+            592
+          ]
+        ],
+        "svgPath": "M 791.0 548.0 L 869.0 548.0 L 869.0 592.0 L 791.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-053",
+      "plotNumber": 53,
+      "label": "Plot 53",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": true,
+      "dimensions": "30.2' × 67.5'",
+      "dimensionsMetric": "9.2m × 20.6m",
+      "areaSqM": 189.15,
+      "areaSqFt": 2036,
+      "guntha": 1.87,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5802600,
+      "cornerPlc": 290130,
+      "infraCharges": 250000,
+      "totalPrice": 6342730,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10434.84,
+        "y": -1363.74
+      },
+      "svg": {
+        "cx": 925,
+        "cy": 570,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            886,
+            548
+          ],
+          [
+            964,
+            548
+          ],
+          [
+            964,
+            592
+          ],
+          [
+            886,
+            592
+          ]
+        ],
+        "svgPath": "M 886.0 548.0 L 964.0 548.0 L 964.0 592.0 L 886.0 592.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-054",
+      "plotNumber": 54,
+      "label": "Plot 54",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": true,
+      "dimensions": "30.2' × 83.3'",
+      "dimensionsMetric": "9.2m × 25.4m",
+      "areaSqM": 233.68,
+      "areaSqFt": 2515.3,
+      "guntha": 2.31,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168605,
+      "cornerPlc": 358430,
+      "infraCharges": 250000,
+      "totalPrice": 7777035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10435.2,
+        "y": -1344.66
+      },
+      "svg": {
+        "cx": 260,
+        "cy": 635,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            221,
+            613
+          ],
+          [
+            299,
+            613
+          ],
+          [
+            299,
+            657
+          ],
+          [
+            221,
+            657
+          ]
+        ],
+        "svgPath": "M 221.0 613.0 L 299.0 613.0 L 299.0 657.0 L 221.0 657.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-055",
+      "plotNumber": 55,
+      "label": "Plot 55",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 64.4'",
+      "dimensionsMetric": "8.5m × 19.6m",
+      "areaSqM": 166.94,
+      "areaSqFt": 1796.9,
+      "guntha": 1.65,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5121165,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 5371165,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10426.42,
+        "y": -1344.66
+      },
+      "svg": {
+        "cx": 355,
+        "cy": 635,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            316,
+            613
+          ],
+          [
+            394,
+            613
+          ],
+          [
+            394,
+            657
+          ],
+          [
+            316,
+            657
+          ]
+        ],
+        "svgPath": "M 316.0 613.0 L 394.0 613.0 L 394.0 657.0 L 316.0 657.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-056",
+      "plotNumber": 56,
+      "label": "Plot 56",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 81.6'",
+      "dimensionsMetric": "8.5m × 24.9m",
+      "areaSqM": 211.48,
+      "areaSqFt": 2276.3,
+      "guntha": 2.09,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 6487455,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6737455,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10418.17,
+        "y": -1344.66
+      },
+      "svg": {
+        "cx": 450,
+        "cy": 635,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            411,
+            613
+          ],
+          [
+            489,
+            613
+          ],
+          [
+            489,
+            657
+          ],
+          [
+            411,
+            657
+          ]
+        ],
+        "svgPath": "M 411.0 613.0 L 489.0 613.0 L 489.0 657.0 L 411.0 657.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-057",
+      "plotNumber": 57,
+      "label": "Plot 57",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 98.8'",
+      "dimensionsMetric": "8.5m × 30.1m",
+      "areaSqM": 255.94,
+      "areaSqFt": 2754.9,
+      "guntha": 2.53,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7851465,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 8101465,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10409.92,
+        "y": -1344.66
+      },
+      "svg": {
+        "cx": 545,
+        "cy": 635,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            506,
+            613
+          ],
+          [
+            584,
+            613
+          ],
+          [
+            584,
+            657
+          ],
+          [
+            506,
+            657
+          ]
+        ],
+        "svgPath": "M 506.0 613.0 L 584.0 613.0 L 584.0 657.0 L 506.0 657.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-058",
+      "plotNumber": 58,
+      "label": "Plot 58",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 73.0'",
+      "dimensionsMetric": "8.5m × 22.3m",
+      "areaSqM": 189.21,
+      "areaSqFt": 2036.6,
+      "guntha": 1.87,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5804310,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 6054310,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10401.67,
+        "y": -1344.66
+      },
+      "svg": {
+        "cx": 640,
+        "cy": 635,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            601,
+            613
+          ],
+          [
+            679,
+            613
+          ],
+          [
+            679,
+            657
+          ],
+          [
+            601,
+            657
+          ]
+        ],
+        "svgPath": "M 601.0 613.0 L 679.0 613.0 L 679.0 657.0 L 601.0 657.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-059",
+      "plotNumber": 59,
+      "label": "Plot 59",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": false,
+      "dimensions": "27.9' × 90.2'",
+      "dimensionsMetric": "8.5m × 27.5m",
+      "areaSqM": 233.66,
+      "areaSqFt": 2515.1,
+      "guntha": 2.31,
+      "facing": "North-East (Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 7168035,
+      "cornerPlc": 0,
+      "infraCharges": 250000,
+      "totalPrice": 7418035,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10393.42,
+        "y": -1344.66
+      },
+      "svg": {
+        "cx": 735,
+        "cy": 635,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            696,
+            613
+          ],
+          [
+            774,
+            613
+          ],
+          [
+            774,
+            657
+          ],
+          [
+            696,
+            657
+          ]
+        ],
+        "svgPath": "M 696.0 613.0 L 774.0 613.0 L 774.0 657.0 L 696.0 657.0 Z"
+      }
+    },
+    {
+      "id": "KES-P-060",
+      "plotNumber": 60,
+      "label": "Plot 60",
+      "sector": "Sector D — West Ridge Estates",
+      "isCorner": true,
+      "dimensions": "30.2' × 59.5'",
+      "dimensionsMetric": "9.2m × 18.1m",
+      "areaSqM": 166.89,
+      "areaSqFt": 1796.4,
+      "guntha": 1.65,
+      "facing": "North-East (Prime Corner)",
+      "roadFrontage": "18.0M DP Main Access Road",
+      "status": "available",
+      "buyerName": null,
+      "holdRemainingSeconds": null,
+      "baseRatePerSqFt": 2850,
+      "basePrice": 5119740,
+      "cornerPlc": 255987,
+      "infraCharges": 250000,
+      "totalPrice": 5625727,
+      "bookingTokenAmount": 100000,
+      "cadCoords": {
+        "x": 10385.17,
+        "y": -1344.66
+      },
+      "svg": {
+        "cx": 830,
+        "cy": 635,
+        "w": 78,
+        "h": 44,
+        "polygon": [
+          [
+            791,
+            613
+          ],
+          [
+            869,
+            613
+          ],
+          [
+            869,
+            657
+          ],
+          [
+            791,
+            657
+          ]
+        ],
+        "svgPath": "M 791.0 613.0 L 869.0 613.0 L 869.0 657.0 L 791.0 657.0 Z"
+      }
+    }
+  ]
+}

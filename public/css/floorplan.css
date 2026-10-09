@@ -152,3 +152,345 @@
   height: 100% !important;
   outline: none;
 }
+
+/* ==================================================== */
+/* CAD LAND PLOTTING MASTERPLAN & DWG IMPORT STYLES     */
+/* ==================================================== */
+
+.cad-masterplan-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cad-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.cad-stat-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.cad-stat-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cad-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.cad-stat-val {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cad-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cad-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cad-filter-select {
+  background: #F9FAFB;
+  border: 1.5px solid #E5E7EB;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: #111827;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.cad-filter-select:focus {
+  border-color: var(--accent-dark);
+  background: #FFFFFF;
+}
+
+.cad-canvas-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .cad-canvas-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cad-canvas-box {
+  background: #F8FAFC;
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cad-svg-element {
+  width: 100%;
+  height: 100%;
+  max-height: 620px;
+  user-select: none;
+}
+
+/* Plot SVG Interactive styling */
+.cad-plot-g {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.cad-plot-rect {
+  transition: all 0.2s ease;
+  stroke-width: 1.5;
+}
+
+.cad-plot-rect.status-available {
+  fill: #ECFDF5;
+  stroke: #10B981;
+}
+
+.cad-plot-rect.status-available:hover {
+  fill: #D1FAE5;
+  stroke: #059669;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.25));
+}
+
+.cad-plot-rect.status-held {
+  fill: #FFFBEB;
+  stroke: #F59E0B;
+  stroke-width: 2;
+  animation: cadHeldPulse 2s infinite;
+}
+
+.cad-plot-rect.status-held:hover {
+  fill: #FEF3C7;
+  stroke: #D97706;
+  stroke-width: 2.5;
+}
+
+@keyframes cadHeldPulse {
+  0% { stroke-opacity: 1; }
+  50% { stroke-opacity: 0.4; }
+  100% { stroke-opacity: 1; }
+}
+
+.cad-plot-rect.status-booked {
+  fill: #EFF6FF;
+  stroke: #3B82F6;
+}
+
+.cad-plot-rect.status-booked:hover {
+  fill: #DBEAFE;
+  stroke: #2563EB;
+  stroke-width: 2.5;
+}
+
+.cad-plot-rect.status-sold {
+  fill: #F1F5F9;
+  stroke: #64748B;
+  stroke-opacity: 0.8;
+}
+
+.cad-plot-rect.is-selected {
+  stroke: #4F46E5 !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 8px rgba(79, 70, 229, 0.45));
+}
+
+.cad-plot-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  fill: #111827;
+  pointer-events: none;
+}
+
+.cad-plot-sublabel {
+  font-family: var(--font-body);
+  font-size: 8.5px;
+  font-weight: 600;
+  fill: #6B7280;
+  pointer-events: none;
+}
+
+/* Dossier Drawer Card */
+.cad-dossier-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cad-dossier-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid #F3F4F6;
+  padding-bottom: 12px;
+}
+
+.cad-dossier-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.cad-spec-pill {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cad-spec-pill-label {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.cad-spec-pill-val {
+  font-size: 13px;
+  color: #111827;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.cad-cost-breakdown {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.cad-cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 4px 0;
+  color: var(--text-secondary);
+}
+
+.cad-cost-row.total-row {
+  border-top: 1.5px dashed #CBD5E1;
+  margin-top: 6px;
+  padding-top: 8px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* CAD File Dropzone */
+.cad-dropzone {
+  border: 2px dashed #D1D5DB;
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  text-align: center;
+  background: #F9FAFB;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cad-dropzone:hover, .cad-dropzone.dragover {
+  border-color: var(--accent-dark);
+  background: #F3F4F6;
+}
+
+.cad-hud-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #111827;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+}
+
+.cad-zoom-controls {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+}
+
+.cad-zoom-btn {
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111827;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.cad-zoom-btn:hover {
+  background: #F3F4F6;
+  border-color: #9CA3AF;
+}

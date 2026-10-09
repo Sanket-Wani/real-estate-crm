@@ -224,6 +224,35 @@ async function runTests() {
     assert(voiceFinalizeRes.status === 200 && voiceFinalizeRes.body.lead.stage === 'visit_scheduled' && voiceFinalizeRes.body.lead.jarvis_score === 96, 'POST /v1/ai/voice-call/finalize auto-promotes lead to Visit Scheduled with 96% score');
     assert(voiceFinalizeRes.body.visit && voiceFinalizeRes.body.visit.id, 'Jarvis AI Voice finalization auto-schedules VIP Site Visit');
 
+    // CAD Land Plotting Masterplan Module Tests
+    const cadMasterplanRes = await request('/v1/cad/masterplan');
+    assert(cadMasterplanRes.status === 200 && cadMasterplanRes.body.masterplan.plots.length >= 50, 'GET /v1/cad/masterplan loads plotted development township with 50+ plots');
+    assert(cadMasterplanRes.body.masterplan.metadata.fileName === 'SUB-KESNAND-13.11.2025.dwg', 'CAD masterplan metadata binds to Kesnand DWG file');
+
+    const cadHoldRes = await request('/v1/cad/plots/KES-P-001/hold', {
+      method: 'POST',
+      body: { buyerName: 'VIP Hold Test' }
+    });
+    assert(cadHoldRes.status === 200 && cadHoldRes.body.plot.status === 'held', 'POST /v1/cad/plots/:id/hold places 15-minute priority lock');
+
+    const cadCostSheetRes = await request('/v1/cad/plots/KES-P-001/cost-sheet', {
+      method: 'POST',
+      body: { discountPct: 2 }
+    });
+    assert(cadCostSheetRes.status === 200 && cadCostSheetRes.body.costSheet.stampDutyPct === 7 && cadCostSheetRes.body.costSheet.gst === 0, 'POST /v1/cad/plots/:id/cost-sheet calculates 0% Land GST and 7% PMRDA stamp duty');
+
+    const cadBookRes = await request('/v1/cad/plots/KES-P-001/book', {
+      method: 'POST',
+      body: { buyerName: 'Rohan Sharma', tokenAmount: 100000, paymentScheme: 'clp' }
+    });
+    assert(cadBookRes.status === 200 && cadBookRes.body.plot.status === 'booked', 'POST /v1/cad/plots/:id/book confirms token allotment');
+
+    const cadResetRes = await request('/v1/cad/plots/KES-P-001/status', {
+      method: 'PATCH',
+      body: { status: 'available' }
+    });
+    assert(cadResetRes.status === 200 && cadResetRes.body.plot.status === 'available', 'PATCH /v1/cad/plots/:id/status resets plot availability');
+
     console.log(`\n======================================================`);
     console.log(`  Tests Passed: ${passed} / ${passed + failed}`);
     console.log(`  Tests Failed: ${failed}`);
